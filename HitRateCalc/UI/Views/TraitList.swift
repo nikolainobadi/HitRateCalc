@@ -14,16 +14,27 @@ struct TraitsSection: View {
     let rateResult: String
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             Text(title)
+                .font(.largeTitle.bold())
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal)
             
             HStack {
                 TraitList(traitList: $traitList)
                 VStack {
+                    Spacer()
                     Text("\(rateResult)%")
+                        .lineLimit(1)
+                        .font(.largeTitle)
+                        .minimumScaleFactor(0.5)
+                    Spacer()
                     Text("Estimated Result")
-                }
-            }
+                        .padding(5)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
+                }.frame(maxHeight: getHeightPercent(21))
+            }.withRoundedBorder()
         }
     }
 }
@@ -32,8 +43,10 @@ struct TraitList: View {
     @Binding var traitList: [Trait]
     
     var body: some View {
-        List($traitList) { trait in
-            TraitRow(trait: trait)
+        VStack {
+            ForEach($traitList) { trait in
+                TraitRow(trait: trait)
+            }
         }
     }
 }
