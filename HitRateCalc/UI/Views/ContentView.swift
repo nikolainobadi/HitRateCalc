@@ -16,6 +16,10 @@ struct ContentView: View {
     private var evasionRate: String { "\(dataModel.evasionRate)" }
     private var accuracyRate: String { "\(dataModel.accuracyRate)" }
     
+    private func clearValues(isEvasion: Bool) {
+        dataModel.clearValues(isEvasion: isEvasion)
+    }
+    
     private func toggleMode() {
         withAnimation { dataModel.toggleMode() }
     }
@@ -27,12 +31,12 @@ struct ContentView: View {
                 
                 VStack {
                     ZStack {
-                        TraitsSection(traitList: $dataModel.evasionTraits, title: "Evasion", rateResult: evasionRate)
+                        TraitsSection(traitList: $dataModel.evasionTraits, title: "Evasion", rateResult: evasionRate, clearValues: { clearValues(isEvasion: true) })
                             .offset(y: evasionOffset)
                         
                         SwitchButton(action: toggleMode)
                         
-                        TraitsSection(traitList: $dataModel.accuracyTraits, title: "Accuracy", rateResult: accuracyRate)
+                        TraitsSection(traitList: $dataModel.accuracyTraits, title: "Accuracy", rateResult: accuracyRate, clearValues: { clearValues(isEvasion: false) })
                             .offset(y: accuracyOffset)
                             
                     }.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -128,6 +132,13 @@ extension HitRateDataModel {
     }
     
     func toggleMode() { checkingHitRate.toggle() }
+    func clearValues(isEvasion: Bool) {
+        if isEvasion {
+            evasionTraits = evasionTraits.map({ Trait(id: $0.id, name: $0.name) })
+        } else {
+            accuracyTraits = accuracyTraits.map({ Trait(id: $0.id, name: $0.name) })
+        }
+    }
 }
 
 private extension HitRateDataModel {

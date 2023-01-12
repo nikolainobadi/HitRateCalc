@@ -12,6 +12,11 @@ struct TraitsSection: View {
     
     let title: String
     let rateResult: String
+    let clearValues: () -> Void
+    
+    private var showClearButton: Bool {
+        traitList.compactMap({ Double($0.amount) ?? 0 }).reduce(0, +) > 0
+    }
     
     var body: some View {
         VStack(spacing: 0) {
@@ -24,11 +29,20 @@ struct TraitsSection: View {
                 TraitList(traitList: $traitList)
                 Divider().frame(maxHeight: getHeightPercent(21))
                 VStack {
+                    if showClearButton {
+                        Button(action: clearValues) {
+                            Text("Clear values")
+                                .underline()
+                                .font(.caption)
+                        }.padding(5)
+                    }
+                    Spacer()
                     Text("\(rateResult)%")
                         .lineLimit(1)
                         .font(.largeTitle)
                         .minimumScaleFactor(0.5)
-                        .frame(maxWidth: getWidthPercent(21))
+                        .frame(maxWidth: getWidthPercent(25))
+                    Spacer()
                 }.frame(maxHeight: getHeightPercent(21))
             }.withRoundedBorder()
         }
@@ -99,6 +113,6 @@ fileprivate struct AmountField: View {
 // MARK: - Preview
 struct TraitList_Previews: PreviewProvider {
     static var previews: some View {
-        TraitsSection(traitList: .constant(Trait.evasionTraits), title: "Evasion", rateResult: "0")
+        TraitsSection(traitList: .constant(Trait.evasionTraits), title: "Evasion", rateResult: "0", clearValues: { })
     }
 }
