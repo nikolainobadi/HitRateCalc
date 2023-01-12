@@ -25,7 +25,6 @@ struct TraitRow: View {
     var body: some View {
         HStack(spacing: 0) {
             TitleLabel(title: trait.name)
-            Divider()
             AmountField(amount: $trait.amount)
         }
     }
