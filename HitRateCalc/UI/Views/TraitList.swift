@@ -24,16 +24,11 @@ struct TraitsSection: View {
                 TraitList(traitList: $traitList)
                 Divider().frame(maxHeight: getHeightPercent(21))
                 VStack {
-                    Spacer()
                     Text("\(rateResult)%")
                         .lineLimit(1)
                         .font(.largeTitle)
                         .minimumScaleFactor(0.5)
-                    Spacer()
-                    Text("Estimated Result")
-                        .padding(5)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.5)
+                        .frame(maxWidth: getWidthPercent(21))
                 }.frame(maxHeight: getHeightPercent(21))
             }.withRoundedBorder()
         }
