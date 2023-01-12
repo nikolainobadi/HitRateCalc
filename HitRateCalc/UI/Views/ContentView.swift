@@ -30,15 +30,7 @@ struct ContentView: View {
                         TraitsSection(traitList: $dataModel.evasionTraits, title: "Evasion", rateResult: evasionRate)
                             .offset(y: evasionOffset)
                         
-                        Button(action: toggleMode) {
-                            Image(systemName: "arrow.up.arrow.down")
-                                .font(.largeTitle)
-                                .cornerRadius(1)
-                        }
-                        .tint(.black)
-                        .buttonStyle(.borderedProminent)
-                        .padding(.top, getHeightPercent(5))
-                        .shadow(color: .primary, radius: 4)
+                        SwitchButton(action: toggleMode)
                         
                         TraitsSection(traitList: $dataModel.accuracyTraits, title: "Accuracy", rateResult: accuracyRate)
                             .offset(y: accuracyOffset)
@@ -62,6 +54,24 @@ struct ContentView: View {
                 }
             }
         }
+    }
+}
+
+
+// MARK: - SwitchButton
+fileprivate struct SwitchButton: View {
+    let action: () -> Void
+    
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: "arrow.up.arrow.down")
+                .font(.largeTitle)
+                .cornerRadius(1)
+        }
+        .tint(.black)
+        .buttonStyle(.borderedProminent)
+        .padding(.top, getHeightPercent(5))
+        .shadow(color: .primary, radius: 4)
     }
 }
 
