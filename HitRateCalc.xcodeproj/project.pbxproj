@@ -145,9 +145,9 @@
 		D451DEF02970A00600486EEE /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				D409B7BE2970C205004CFA64 /* Extensions */,
 				D409B7BA2970C12B004CFA64 /* Views */,
 				D409B7BB2970C133004CFA64 /* ViewModifiers */,
+				D409B7BE2970C205004CFA64 /* Extensions */,
 			);
 			path = UI;
 			sourceTree = "<group>";
