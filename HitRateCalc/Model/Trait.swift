@@ -8,7 +8,7 @@
 import Foundation
 
 struct Trait: Identifiable {
-    var id = UUID()
+    var id = 0
     var name = ""
     var amount = ""
 }
@@ -19,5 +19,5 @@ extension Trait {
 }
 
 private extension Trait {
-    static let universalTraits: [Trait] = [Trait(name: "Luck"), Trait(name: "Bonus")]
+    static let universalTraits: [Trait] = [Trait(id: 1, name: "Luck"), Trait(id: 2, name: "Bonus")]
 }
