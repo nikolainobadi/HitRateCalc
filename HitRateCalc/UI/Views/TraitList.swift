@@ -22,6 +22,7 @@ struct TraitsSection: View {
             
             HStack {
                 TraitList(traitList: $traitList)
+                Divider().frame(maxHeight: getHeightPercent(21))
                 VStack {
                     Spacer()
                     Text("\(rateResult)%")
@@ -43,9 +44,12 @@ struct TraitList: View {
     @Binding var traitList: [Trait]
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             ForEach($traitList) { trait in
                 TraitRow(trait: trait)
+                if trait.id != 2 {
+                    Divider().background(Color(uiColor: .systemBackground))
+                }
             }
         }
     }
@@ -60,7 +64,7 @@ struct TraitRow: View {
         HStack(spacing: 0) {
             TitleLabel(title: trait.name)
             AmountField(amount: $trait.amount)
-        }
+        }.frame(maxHeight: getHeightPercent(7))
     }
 }
 
@@ -76,6 +80,7 @@ fileprivate struct TitleLabel: View {
             .minimumScaleFactor(0.5)
             .foregroundColor(Color(uiColor: .systemBackground))
             .padding(.horizontal, 5)
+            .frame(maxWidth: getWidthPercent(25), maxHeight: .infinity, alignment: .center)
             .background(Color(uiColor: .label))
     }
 }
