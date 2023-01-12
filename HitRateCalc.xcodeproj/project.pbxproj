@@ -13,6 +13,7 @@
 		D451DECD29709FE600486EEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D451DECC29709FE600486EEE /* Preview Assets.xcassets */; };
 		D451DED729709FE600486EEE /* HitRateCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DED629709FE600486EEE /* HitRateCalcTests.swift */; };
 		D451DEF42970A0D300486EEE /* Trait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEF32970A0D300486EEE /* Trait.swift */; };
+		D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		D451DED229709FE600486EEE /* HitRateCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HitRateCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D451DED629709FE600486EEE /* HitRateCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalcTests.swift; sourceTree = "<group>"; };
 		D451DEF32970A0D300486EEE /* Trait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trait.swift; sourceTree = "<group>"; };
+		D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				D451DEEF29709FFE00486EEE /* Main */,
 				D451DEF02970A00600486EEE /* UI */,
+				D451DEF52970A18700486EEE /* Logic */,
 				D451DEF22970A0C200486EEE /* Model */,
 				D451DEF12970A00E00486EEE /* Resources */,
 				D451DECB29709FE600486EEE /* Preview Content */,
@@ -130,6 +133,14 @@
 				D451DEF32970A0D300486EEE /* Trait.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D451DEF52970A18700486EEE /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */,
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D451DEC829709FE500486EEE /* ContentView.swift in Sources */,
+				D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */,
 				D451DEF42970A0D300486EEE /* Trait.swift in Sources */,
 				D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */,
 			);
