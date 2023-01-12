@@ -1,5 +1,5 @@
 //
-//  TraitRow.swift
+//  TraitList.swift
 //  HitRateCalc
 //
 //  Created by Nikolai Nobadi on 1/12/23.
@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+struct TraitList: View {
+    @Binding var traitList: [Trait]
+    
+    var body: some View {
+        List($traitList) { trait in
+            TraitRow(trait: trait)
+        }
+    }
+}
+
+
+// MARK: - Row
 struct TraitRow: View {
     @Binding var trait: Trait
     
@@ -51,10 +63,9 @@ fileprivate struct AmountField: View {
     }
 }
 
-
 // MARK: - Preview
-struct TraitRow_Previews: PreviewProvider {
+struct TraitList_Previews: PreviewProvider {
     static var previews: some View {
-        TraitRow(trait: .constant(Trait(name: "Agility")))
+        TraitList(traitList: .constant(Trait.evasionTraits))
     }
 }

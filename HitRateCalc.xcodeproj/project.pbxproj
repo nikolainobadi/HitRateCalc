@@ -14,7 +14,7 @@
 		D451DED729709FE600486EEE /* HitRateCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DED629709FE600486EEE /* HitRateCalcTests.swift */; };
 		D451DEF42970A0D300486EEE /* Trait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEF32970A0D300486EEE /* Trait.swift */; };
 		D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */; };
-		D451DEF92970A40700486EEE /* TraitRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEF82970A40700486EEE /* TraitRow.swift */; };
+		D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEFA2970A53C00486EEE /* TraitList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		D451DED629709FE600486EEE /* HitRateCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalcTests.swift; sourceTree = "<group>"; };
 		D451DEF32970A0D300486EEE /* Trait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trait.swift; sourceTree = "<group>"; };
 		D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalculator.swift; sourceTree = "<group>"; };
-		D451DEF82970A40700486EEE /* TraitRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitRow.swift; sourceTree = "<group>"; };
+		D451DEFA2970A53C00486EEE /* TraitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				D451DEC729709FE500486EEE /* ContentView.swift */,
-				D451DEF82970A40700486EEE /* TraitRow.swift */,
+				D451DEFA2970A53C00486EEE /* TraitList.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -248,8 +248,8 @@
 			files = (
 				D451DEC829709FE500486EEE /* ContentView.swift in Sources */,
 				D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */,
-				D451DEF92970A40700486EEE /* TraitRow.swift in Sources */,
 				D451DEF42970A0D300486EEE /* Trait.swift in Sources */,
+				D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */,
 				D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
