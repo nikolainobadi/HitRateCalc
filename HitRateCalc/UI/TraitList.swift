@@ -7,6 +7,27 @@
 
 import SwiftUI
 
+struct TraitsSection: View {
+    @Binding var traitList: [Trait]
+    
+    let title: String
+    let rateResult: String
+    
+    var body: some View {
+        VStack {
+            Text(title)
+            
+            HStack {
+                TraitList(traitList: $traitList)
+                VStack {
+                    Text("\(rateResult)%")
+                    Text("Estimated Result")
+                }
+            }
+        }
+    }
+}
+
 struct TraitList: View {
     @Binding var traitList: [Trait]
     
@@ -65,6 +86,6 @@ fileprivate struct AmountField: View {
 // MARK: - Preview
 struct TraitList_Previews: PreviewProvider {
     static var previews: some View {
-        TraitList(traitList: .constant(Trait.evasionTraits))
+        TraitsSection(traitList: .constant(Trait.evasionTraits), title: "Evasion", rateResult: "0")
     }
 }
