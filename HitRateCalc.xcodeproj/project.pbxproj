@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEC529709FE500486EEE /* HitRateCalcApp.swift */; };
+		D451DEC829709FE500486EEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEC729709FE500486EEE /* ContentView.swift */; };
+		D451DECA29709FE600486EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D451DEC929709FE600486EEE /* Assets.xcassets */; };
+		D451DECD29709FE600486EEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D451DECC29709FE600486EEE /* Preview Assets.xcassets */; };
+		D451DED729709FE600486EEE /* HitRateCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DED629709FE600486EEE /* HitRateCalcTests.swift */; };
+		D451DEE129709FE600486EEE /* HitRateCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEE029709FE600486EEE /* HitRateCalcUITests.swift */; };
+		D451DEE329709FE600486EEE /* HitRateCalcUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEE229709FE600486EEE /* HitRateCalcUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D451DED329709FE600486EEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D451DEBA29709FE500486EEE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D451DEC129709FE500486EEE;
+			remoteInfo = HitRateCalc;
+		};
+		D451DEDD29709FE600486EEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D451DEBA29709FE500486EEE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D451DEC129709FE500486EEE;
+			remoteInfo = HitRateCalc;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D451DEC229709FE500486EEE /* HitRateCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HitRateCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D451DEC529709FE500486EEE /* HitRateCalcApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalcApp.swift; sourceTree = "<group>"; };
+		D451DEC729709FE500486EEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D451DEC929709FE600486EEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D451DECC29709FE600486EEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D451DED229709FE600486EEE /* HitRateCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HitRateCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D451DED629709FE600486EEE /* HitRateCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalcTests.swift; sourceTree = "<group>"; };
+		D451DEDC29709FE600486EEE /* HitRateCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HitRateCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D451DEE029709FE600486EEE /* HitRateCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalcUITests.swift; sourceTree = "<group>"; };
+		D451DEE229709FE600486EEE /* HitRateCalcUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalcUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D451DEBF29709FE500486EEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D451DECF29709FE600486EEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D451DED929709FE600486EEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D451DEB929709FE500486EEE = {
+			isa = PBXGroup;
+			children = (
+				D451DEC429709FE500486EEE /* HitRateCalc */,
+				D451DED529709FE600486EEE /* HitRateCalcTests */,
+				D451DEDF29709FE600486EEE /* HitRateCalcUITests */,
+				D451DEC329709FE500486EEE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D451DEC329709FE500486EEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D451DEC229709FE500486EEE /* HitRateCalc.app */,
+				D451DED229709FE600486EEE /* HitRateCalcTests.xctest */,
+				D451DEDC29709FE600486EEE /* HitRateCalcUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D451DEC429709FE500486EEE /* HitRateCalc */ = {
+			isa = PBXGroup;
+			children = (
+				D451DEC529709FE500486EEE /* HitRateCalcApp.swift */,
+				D451DEC729709FE500486EEE /* ContentView.swift */,
+				D451DEC929709FE600486EEE /* Assets.xcassets */,
+				D451DECB29709FE600486EEE /* Preview Content */,
+			);
+			path = HitRateCalc;
+			sourceTree = "<group>";
+		};
+		D451DECB29709FE600486EEE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D451DECC29709FE600486EEE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D451DED529709FE600486EEE /* HitRateCalcTests */ = {
+			isa = PBXGroup;
+			children = (
+				D451DED629709FE600486EEE /* HitRateCalcTests.swift */,
+			);
+			path = HitRateCalcTests;
+			sourceTree = "<group>";
+		};
+		D451DEDF29709FE600486EEE /* HitRateCalcUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D451DEE029709FE600486EEE /* HitRateCalcUITests.swift */,
+				D451DEE229709FE600486EEE /* HitRateCalcUITestsLaunchTests.swift */,
+			);
+			path = HitRateCalcUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D451DEC129709FE500486EEE /* HitRateCalc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D451DEE629709FE600486EEE /* Build configuration list for PBXNativeTarget "HitRateCalc" */;
+			buildPhases = (
+				D451DEBE29709FE500486EEE /* Sources */,
+				D451DEBF29709FE500486EEE /* Frameworks */,
+				D451DEC029709FE500486EEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HitRateCalc;
+			productName = HitRateCalc;
+			productReference = D451DEC229709FE500486EEE /* HitRateCalc.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D451DED129709FE600486EEE /* HitRateCalcTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D451DEE929709FE600486EEE /* Build configuration list for PBXNativeTarget "HitRateCalcTests" */;
+			buildPhases = (
+				D451DECE29709FE600486EEE /* Sources */,
+				D451DECF29709FE600486EEE /* Frameworks */,
+				D451DED029709FE600486EEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D451DED429709FE600486EEE /* PBXTargetDependency */,
+			);
+			name = HitRateCalcTests;
+			productName = HitRateCalcTests;
+			productReference = D451DED229709FE600486EEE /* HitRateCalcTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D451DEDB29709FE600486EEE /* HitRateCalcUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D451DEEC29709FE600486EEE /* Build configuration list for PBXNativeTarget "HitRateCalcUITests" */;
+			buildPhases = (
+				D451DED829709FE600486EEE /* Sources */,
+				D451DED929709FE600486EEE /* Frameworks */,
+				D451DEDA29709FE600486EEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D451DEDE29709FE600486EEE /* PBXTargetDependency */,
+			);
+			name = HitRateCalcUITests;
+			productName = HitRateCalcUITests;
+			productReference = D451DEDC29709FE600486EEE /* HitRateCalcUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D451DEBA29709FE500486EEE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					D451DEC129709FE500486EEE = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					D451DED129709FE600486EEE = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = D451DEC129709FE500486EEE;
+					};
+					D451DEDB29709FE600486EEE = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = D451DEC129709FE500486EEE;
+					};
+				};
+			};
+			buildConfigurationList = D451DEBD29709FE500486EEE /* Build configuration list for PBXProject "HitRateCalc" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D451DEB929709FE500486EEE;
+			productRefGroup = D451DEC329709FE500486EEE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D451DEC129709FE500486EEE /* HitRateCalc */,
+				D451DED129709FE600486EEE /* HitRateCalcTests */,
+				D451DEDB29709FE600486EEE /* HitRateCalcUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D451DEC029709FE500486EEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D451DECD29709FE600486EEE /* Preview Assets.xcassets in Resources */,
+				D451DECA29709FE600486EEE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D451DED029709FE600486EEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D451DEDA29709FE600486EEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D451DEBE29709FE500486EEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D451DEC829709FE500486EEE /* ContentView.swift in Sources */,
+				D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D451DECE29709FE600486EEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D451DED729709FE600486EEE /* HitRateCalcTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D451DED829709FE600486EEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D451DEE129709FE600486EEE /* HitRateCalcUITests.swift in Sources */,
+				D451DEE329709FE600486EEE /* HitRateCalcUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D451DED429709FE600486EEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D451DEC129709FE500486EEE /* HitRateCalc */;
+			targetProxy = D451DED329709FE600486EEE /* PBXContainerItemProxy */;
+		};
+		D451DEDE29709FE600486EEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D451DEC129709FE500486EEE /* HitRateCalc */;
+			targetProxy = D451DEDD29709FE600486EEE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D451DEE429709FE600486EEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D451DEE529709FE600486EEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D451DEE729709FE600486EEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HitRateCalc/Preview Content\"";
+				DEVELOPMENT_TEAM = R8SJ24LQF3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nobadi.HitRateCalc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D451DEE829709FE600486EEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HitRateCalc/Preview Content\"";
+				DEVELOPMENT_TEAM = R8SJ24LQF3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nobadi.HitRateCalc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D451DEEA29709FE600486EEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R8SJ24LQF3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nobadi.HitRateCalcTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HitRateCalc.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HitRateCalc";
+			};
+			name = Debug;
+		};
+		D451DEEB29709FE600486EEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R8SJ24LQF3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nobadi.HitRateCalcTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HitRateCalc.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HitRateCalc";
+			};
+			name = Release;
+		};
+		D451DEED29709FE600486EEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R8SJ24LQF3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nobadi.HitRateCalcUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HitRateCalc;
+			};
+			name = Debug;
+		};
+		D451DEEE29709FE600486EEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R8SJ24LQF3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nobadi.HitRateCalcUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HitRateCalc;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D451DEBD29709FE500486EEE /* Build configuration list for PBXProject "HitRateCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D451DEE429709FE600486EEE /* Debug */,
+				D451DEE529709FE600486EEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D451DEE629709FE600486EEE /* Build configuration list for PBXNativeTarget "HitRateCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D451DEE729709FE600486EEE /* Debug */,
+				D451DEE829709FE600486EEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D451DEE929709FE600486EEE /* Build configuration list for PBXNativeTarget "HitRateCalcTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D451DEEA29709FE600486EEE /* Debug */,
+				D451DEEB29709FE600486EEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D451DEEC29709FE600486EEE /* Build configuration list for PBXNativeTarget "HitRateCalcUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D451DEED29709FE600486EEE /* Debug */,
+				D451DEEE29709FE600486EEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D451DEBA29709FE500486EEE /* Project object */;
+}
