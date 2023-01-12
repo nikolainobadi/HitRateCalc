@@ -23,8 +23,8 @@ struct ContentView: View {
                 TraitsSection(traitList: $dataModel.accuracyTraits, title: "Accuracy", rateResult: accuracyRate)
                 
                 VStack(spacing: 0) {
-                    Text("Chance to evade enemy unit")
-                    Text("")
+                    Text(dataModel.finalRateTitle)
+                    Text(dataModel.finalRate)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -51,11 +51,16 @@ struct ContentView_Previews: PreviewProvider {
 
 // MARK: - DataModel
 final class HitRateDataModel: ObservableObject {
+    @Published var checkingHitRate = false
     @Published var evasionTraits = Trait.evasionTraits
     @Published var accuracyTraits = Trait.accuracyTraits
+    
 }
 
 extension HitRateDataModel {
+    var finalRate: String { checkingHitRate ? hitRate : changeToEvade }
+    var finalRateTitle: String { "Chance to \(checkingHitRate ? "hit" : "evade") enemy unit" }
+    
     var evasionRate: Int {
         let evadeAmounts = evasionTraits.map({ $0.amount})
         
@@ -66,5 +71,15 @@ extension HitRateDataModel {
         let accAmounts = accuracyTraits.map({ $0.amount })
         
         return HitRateCalculator.getAccuracyRate(dex: accAmounts[0], luck: accAmounts[1], bonus: accAmounts[2])
+    }
+}
+
+private extension HitRateDataModel {
+    var hitRate: String {
+        "\(HitRateCalculator.getHitRate(accuracyRate: accuracyRate, evasionRate: evasionRate))"
+    }
+    
+    var changeToEvade: String {
+        "\(HitRateCalculator.getChanceToEvade(evasionRate: evasionRate, accuracyRate: accuracyRate))"
     }
 }
