@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D409B7BD2970C144004CFA64 /* RoundedBorderViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D409B7BC2970C144004CFA64 /* RoundedBorderViewModifier.swift */; };
 		D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEC529709FE500486EEE /* HitRateCalcApp.swift */; };
 		D451DEC829709FE500486EEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEC729709FE500486EEE /* ContentView.swift */; };
 		D451DECA29709FE600486EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D451DEC929709FE600486EEE /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D409B7BC2970C144004CFA64 /* RoundedBorderViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderViewModifier.swift; sourceTree = "<group>"; };
 		D451DEC229709FE500486EEE /* HitRateCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HitRateCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D451DEC529709FE500486EEE /* HitRateCalcApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalcApp.swift; sourceTree = "<group>"; };
 		D451DEC729709FE500486EEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D409B7BA2970C12B004CFA64 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D451DEC729709FE500486EEE /* ContentView.swift */,
+				D451DEFA2970A53C00486EEE /* TraitList.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D409B7BB2970C133004CFA64 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				D409B7BC2970C144004CFA64 /* RoundedBorderViewModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
 		D451DEB929709FE500486EEE = {
 			isa = PBXGroup;
 			children = (
@@ -116,8 +135,8 @@
 		D451DEF02970A00600486EEE /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				D451DEC729709FE500486EEE /* ContentView.swift */,
-				D451DEFA2970A53C00486EEE /* TraitList.swift */,
+				D409B7BA2970C12B004CFA64 /* Views */,
+				D409B7BB2970C133004CFA64 /* ViewModifiers */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -251,6 +270,7 @@
 				D451DEF42970A0D300486EEE /* Trait.swift in Sources */,
 				D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */,
 				D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */,
+				D409B7BD2970C144004CFA64 /* RoundedBorderViewModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
