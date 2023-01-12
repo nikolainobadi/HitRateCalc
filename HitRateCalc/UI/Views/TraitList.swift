@@ -27,7 +27,7 @@ struct TraitsSection: View {
             
             HStack {
                 TraitList(traitList: $traitList)
-                Divider().frame(maxHeight: getHeightPercent(21))
+                Divider().frame(maxHeight: getHeightPercent(21)).background(.primary)
                 VStack {
                     if showClearButton {
                         Button(action: clearValues) {
