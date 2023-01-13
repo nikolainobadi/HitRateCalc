@@ -8,15 +8,21 @@
 import Foundation
 
 final class HitRateDataModel: ObservableObject {
-    @Published var checkingHitRate = false
-    @Published var evasionTraits = Trait.evasionTraits
-    @Published var accuracyTraits = Trait.accuracyTraits
+    @Published var checkingHitRate: Bool
+    @Published var evasionTraits: [Trait]
+    @Published var accuracyTraits: [Trait]
+    
+    init(checkingHitRate: Bool = false, evasionTraits: [Trait] = Trait.evasionTraits, accuracyTraits: [Trait] = Trait.accuracyTraits) {
+        self.checkingHitRate = checkingHitRate
+        self.evasionTraits = evasionTraits
+        self.accuracyTraits = accuracyTraits
+    }
 }
 
 
 // MARK: - View Model
 extension HitRateDataModel {
-    var finalRate: String { checkingHitRate ? hitRate : changeToEvade }
+    var finalRate: String { checkingHitRate ? hitRate : chanceToEvade }
     var finalRateTitle: String { "Chance to \(checkingHitRate ? "hit" : "evade") enemy unit" }
     
     var evasionRate: Int {
@@ -45,5 +51,5 @@ extension HitRateDataModel {
 // MARK: - Private
 private extension HitRateDataModel {
     var hitRate: String { "\(HitRateCalculator.getHitRate(accuracyRate: accuracyRate, evasionRate: evasionRate))" }
-    var changeToEvade: String { "\(HitRateCalculator.getChanceToEvade(evasionRate: evasionRate, accuracyRate: accuracyRate))" }
+    var chanceToEvade: String { "\(HitRateCalculator.getChanceToEvade(evasionRate: evasionRate, accuracyRate: accuracyRate))" }
 }

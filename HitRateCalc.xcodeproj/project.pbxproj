@@ -13,7 +13,6 @@
 		D451DEC829709FE500486EEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEC729709FE500486EEE /* ContentView.swift */; };
 		D451DECA29709FE600486EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D451DEC929709FE600486EEE /* Assets.xcassets */; };
 		D451DECD29709FE600486EEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D451DECC29709FE600486EEE /* Preview Assets.xcassets */; };
-		D451DED729709FE600486EEE /* HitRateCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DED629709FE600486EEE /* HitRateCalcTests.swift */; };
 		D451DEF42970A0D300486EEE /* Trait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEF32970A0D300486EEE /* Trait.swift */; };
 		D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */; };
 		D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEFA2970A53C00486EEE /* TraitList.swift */; };
@@ -22,6 +21,8 @@
 		D4BA87AF2970E332009977D4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87AE2970E332009977D4 /* SettingsView.swift */; };
 		D4BA87B12970E5C3009977D4 /* SettingsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87B02970E5C3009977D4 /* SettingsDataModel.swift */; };
 		D4BA87B32970E5E6009977D4 /* AppRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87B22970E5E6009977D4 /* AppRateManager.swift */; };
+		D4BA87C22970E799009977D4 /* HitRateDataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87C12970E799009977D4 /* HitRateDataModelTests.swift */; };
+		D4BA87C42970E7BC009977D4 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87C32970E7BC009977D4 /* XCTestCase+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +44,6 @@
 		D451DEC929709FE600486EEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D451DECC29709FE600486EEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D451DED229709FE600486EEE /* HitRateCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HitRateCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D451DED629709FE600486EEE /* HitRateCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalcTests.swift; sourceTree = "<group>"; };
 		D451DEF32970A0D300486EEE /* Trait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trait.swift; sourceTree = "<group>"; };
 		D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalculator.swift; sourceTree = "<group>"; };
 		D451DEFA2970A53C00486EEE /* TraitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitList.swift; sourceTree = "<group>"; };
@@ -52,6 +52,8 @@
 		D4BA87AE2970E332009977D4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D4BA87B02970E5C3009977D4 /* SettingsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDataModel.swift; sourceTree = "<group>"; };
 		D4BA87B22970E5E6009977D4 /* AppRateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRateManager.swift; sourceTree = "<group>"; };
+		D4BA87C12970E799009977D4 /* HitRateDataModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateDataModelTests.swift; sourceTree = "<group>"; };
+		D4BA87C32970E7BC009977D4 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +144,8 @@
 		D451DED529709FE600486EEE /* HitRateCalcTests */ = {
 			isa = PBXGroup;
 			children = (
-				D451DED629709FE600486EEE /* HitRateCalcTests.swift */,
+				D4BA87C12970E799009977D4 /* HitRateDataModelTests.swift */,
+				D4BA87C32970E7BC009977D4 /* XCTestCase+Extensions.swift */,
 			);
 			path = HitRateCalcTests;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 					};
 					D451DED129709FE600486EEE = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 						TestTargetID = D451DEC129709FE500486EEE;
 					};
 				};
@@ -318,7 +322,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D451DED729709FE600486EEE /* HitRateCalcTests.swift in Sources */,
+				D4BA87C22970E799009977D4 /* HitRateDataModelTests.swift in Sources */,
+				D4BA87C42970E7BC009977D4 /* XCTestCase+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,15 +525,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R8SJ24LQF3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nobadi.HitRateCalcTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HitRateCalc.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HitRateCalc";
@@ -540,11 +552,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R8SJ24LQF3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nobadi.HitRateCalcTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
