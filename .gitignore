@@ -25,3 +25,4 @@ xcshareddata
 *.xcscmblueprint
 node_modules/
 serviceKey/
+codesigning/
