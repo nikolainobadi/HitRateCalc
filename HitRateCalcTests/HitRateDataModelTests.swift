@@ -52,22 +52,22 @@ final class HitRateDataModelTests: XCTestCase {
     }
     
     func test_evasionRate_onlyEvadeBonus() {
-        let traits = [Trait(id: 0, name: "Agility"), Trait(id: 1, name: "Luck"), Trait(id: 2, name: "Bonus", amount: "100")]
+        let traits = makeEvasionTraits(bonus: "100")
         let sut = makeSUT(evasionTraits: traits)
     
         XCTAssertEqual(sut.evasionRate, 100)
     }
     
     func test_accuracyRate_onlyAccuracyBonus() {
-        let traits = [Trait(id: 0, name: "Dexterity"), Trait(id: 1, name: "Luck"), Trait(id: 2, name: "Bonus", amount: "100")]
+        let traits = makeAccuracyTraits(bonus: "100")
         let sut = makeSUT(accuracyTraits: traits)
     
         XCTAssertEqual(sut.accuracyRate, 100)
     }
     
     func test_clearValues() {
-        let evasionTraits = [Trait(id: 0, name: "Agility", amount: "100"), Trait(id: 1, name: "Luck", amount: "100"), Trait(id: 2, name: "Bonus", amount: "100")]
-        let accuracyTraits = [Trait(id: 0, name: "Dexterity", amount: "100"), Trait(id: 1, name: "Luck", amount: "100"), Trait(id: 2, name: "Bonus", amount: "100")]
+        let evasionTraits = makeEvasionTraits(agility: "100", luck: "100", bonus: "100")
+        let accuracyTraits = makeAccuracyTraits(dex: "100", luck: "100", bonus: "100")
         let sut = makeSUT(evasionTraits: evasionTraits, accuracyTraits: accuracyTraits)
         
         sut.evasionTraits.forEach { XCTAssertNotEqual($0.amount, "") }
@@ -86,10 +86,37 @@ final class HitRateDataModelTests: XCTestCase {
 }
 
 
+// MARK: - Formula Tests -> values verified manually first
+extension HitRateDataModelTests {
+    func test_evasionRate() {
+        let traits = makeEvasionTraits(agility: "100", luck: "400", bonus: "50")
+        let sut = makeSUT(evasionTraits: traits)
+        
+        XCTAssertEqual(sut.evasionRate, 177)
+    }
+    
+    func test_accuracyRate() {
+        let traits = makeAccuracyTraits(dex: "400", luck: "400", bonus: "50")
+        let sut = makeSUT(accuracyTraits: traits)
+        
+        XCTAssertEqual(sut.accuracyRate, 290)
+    }
+}
+
+
 // MARK: - SUT
 extension HitRateDataModelTests {
     func makeSUT(checkingHitRate: Bool = false, evasionTraits: [Trait] = Trait.evasionTraits, accuracyTraits: [Trait] = Trait.accuracyTraits, file: StaticString = #filePath, line: UInt = #line) -> HitRateDataModel {
         
         HitRateDataModel(checkingHitRate: checkingHitRate, evasionTraits: evasionTraits, accuracyTraits: accuracyTraits)
+    }
+    
+    func makeEvasionTraits(agility: String = "", luck: String = "", bonus: String = "") -> [Trait] {
+        
+        [Trait(id: 0, name: "Agility", amount: agility), Trait(id: 1, name: "Luck", amount: luck), Trait(id: 2, name: "Bonus", amount: bonus)]
+    }
+    
+    func makeAccuracyTraits(dex: String = "", luck: String = "", bonus: String = "") -> [Trait] {
+        [Trait(id: 0, name: "Dexterity", amount: dex), Trait(id: 1, name: "Luck", amount: luck), Trait(id: 2, name: "Bonus", amount: bonus)]
     }
 }
