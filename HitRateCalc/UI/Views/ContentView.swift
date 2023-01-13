@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingSettings = false
     @StateObject var dataModel = HitRateDataModel()
     @State private var detailsToShow: TraitDetails?
     
@@ -52,11 +53,12 @@ struct ContentView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .navigationTitle("Hit Rate Calc")
             .navigationBarTitleDisplayMode(.inline)
+            .sheet(isPresented: $showingSettings, content: { SettingsView() })
             .sheet(item: $detailsToShow, content: { details in
                 EditableTraitList(traitList: details == .evasion ? $dataModel.evasionTraits : $dataModel.accuracyTraits, isEvasion: details == .evasion)
             })
             .toolbar {
-                Button(action: { }) {
+                Button(action: { showingSettings = true }) {
                     Image(systemName: "gearshape")
                         .foregroundColor(.primary)
                 }
