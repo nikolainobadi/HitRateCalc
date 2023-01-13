@@ -7,17 +7,6 @@
 
 import SwiftUI
 
-enum TraitDetails: Identifiable {
-    case accuracy, evasion
-    
-    var id: Int {
-        switch self {
-        case .accuracy: return 0
-        case .evasion: return 1
-        }
-    }
-}
-
 struct ContentView: View {
     @StateObject var dataModel = HitRateDataModel()
     @State private var detailsToShow: TraitDetails?
@@ -49,11 +38,10 @@ struct ContentView: View {
                         
                         VStack {
                             TraitsSection(traitList: $dataModel.accuracyTraits, title: "Accuracy", rateResult: accuracyRate, clearValues: { clearValues(isEvasion: false) })
+                                .disabled(true)
                         }
                         .offset(y: accuracyOffset)
-                        .onTapGesture {
-                            
-                        }
+                        .onTapGesture { detailsToShow = .accuracy }
                             
                     }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
@@ -65,7 +53,7 @@ struct ContentView: View {
             .navigationTitle("Hit Rate Calc")
             .navigationBarTitleDisplayMode(.inline)
             .sheet(item: $detailsToShow, content: { details in
-                EditableTraitList(traitList: details == .evasion ? $dataModel.evasionTraits : $dataModel.accuracyTraits)
+                EditableTraitList(traitList: details == .evasion ? $dataModel.evasionTraits : $dataModel.accuracyTraits, isEvasion: details == .evasion)
             })
             .toolbar {
                 Button(action: { }) {
@@ -122,5 +110,18 @@ fileprivate struct FinalResult: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+
+// MARK: - Dependencies
+enum TraitDetails: Identifiable {
+    case accuracy, evasion
+    
+    var id: Int {
+        switch self {
+        case .accuracy: return 0
+        case .evasion: return 1
+        }
     }
 }

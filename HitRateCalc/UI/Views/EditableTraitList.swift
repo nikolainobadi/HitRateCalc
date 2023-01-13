@@ -12,6 +12,8 @@ struct EditableTraitList: View {
     @FocusState private var focusedIndex: Int?
     @Environment(\.dismiss) private var dismiss
     
+    let isEvasion: Bool
+    
     private var nextButtonText: String { focusedIndex != 2 ? "Next" : "Done" }
     
     private func nextAction() {
@@ -29,23 +31,27 @@ struct EditableTraitList: View {
             VStack {
                 ForEach($traitList) { trait in
                     TraitRow(trait: trait)
+                        .tint(.primary)
                         .focused($focusedIndex, equals: trait.id)
                 }
             }
-            .navigationBarTitleDisplayMode(.inline)
+            .withRoundedBorder()
+            .onAppear { focusedIndex = 0 }
+            .navigationTitle(isEvasion ? "Evasion" : "Accuracy")
+            .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: { dismiss() }) {
                         Image(systemName: "xmark")
                             .font(.title)
-                        
+                            .tint(.primary)
                     }
                 }
                 
                 ToolbarItemGroup(placement: .keyboard) {
-                    Button(action: { focusedIndex = nil }, label: { Text("Cancel") })
+                    Button(action: { focusedIndex = nil }, label: { Text("Cancel") }).tint(.primary)
                     Spacer()
-                    Button(action: nextAction, label: { Text(nextButtonText) })
+                    Button(action: nextAction, label: { Text(nextButtonText) }).tint(.primary)
                 }
             }
         }
@@ -56,6 +62,6 @@ struct EditableTraitList: View {
 // MARK: - Preview
 struct EditableTraitList_Previews: PreviewProvider {
     static var previews: some View {
-        EditableTraitList(traitList: .constant(Trait.evasionTraits))
+        EditableTraitList(traitList: .constant(Trait.evasionTraits), isEvasion: false)
     }
 }
