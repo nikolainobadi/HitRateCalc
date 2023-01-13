@@ -17,6 +17,7 @@
 		D451DEF42970A0D300486EEE /* Trait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEF32970A0D300486EEE /* Trait.swift */; };
 		D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */; };
 		D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEFA2970A53C00486EEE /* TraitList.swift */; };
+		D4BA87A72970E021009977D4 /* EditableTraitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87A62970E021009977D4 /* EditableTraitList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		D451DEF32970A0D300486EEE /* Trait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trait.swift; sourceTree = "<group>"; };
 		D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalculator.swift; sourceTree = "<group>"; };
 		D451DEFA2970A53C00486EEE /* TraitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitList.swift; sourceTree = "<group>"; };
+		D4BA87A62970E021009977D4 /* EditableTraitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableTraitList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			children = (
 				D451DEC729709FE500486EEE /* ContentView.swift */,
 				D451DEFA2970A53C00486EEE /* TraitList.swift */,
+				D4BA87A62970E021009977D4 /* EditableTraitList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */,
 				D451DEF42970A0D300486EEE /* Trait.swift in Sources */,
 				D409B7C02970C20E004CFA64 /* View+Extensions.swift in Sources */,
+				D4BA87A72970E021009977D4 /* EditableTraitList.swift in Sources */,
 				D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */,
 				D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */,
 				D409B7BD2970C144004CFA64 /* RoundedBorderViewModifier.swift in Sources */,

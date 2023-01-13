@@ -7,8 +7,20 @@
 
 import SwiftUI
 
+enum TraitDetails: Identifiable {
+    case accuracy, evasion
+    
+    var id: Int {
+        switch self {
+        case .accuracy: return 0
+        case .evasion: return 1
+        }
+    }
+}
+
 struct ContentView: View {
     @StateObject var dataModel = HitRateDataModel()
+    @State private var detailsToShow: TraitDetails?
     
     private var offset: CGFloat { getHeightPercent(20) }
     private var accuracyOffset: CGFloat { dataModel.checkingHitRate ? -offset : offset }
@@ -16,13 +28,8 @@ struct ContentView: View {
     private var evasionRate: String { "\(dataModel.evasionRate)" }
     private var accuracyRate: String { "\(dataModel.accuracyRate)" }
     
-    private func clearValues(isEvasion: Bool) {
-        dataModel.clearValues(isEvasion: isEvasion)
-    }
-    
-    private func toggleMode() {
-        withAnimation { dataModel.toggleMode() }
-    }
+    private func toggleMode() { withAnimation { dataModel.toggleMode() } }
+    private func clearValues(isEvasion: Bool) { dataModel.clearValues(isEvasion: isEvasion) }
     
     var body: some View {
         NavigationView {
@@ -31,13 +38,22 @@ struct ContentView: View {
                 
                 VStack {
                     ZStack {
-                        TraitsSection(traitList: $dataModel.evasionTraits, title: "Evasion", rateResult: evasionRate, clearValues: { clearValues(isEvasion: true) })
-                            .offset(y: evasionOffset)
+                        VStack {
+                            TraitsSection(traitList: $dataModel.evasionTraits, title: "Evasion", rateResult: evasionRate, clearValues: { clearValues(isEvasion: true) })
+                                .disabled(true)
+                        }
+                        .offset(y: evasionOffset)
+                        .onTapGesture { detailsToShow = .evasion }
                         
                         SwitchButton(action: toggleMode)
                         
-                        TraitsSection(traitList: $dataModel.accuracyTraits, title: "Accuracy", rateResult: accuracyRate, clearValues: { clearValues(isEvasion: false) })
-                            .offset(y: accuracyOffset)
+                        VStack {
+                            TraitsSection(traitList: $dataModel.accuracyTraits, title: "Accuracy", rateResult: accuracyRate, clearValues: { clearValues(isEvasion: false) })
+                        }
+                        .offset(y: accuracyOffset)
+                        .onTapGesture {
+                            
+                        }
                             
                     }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
@@ -48,6 +64,9 @@ struct ContentView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .navigationTitle("Hit Rate Calc")
             .navigationBarTitleDisplayMode(.inline)
+            .sheet(item: $detailsToShow, content: { details in
+                EditableTraitList(traitList: details == .evasion ? $dataModel.evasionTraits : $dataModel.accuracyTraits)
+            })
             .toolbar {
                 Button(action: { }) {
                     Image(systemName: "gearshape")
