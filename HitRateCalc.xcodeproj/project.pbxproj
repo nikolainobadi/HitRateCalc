@@ -20,6 +20,7 @@
 		D4BA87A72970E021009977D4 /* EditableTraitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87A62970E021009977D4 /* EditableTraitList.swift */; };
 		D4BA87AA2970E083009977D4 /* HitRateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87A92970E083009977D4 /* HitRateDataModel.swift */; };
 		D4BA87AF2970E332009977D4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87AE2970E332009977D4 /* SettingsView.swift */; };
+		D4BA87B12970E5C3009977D4 /* SettingsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87B02970E5C3009977D4 /* SettingsDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		D4BA87A62970E021009977D4 /* EditableTraitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableTraitList.swift; sourceTree = "<group>"; };
 		D4BA87A92970E083009977D4 /* HitRateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateDataModel.swift; sourceTree = "<group>"; };
 		D4BA87AE2970E332009977D4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D4BA87B02970E5C3009977D4 /* SettingsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				D4BA87A92970E083009977D4 /* HitRateDataModel.swift */,
+				D4BA87B02970E5C3009977D4 /* SettingsDataModel.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				D451DEC829709FE500486EEE /* ContentView.swift in Sources */,
 				D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */,
 				D451DEF42970A0D300486EEE /* Trait.swift in Sources */,
+				D4BA87B12970E5C3009977D4 /* SettingsDataModel.swift in Sources */,
 				D409B7C02970C20E004CFA64 /* View+Extensions.swift in Sources */,
 				D4BA87A72970E021009977D4 /* EditableTraitList.swift in Sources */,
 				D4BA87AF2970E332009977D4 /* SettingsView.swift in Sources */,
