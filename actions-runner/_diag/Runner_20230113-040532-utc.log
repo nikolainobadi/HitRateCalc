@@ -1,0 +1,163 @@
+[2023-01-13 04:05:32Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Bin': '/Users/nelix/Desktop/HitRateCalc/actions-runner/bin'
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Root': '/Users/nelix/Desktop/HitRateCalc/actions-runner'
+[2023-01-13 04:05:32Z INFO HostContext] Well known config file 'Credentials': '/Users/nelix/Desktop/HitRateCalc/actions-runner/.credentials'
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Bin': '/Users/nelix/Desktop/HitRateCalc/actions-runner/bin'
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Root': '/Users/nelix/Desktop/HitRateCalc/actions-runner'
+[2023-01-13 04:05:32Z INFO HostContext] Well known config file 'Runner': '/Users/nelix/Desktop/HitRateCalc/actions-runner/.runner'
+[2023-01-13 04:05:32Z INFO Listener] Runner is built for OSX (Arm64) - osx-arm64.
+[2023-01-13 04:05:32Z INFO Listener] RuntimeInformation: Darwin 21.6.0 Darwin Kernel Version 21.6.0: Sun Nov  6 23:31:13 PST 2022; root:xnu-8020.240.14~1/RELEASE_ARM64_T6000.
+[2023-01-13 04:05:32Z INFO Listener] Version: 2.300.2
+[2023-01-13 04:05:32Z INFO Listener] Commit: 5b39316bae9c5831bd23ae25cd63bf903488a9d0
+[2023-01-13 04:05:32Z INFO Listener] Culture: en-US
+[2023-01-13 04:05:32Z INFO Listener] UI Culture: en-US
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Bin': '/Users/nelix/Desktop/HitRateCalc/actions-runner/bin'
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Root': '/Users/nelix/Desktop/HitRateCalc/actions-runner'
+[2023-01-13 04:05:32Z INFO Listener] Validating directory permissions for: '/Users/nelix/Desktop/HitRateCalc/actions-runner'
+[2023-01-13 04:05:32Z INFO CommandLineParser] Parse
+[2023-01-13 04:05:32Z INFO CommandLineParser] Parsing 1 args
+[2023-01-13 04:05:32Z INFO CommandLineParser] parsing argument
+[2023-01-13 04:05:32Z INFO CommandLineParser] HasArgs: False
+[2023-01-13 04:05:32Z INFO CommandLineParser] Adding Command: run
+[2023-01-13 04:05:32Z INFO Listener] Arguments parsed
+[2023-01-13 04:05:32Z INFO Runner] ExecuteCommand
+[2023-01-13 04:05:32Z INFO ConfigurationStore] currentAssemblyLocation: /Users/nelix/Desktop/HitRateCalc/actions-runner/bin/Runner.Listener.dll
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Bin': '/Users/nelix/Desktop/HitRateCalc/actions-runner/bin'
+[2023-01-13 04:05:32Z INFO ConfigurationStore] binPath: /Users/nelix/Desktop/HitRateCalc/actions-runner/bin
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Bin': '/Users/nelix/Desktop/HitRateCalc/actions-runner/bin'
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Root': '/Users/nelix/Desktop/HitRateCalc/actions-runner'
+[2023-01-13 04:05:32Z INFO ConfigurationStore] RootFolder: /Users/nelix/Desktop/HitRateCalc/actions-runner
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Bin': '/Users/nelix/Desktop/HitRateCalc/actions-runner/bin'
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Root': '/Users/nelix/Desktop/HitRateCalc/actions-runner'
+[2023-01-13 04:05:32Z INFO HostContext] Well known config file 'Runner': '/Users/nelix/Desktop/HitRateCalc/actions-runner/.runner'
+[2023-01-13 04:05:32Z INFO ConfigurationStore] ConfigFilePath: /Users/nelix/Desktop/HitRateCalc/actions-runner/.runner
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Bin': '/Users/nelix/Desktop/HitRateCalc/actions-runner/bin'
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Root': '/Users/nelix/Desktop/HitRateCalc/actions-runner'
+[2023-01-13 04:05:32Z INFO HostContext] Well known config file 'Credentials': '/Users/nelix/Desktop/HitRateCalc/actions-runner/.credentials'
+[2023-01-13 04:05:32Z INFO ConfigurationStore] CredFilePath: /Users/nelix/Desktop/HitRateCalc/actions-runner/.credentials
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Bin': '/Users/nelix/Desktop/HitRateCalc/actions-runner/bin'
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Root': '/Users/nelix/Desktop/HitRateCalc/actions-runner'
+[2023-01-13 04:05:32Z INFO HostContext] Well known config file 'MigratedCredentials': '/Users/nelix/Desktop/HitRateCalc/actions-runner/.credentials_migrated'
+[2023-01-13 04:05:32Z INFO ConfigurationStore] MigratedCredFilePath: /Users/nelix/Desktop/HitRateCalc/actions-runner/.credentials_migrated
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Bin': '/Users/nelix/Desktop/HitRateCalc/actions-runner/bin'
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Root': '/Users/nelix/Desktop/HitRateCalc/actions-runner'
+[2023-01-13 04:05:32Z INFO HostContext] Well known config file 'Service': '/Users/nelix/Desktop/HitRateCalc/actions-runner/.service'
+[2023-01-13 04:05:32Z INFO ConfigurationStore] ServiceConfigFilePath: /Users/nelix/Desktop/HitRateCalc/actions-runner/.service
+[2023-01-13 04:05:32Z INFO CommandSettings] Flag 'help': 'False'
+[2023-01-13 04:05:32Z INFO CommandSettings] Flag 'version': 'False'
+[2023-01-13 04:05:32Z INFO CommandSettings] Flag 'commit': 'False'
+[2023-01-13 04:05:32Z INFO CommandSettings] Flag 'check': 'False'
+[2023-01-13 04:05:32Z INFO CommandSettings] Command 'configure': 'False'
+[2023-01-13 04:05:32Z INFO CommandSettings] Command 'remove': 'False'
+[2023-01-13 04:05:32Z INFO CommandSettings] Command 'warmup': 'False'
+[2023-01-13 04:05:32Z INFO ConfigurationManager] LoadSettings
+[2023-01-13 04:05:32Z INFO ConfigurationStore] IsConfigured()
+[2023-01-13 04:05:32Z INFO ConfigurationStore] IsConfigured: True
+[2023-01-13 04:05:32Z INFO ConfigurationManager] Is configured: True
+[2023-01-13 04:05:32Z INFO ConfigurationStore] Read setting file: 302 chars
+[2023-01-13 04:05:32Z INFO ConfigurationManager] Settings Loaded
+[2023-01-13 04:05:32Z INFO ConfigurationStore] IsServiceConfigured()
+[2023-01-13 04:05:32Z INFO ConfigurationStore] IsServiceConfigured: False
+[2023-01-13 04:05:32Z INFO CommandSettings] Command 'run': 'True'
+[2023-01-13 04:05:32Z INFO ConfigurationStore] IsConfigured()
+[2023-01-13 04:05:32Z INFO ConfigurationStore] IsConfigured: True
+[2023-01-13 04:05:32Z INFO ConfigurationManager] Is configured: True
+[2023-01-13 04:05:32Z INFO Runner] Could not parse the argument value '' for StartupType. Defaulting to Manual
+[2023-01-13 04:05:32Z INFO Runner] Set runner startup type - Manual
+[2023-01-13 04:05:32Z INFO CommandSettings] Flag 'once': 'False'
+[2023-01-13 04:05:32Z INFO CommandSettings] Flag 'once': 'False'
+[2023-01-13 04:05:32Z INFO Runner] RunAsync
+[2023-01-13 04:05:32Z INFO ConfigurationManager] LoadSettings
+[2023-01-13 04:05:32Z INFO ConfigurationStore] IsConfigured()
+[2023-01-13 04:05:32Z INFO ConfigurationStore] IsConfigured: True
+[2023-01-13 04:05:32Z INFO ConfigurationManager] Is configured: True
+[2023-01-13 04:05:32Z INFO ConfigurationManager] Settings Loaded
+[2023-01-13 04:05:32Z INFO MessageListener] {
+  "AgentId": 21,
+  "AgentName": "Nikolais-Mac-Studio",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelines.actions.githubusercontent.com/7z11zXkXte6sG8itTV0Ic2UR1XIabPrTYaqk4kAGHRPSBMfRDM",
+  "GitHubUrl": "https://github.com/nikolainobadi/HitRateCalc",
+  "WorkFolder": "_work"
+}
+[2023-01-13 04:05:32Z INFO MessageListener] Loading Credentials
+[2023-01-13 04:05:32Z INFO ConfigurationStore] HasCredentials()
+[2023-01-13 04:05:32Z INFO ConfigurationStore] stored True
+[2023-01-13 04:05:32Z INFO CredentialManager] GetCredentialProvider
+[2023-01-13 04:05:32Z INFO CredentialManager] Creating type OAuth
+[2023-01-13 04:05:32Z INFO CredentialManager] Creating credential type: OAuth
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Bin': '/Users/nelix/Desktop/HitRateCalc/actions-runner/bin'
+[2023-01-13 04:05:32Z INFO HostContext] Well known directory 'Root': '/Users/nelix/Desktop/HitRateCalc/actions-runner'
+[2023-01-13 04:05:32Z INFO HostContext] Well known config file 'RSACredentials': '/Users/nelix/Desktop/HitRateCalc/actions-runner/.credentials_rsaparams'
+[2023-01-13 04:05:32Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/nelix/Desktop/HitRateCalc/actions-runner/.credentials_rsaparams
+[2023-01-13 04:05:32Z INFO MessageListener] Attempt to create session.
+[2023-01-13 04:05:32Z INFO MessageListener] Connecting to the Runner Server...
+[2023-01-13 04:05:32Z INFO RunnerServer] EstablishVssConnection
+[2023-01-13 04:05:32Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2023-01-13 04:05:32Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-01-13 04:05:32Z INFO RunnerServer] EstablishVssConnection
+[2023-01-13 04:05:32Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2023-01-13 04:05:32Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-01-13 04:05:32Z INFO RunnerServer] EstablishVssConnection
+[2023-01-13 04:05:32Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2023-01-13 04:05:32Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-01-13 04:05:33Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-01-13 04:05:33Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-01-13 04:05:33Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-01-13 04:05:33Z INFO MessageListener] VssConnection created
+[2023-01-13 04:05:33Z INFO Terminal] WRITE LINE: 
+[2023-01-13 04:05:33Z INFO Terminal] WRITE LINE: 
+[2023-01-13 04:05:33Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/nelix/Desktop/HitRateCalc/actions-runner/.credentials_rsaparams
+[2023-01-13 04:05:33Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/nelix/Desktop/HitRateCalc/actions-runner/.credentials_rsaparams
+[2023-01-13 04:05:33Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2023-01-13 04:05:33Z INFO MessageListener] Session created.
+[2023-01-13 04:05:33Z INFO Terminal] WRITE LINE: Current runner version: '2.300.2'
+[2023-01-13 04:05:33Z INFO Terminal] WRITE LINE: 2023-01-13 04:05:33Z: Listening for Jobs
+[2023-01-13 04:05:33Z INFO JobDispatcher] Set runner/worker IPC timeout to 30 seconds.
+[2023-01-13 04:05:38Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/nelix/Desktop/HitRateCalc/actions-runner/.credentials_rsaparams
+[2023-01-13 04:05:38Z INFO MessageListener] Message '1' received from session '5a7486b6-2828-4fa1-b707-77579864dc58'.
+[2023-01-13 04:05:38Z INFO Runner] Received job message of length 40697 from service, with hash 'a3576ae1195f9ed65d5e6cc913ad9ec9dd21adfa4383f2a85d0bab28a79e3717'
+[2023-01-13 04:05:38Z INFO JobDispatcher] Job request 15 for plan d77221f6-091a-4dad-928e-06225f427362 job be3eeb22-584a-5ee4-236b-1a042e19f0eb received.
+[2023-01-13 04:05:38Z INFO JobDispatcher] Pull OrchestrationId d77221f6-091a-4dad-928e-06225f427362.build-and-test.__default from JWT claims
+[2023-01-13 04:05:38Z INFO Terminal] WRITE LINE: 2023-01-13 04:05:38Z: Running job: build-and-test
+[2023-01-13 04:05:38Z INFO JobDispatcher] Start renew job request 15 for job be3eeb22-584a-5ee4-236b-1a042e19f0eb.
+[2023-01-13 04:05:38Z INFO JobDispatcher] Successfully renew job request 15, job is valid till 1/13/2023 4:15:38 AM
+[2023-01-13 04:05:38Z INFO HostContext] Well known directory 'Bin': '/Users/nelix/Desktop/HitRateCalc/actions-runner/bin'
+[2023-01-13 04:05:38Z INFO ProcessInvokerWrapper] Starting process:
+[2023-01-13 04:05:38Z INFO ProcessInvokerWrapper]   File name: '/Users/nelix/Desktop/HitRateCalc/actions-runner/bin/Runner.Worker'
+[2023-01-13 04:05:38Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 107 110'
+[2023-01-13 04:05:38Z INFO ProcessInvokerWrapper]   Working directory: '/Users/nelix/Desktop/HitRateCalc/actions-runner/bin'
+[2023-01-13 04:05:38Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-01-13 04:05:38Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-01-13 04:05:38Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2023-01-13 04:05:38Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-01-13 04:05:38Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-01-13 04:05:38Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-01-13 04:05:38Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2023-01-13 04:05:38Z INFO ProcessInvokerWrapper] Process started with process id 33857, waiting for process exit.
+[2023-01-13 04:05:38Z INFO JobDispatcher] Send job request message to worker for job be3eeb22-584a-5ee4-236b-1a042e19f0eb.
+[2023-01-13 04:05:38Z INFO ProcessChannel] Sending message of length 40697, with hash 'a3576ae1195f9ed65d5e6cc913ad9ec9dd21adfa4383f2a85d0bab28a79e3717'
+[2023-01-13 04:05:39Z INFO JobNotification] Entering JobStarted Notification
+[2023-01-13 04:05:39Z INFO JobNotification] Entering StartMonitor
+[2023-01-13 04:06:39Z INFO JobDispatcher] Successfully renew job request 15, job is valid till 1/13/2023 4:16:39 AM
+[2023-01-13 04:06:59Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-01-13 04:06:59Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-01-13 04:06:59Z INFO ProcessInvokerWrapper] Finished process 33857 with exit code 102, and elapsed time 00:01:20.7478476.
+[2023-01-13 04:06:59Z INFO JobDispatcher] Worker finished for job be3eeb22-584a-5ee4-236b-1a042e19f0eb. Code: 102
+[2023-01-13 04:06:59Z INFO JobDispatcher] finish job request for job be3eeb22-584a-5ee4-236b-1a042e19f0eb with result: Failed
+[2023-01-13 04:06:59Z INFO Terminal] WRITE LINE: 2023-01-13 04:06:59Z: Job build-and-test completed with result: Failed
+[2023-01-13 04:06:59Z INFO JobDispatcher] Stop renew job request for job be3eeb22-584a-5ee4-236b-1a042e19f0eb.
+[2023-01-13 04:06:59Z INFO JobDispatcher] job renew has been cancelled, stop renew job request 15.
+[2023-01-13 04:06:59Z INFO JobNotification] Entering JobCompleted Notification
+[2023-01-13 04:06:59Z INFO JobNotification] Entering EndMonitor
+[2023-01-13 04:07:52Z INFO Terminal] WRITE LINE: Exiting...
+[2023-01-13 04:07:52Z INFO ConfigurationStore] IsServiceConfigured()
+[2023-01-13 04:07:52Z INFO ConfigurationStore] IsServiceConfigured: False
+[2023-01-13 04:07:52Z INFO HostContext] Runner will be shutdown for UserCancelled
+[2023-01-13 04:07:52Z WARN GitHubActionsService] GET request to https://pipelines.actions.githubusercontent.com/7z11zXkXte6sG8itTV0Ic2UR1XIabPrTYaqk4kAGHRPSBMfRDM/_apis/distributedtask/pools/1/messages?sessionId=5a7486b6-2828-4fa1-b707-77579864dc58&lastMessageId=1&status=Online&runnerVersion=2.300.2 has been cancelled.
+[2023-01-13 04:07:52Z INFO MessageListener] Get next message has been cancelled.
+[2023-01-13 04:07:52Z INFO JobDispatcher] Shutting down JobDispatcher. Make sure all WorkerDispatcher has finished.
+[2023-01-13 04:07:52Z INFO JobDispatcher] Ensure WorkerDispather for job be3eeb22-584a-5ee4-236b-1a042e19f0eb run to finish, cancel any running job.
+[2023-01-13 04:07:52Z INFO JobDispatcher] Job request be3eeb22-584a-5ee4-236b-1a042e19f0eb processed succeed.
+[2023-01-13 04:07:52Z INFO Listener] Runner execution been cancelled.

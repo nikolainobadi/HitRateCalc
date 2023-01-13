@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "nikolainobadi/HitRateCalc",
+  "pipelineDirectory": "HitRateCalc",
+  "workspaceDirectory": "HitRateCalc/HitRateCalc",
+  "repositories": {
+    "nikolainobadi/HitRateCalc": {
+      "repositoryPath": "HitRateCalc/HitRateCalc",
+      "lastRunOn": "01/12/2023 20:05:39 -08:00"
+    }
+  },
+  "lastRunOn": "01/12/2023 20:05:39 -08:00"
+}
