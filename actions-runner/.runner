@@ -1,0 +1,9 @@
+﻿{
+  "agentId": 21,
+  "agentName": "Nikolais-Mac-Studio",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelines.actions.githubusercontent.com/7z11zXkXte6sG8itTV0Ic2UR1XIabPrTYaqk4kAGHRPSBMfRDM",
+  "gitHubUrl": "https://github.com/nikolainobadi/HitRateCalc",
+  "workFolder": "_work"
+}

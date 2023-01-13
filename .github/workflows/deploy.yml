@@ -8,7 +8,7 @@ on:
 jobs:
   deploy-if-merged:
     if: github.event.pull_request.merged == true
-    runs-on: macos-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout project
