@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD
 
 on:
   pull_request:
@@ -20,3 +20,26 @@ jobs:
 
     - name: Build and test
       run: xcodebuild clean build test -project "$PRODUCT_NAME.xcodeproj" -scheme "$PRODUCT_NAME" -destination "platform=iOS Simulator,name=iPhone 13,OS=16.2" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO -quiet
+
+    - name: Archive
+      run: |
+        xcodebuild archive \
+        -project "$PRODUCT_NAME.xcodeproj" \
+        -scheme "$PRODUCT_NAME \
+        -configuration Release \
+        -archivePath "$PRODUCT_NAME.xcarchive"
+      
+    - name: Export .ipa
+      run: |
+        xcodebuild -exportArchive \
+        -archivePath "$PRODUCT_NAME.xcarchive" \
+        -exportPath "$PRODUCT_NAME.ipa" \
+        -exportOptionsPlist exportOptions.plist
+      
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: $PRODUCT_NAME
+        path: "$PRODUCT_NAME.ipa"
+
+  
