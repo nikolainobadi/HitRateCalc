@@ -114,16 +114,3 @@ struct SettingsView_Previews: PreviewProvider {
         SettingsView()
     }
 }
-
-
-
-
-import StoreKit
-
-final class AppRatingManager: AppRater {
-    func rateApp() {
-        if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
-            SKStoreReviewController.requestReview(in: scene)
-        }
-    }
-}
