@@ -108,7 +108,12 @@ fileprivate struct StatTextField: View {
                         text = ""
                     }
                 }
+        }.onChange(of: text) { newValue in
+            if newValue.count > 3 {
+                text = String(newValue.prefix(3))
+            }
         }
+
     }
 }
 
