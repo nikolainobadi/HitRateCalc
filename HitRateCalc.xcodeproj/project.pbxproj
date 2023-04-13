@@ -33,6 +33,7 @@
 		D4DD9DD329E8618B0068777A /* VisionStatsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DD229E8618B0068777A /* VisionStatsContainer.swift */; };
 		D4DD9DD729E868960068777A /* VisionStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DD629E868960068777A /* VisionStat.swift */; };
 		D4DD9DD929E868FF0068777A /* StatsContainerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DD829E868FF0068777A /* StatsContainerInfo.swift */; };
+		D4DD9DDD29E86A730068777A /* StatsContainerInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DDC29E86A730068777A /* StatsContainerInfoTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		D4DD9DD229E8618B0068777A /* VisionStatsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionStatsContainer.swift; sourceTree = "<group>"; };
 		D4DD9DD629E868960068777A /* VisionStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionStat.swift; sourceTree = "<group>"; };
 		D4DD9DD829E868FF0068777A /* StatsContainerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContainerInfo.swift; sourceTree = "<group>"; };
+		D4DD9DDC29E86A730068777A /* StatsContainerInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContainerInfoTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 				D4BA87C12970E799009977D4 /* HitRateDataModelTests.swift */,
 				D4BA87C32970E7BC009977D4 /* XCTestCase+Extensions.swift */,
 				D4BA87C52970EE46009977D4 /* SettingsDataModelTests.swift */,
+				D4DD9DDC29E86A730068777A /* StatsContainerInfoTests.swift */,
 			);
 			path = HitRateCalcTests;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4BA87C62970EE46009977D4 /* SettingsDataModelTests.swift in Sources */,
+				D4DD9DDD29E86A730068777A /* StatsContainerInfoTests.swift in Sources */,
 				D4BA87C22970E799009977D4 /* HitRateDataModelTests.swift in Sources */,
 				D4BA87C42970E7BC009977D4 /* XCTestCase+Extensions.swift in Sources */,
 			);

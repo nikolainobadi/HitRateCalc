@@ -30,7 +30,7 @@ extension StatsContainerInfo {
     var statRate: Int {
         switch self {
         case .evasion(let vision):
-            return HitRateCalculator.getAccuracyRate(for: vision)
+            return HitRateCalculator.getEvasionRate(for: vision)
         case .accuracy(let vision):
             return HitRateCalculator.getAccuracyRate(for: vision)
         }
