@@ -102,29 +102,3 @@ extension StatsType {
         }
     }
 }
-
-struct VisionStat: Identifiable {
-    let name: String
-    let amount: Int
-    
-    var id: String { name }
-    var value: String { "\(amount)" }
-}
-
-extension Vision {
-    var evadeStats: [VisionStat] {
-        [
-            VisionStat(name: "Luck", amount: luck),
-            VisionStat(name: "Agility", amount: agility),
-            VisionStat(name: "Evade", amount: evasion)
-        ]
-    }
-    
-    var accuracyStats: [VisionStat] {
-        [
-            VisionStat(name: "Luck", amount: luck),
-            VisionStat(name: "Dexterity", amount: dexterity),
-            VisionStat(name: "Accuracy", amount: accuracy)
-        ]
-    }
-}
