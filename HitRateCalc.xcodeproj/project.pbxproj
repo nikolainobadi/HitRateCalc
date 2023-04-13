@@ -20,7 +20,7 @@
 		D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */; };
 		D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEFA2970A53C00486EEE /* TraitList.swift */; };
 		D4BA87A72970E021009977D4 /* EditableTraitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87A62970E021009977D4 /* EditableTraitList.swift */; };
-		D4BA87AA2970E083009977D4 /* HitRateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87A92970E083009977D4 /* HitRateDataModel.swift */; };
+		D4BA87AA2970E083009977D4 /* OldHitRateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87A92970E083009977D4 /* OldHitRateDataModel.swift */; };
 		D4BA87AF2970E332009977D4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87AE2970E332009977D4 /* SettingsView.swift */; };
 		D4BA87B12970E5C3009977D4 /* SettingsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87B02970E5C3009977D4 /* SettingsDataModel.swift */; };
 		D4BA87B32970E5E6009977D4 /* AppRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87B22970E5E6009977D4 /* AppRateManager.swift */; };
@@ -65,7 +65,7 @@
 		D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalculator.swift; sourceTree = "<group>"; };
 		D451DEFA2970A53C00486EEE /* TraitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitList.swift; sourceTree = "<group>"; };
 		D4BA87A62970E021009977D4 /* EditableTraitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableTraitList.swift; sourceTree = "<group>"; };
-		D4BA87A92970E083009977D4 /* HitRateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateDataModel.swift; sourceTree = "<group>"; };
+		D4BA87A92970E083009977D4 /* OldHitRateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldHitRateDataModel.swift; sourceTree = "<group>"; };
 		D4BA87AE2970E332009977D4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D4BA87B02970E5C3009977D4 /* SettingsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDataModel.swift; sourceTree = "<group>"; };
 		D4BA87B22970E5E6009977D4 /* AppRateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRateManager.swift; sourceTree = "<group>"; };
@@ -236,7 +236,7 @@
 		D4BA87A82970E074009977D4 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				D4BA87A92970E083009977D4 /* HitRateDataModel.swift */,
+				D4BA87A92970E083009977D4 /* OldHitRateDataModel.swift */,
 				D4BA87B02970E5C3009977D4 /* SettingsDataModel.swift */,
 				D4DD9DCC29E85E7F0068777A /* VisionDetailsDataModel.swift */,
 			);
@@ -374,7 +374,7 @@
 				D450524229E870680024D519 /* SwitchButton.swift in Sources */,
 				D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */,
 				D409B7BD2970C144004CFA64 /* RoundedBorderViewModifier.swift in Sources */,
-				D4BA87AA2970E083009977D4 /* HitRateDataModel.swift in Sources */,
+				D4BA87AA2970E083009977D4 /* OldHitRateDataModel.swift in Sources */,
 				D4DD9DC729E853BA0068777A /* Vision.swift in Sources */,
 				D4BA87B32970E5E6009977D4 /* AppRateManager.swift in Sources */,
 			);

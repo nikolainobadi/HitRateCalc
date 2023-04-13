@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var showingSettings = false
-    @StateObject var dataModel = HitRateDataModel()
+    @StateObject var dataModel = OldHitRateDataModel()
     @State private var detailsToShow: TraitDetails?
     
     private var offset: CGFloat { getHeightPercent(20) }

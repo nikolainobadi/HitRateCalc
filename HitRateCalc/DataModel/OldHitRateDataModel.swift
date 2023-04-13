@@ -1,5 +1,5 @@
 //
-//  HitRateDataModel.swift
+//  OldHitRateDataModel.swift
 //  HitRateCalc
 //
 //  Created by Nikolai Nobadi on 1/12/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class HitRateDataModel: ObservableObject {
+final class OldHitRateDataModel: ObservableObject {
     @Published var checkingHitRate: Bool
     @Published var evasionTraits: [Trait]
     @Published var accuracyTraits: [Trait]
@@ -21,7 +21,7 @@ final class HitRateDataModel: ObservableObject {
 
 
 // MARK: - View Model
-extension HitRateDataModel {
+extension OldHitRateDataModel {
     var finalRate: String { checkingHitRate ? hitRate : chanceToEvade }
     var finalRateTitle: String { "Chance to \(checkingHitRate ? "hit" : "evade") enemy unit" }
     
@@ -49,7 +49,7 @@ extension HitRateDataModel {
 
 
 // MARK: - Private
-private extension HitRateDataModel {
+private extension OldHitRateDataModel {
     var hitRate: String { "\(HitRateCalculator.getHitRate(accuracyRate: accuracyRate, evasionRate: evasionRate))" }
     var chanceToEvade: String { "\(HitRateCalculator.getChanceToEvade(evasionRate: evasionRate, accuracyRate: accuracyRate))" }
 }
