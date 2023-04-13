@@ -21,7 +21,7 @@ struct AppLauncher {
 struct HitRateCalcApp: App {
     var body: some Scene {
         WindowGroup {
-            VisionDetailsView(dataModel: VisionDetailsDataModel(vision: Vision(), state: .accuracy))
+            ContentView()
         }
     }
 }
