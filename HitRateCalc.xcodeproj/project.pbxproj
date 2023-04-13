@@ -27,6 +27,9 @@
 		D4DD9DC729E853BA0068777A /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DC629E853BA0068777A /* Vision.swift */; };
 		D4DD9DC929E854080068777A /* VisionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DC829E854080068777A /* VisionDetailsView.swift */; };
 		D4DD9DCB29E857770068777A /* ConditionalDisplayViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DCA29E857770068777A /* ConditionalDisplayViewModifier.swift */; };
+		D4DD9DCD29E85E7F0068777A /* VisionDetailsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DCC29E85E7F0068777A /* VisionDetailsDataModel.swift */; };
+		D4DD9DCF29E85ED20068777A /* VisionDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DCE29E85ED20068777A /* VisionDetailState.swift */; };
+		D4DD9DD129E85EFC0068777A /* BindIntFocusStateViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DD029E85EFC0068777A /* BindIntFocusStateViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		D4DD9DC629E853BA0068777A /* Vision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
 		D4DD9DC829E854080068777A /* VisionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionDetailsView.swift; sourceTree = "<group>"; };
 		D4DD9DCA29E857770068777A /* ConditionalDisplayViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalDisplayViewModifier.swift; sourceTree = "<group>"; };
+		D4DD9DCC29E85E7F0068777A /* VisionDetailsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionDetailsDataModel.swift; sourceTree = "<group>"; };
+		D4DD9DCE29E85ED20068777A /* VisionDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionDetailState.swift; sourceTree = "<group>"; };
+		D4DD9DD029E85EFC0068777A /* BindIntFocusStateViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindIntFocusStateViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 			children = (
 				D409B7BC2970C144004CFA64 /* RoundedBorderViewModifier.swift */,
 				D4DD9DCA29E857770068777A /* ConditionalDisplayViewModifier.swift */,
+				D4DD9DD029E85EFC0068777A /* BindIntFocusStateViewModifier.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -192,6 +199,7 @@
 			children = (
 				D451DEF32970A0D300486EEE /* Trait.swift */,
 				D4DD9DC629E853BA0068777A /* Vision.swift */,
+				D4DD9DCE29E85ED20068777A /* VisionDetailState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +218,7 @@
 			children = (
 				D4BA87A92970E083009977D4 /* HitRateDataModel.swift */,
 				D4BA87B02970E5C3009977D4 /* SettingsDataModel.swift */,
+				D4DD9DCC29E85E7F0068777A /* VisionDetailsDataModel.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -315,15 +324,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4DD9DCD29E85E7F0068777A /* VisionDetailsDataModel.swift in Sources */,
 				D451DEC829709FE500486EEE /* ContentView.swift in Sources */,
 				D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */,
 				D451DEF42970A0D300486EEE /* Trait.swift in Sources */,
 				D4BA87B12970E5C3009977D4 /* SettingsDataModel.swift in Sources */,
 				D409B7C02970C20E004CFA64 /* View+Extensions.swift in Sources */,
+				D4DD9DCF29E85ED20068777A /* VisionDetailState.swift in Sources */,
 				D4DD9DC929E854080068777A /* VisionDetailsView.swift in Sources */,
 				D4BA87A72970E021009977D4 /* EditableTraitList.swift in Sources */,
 				D4DD9DCB29E857770068777A /* ConditionalDisplayViewModifier.swift in Sources */,
 				D4BA87AF2970E332009977D4 /* SettingsView.swift in Sources */,
+				D4DD9DD129E85EFC0068777A /* BindIntFocusStateViewModifier.swift in Sources */,
 				D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */,
 				D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */,
 				D409B7BD2970C144004CFA64 /* RoundedBorderViewModifier.swift in Sources */,
