@@ -25,6 +25,7 @@
 		D4BA87C42970E7BC009977D4 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87C32970E7BC009977D4 /* XCTestCase+Extensions.swift */; };
 		D4BA87C62970EE46009977D4 /* SettingsDataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87C52970EE46009977D4 /* SettingsDataModelTests.swift */; };
 		D4DD9DC729E853BA0068777A /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DC629E853BA0068777A /* Vision.swift */; };
+		D4DD9DC929E854080068777A /* VisionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DC829E854080068777A /* VisionDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		D4BA87C32970E7BC009977D4 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		D4BA87C52970EE46009977D4 /* SettingsDataModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDataModelTests.swift; sourceTree = "<group>"; };
 		D4DD9DC629E853BA0068777A /* Vision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
+		D4DD9DC829E854080068777A /* VisionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				D451DEFA2970A53C00486EEE /* TraitList.swift */,
 				D4BA87A62970E021009977D4 /* EditableTraitList.swift */,
 				D4BA87AE2970E332009977D4 /* SettingsView.swift */,
+				D4DD9DC829E854080068777A /* VisionDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				D451DEF42970A0D300486EEE /* Trait.swift in Sources */,
 				D4BA87B12970E5C3009977D4 /* SettingsDataModel.swift in Sources */,
 				D409B7C02970C20E004CFA64 /* View+Extensions.swift in Sources */,
+				D4DD9DC929E854080068777A /* VisionDetailsView.swift in Sources */,
 				D4BA87A72970E021009977D4 /* EditableTraitList.swift in Sources */,
 				D4BA87AF2970E332009977D4 /* SettingsView.swift in Sources */,
 				D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */,
