@@ -8,6 +8,7 @@
 import Foundation
 
 struct Vision {
+    var id: String = UUID().uuidString
     var name: String = ""
     var luck: Int = 0
     var agility: Int = 0
