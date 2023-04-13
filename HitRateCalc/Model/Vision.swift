@@ -15,3 +15,23 @@ struct Vision {
     var evasion: Int = 0
     var accuracy: Int = 0
 }
+
+
+// MARK: - VisionStats
+extension Vision {
+    var evadeStats: [VisionStat] {
+        [
+            VisionStat(name: "Luck", amount: luck),
+            VisionStat(name: "Agility", amount: agility),
+            VisionStat(name: "Evade", amount: evasion)
+        ]
+    }
+    
+    var accuracyStats: [VisionStat] {
+        [
+            VisionStat(name: "Luck", amount: luck),
+            VisionStat(name: "Dexterity", amount: dexterity),
+            VisionStat(name: "Accuracy", amount: accuracy)
+        ]
+    }
+}

@@ -30,6 +30,10 @@
 		D4DD9DCD29E85E7F0068777A /* VisionDetailsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DCC29E85E7F0068777A /* VisionDetailsDataModel.swift */; };
 		D4DD9DCF29E85ED20068777A /* VisionDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DCE29E85ED20068777A /* VisionDetailState.swift */; };
 		D4DD9DD129E85EFC0068777A /* BindIntFocusStateViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DD029E85EFC0068777A /* BindIntFocusStateViewModifier.swift */; };
+		D4DD9DD329E8618B0068777A /* VisionStatsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DD229E8618B0068777A /* VisionStatsContainer.swift */; };
+		D4DD9DD729E868960068777A /* VisionStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DD629E868960068777A /* VisionStat.swift */; };
+		D4DD9DD929E868FF0068777A /* StatsContainerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DD829E868FF0068777A /* StatsContainerInfo.swift */; };
+		D4DD9DDD29E86A730068777A /* StatsContainerInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DDC29E86A730068777A /* StatsContainerInfoTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,10 @@
 		D4DD9DCC29E85E7F0068777A /* VisionDetailsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionDetailsDataModel.swift; sourceTree = "<group>"; };
 		D4DD9DCE29E85ED20068777A /* VisionDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionDetailState.swift; sourceTree = "<group>"; };
 		D4DD9DD029E85EFC0068777A /* BindIntFocusStateViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindIntFocusStateViewModifier.swift; sourceTree = "<group>"; };
+		D4DD9DD229E8618B0068777A /* VisionStatsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionStatsContainer.swift; sourceTree = "<group>"; };
+		D4DD9DD629E868960068777A /* VisionStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionStat.swift; sourceTree = "<group>"; };
+		D4DD9DD829E868FF0068777A /* StatsContainerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContainerInfo.swift; sourceTree = "<group>"; };
+		D4DD9DDC29E86A730068777A /* StatsContainerInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContainerInfoTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,7 @@
 				D4BA87A62970E021009977D4 /* EditableTraitList.swift */,
 				D4BA87AE2970E332009977D4 /* SettingsView.swift */,
 				D4DD9DC829E854080068777A /* VisionDetailsView.swift */,
+				D4DD9DD229E8618B0068777A /* VisionStatsContainer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,6 +153,7 @@
 				D4BA87A82970E074009977D4 /* DataModel */,
 				D451DEF52970A18700486EEE /* Logic */,
 				D451DEF22970A0C200486EEE /* Model */,
+				D4DD9DD529E868660068777A /* Shared */,
 				D451DEF12970A00E00486EEE /* Resources */,
 				D451DECB29709FE600486EEE /* Preview Content */,
 			);
@@ -164,6 +174,7 @@
 				D4BA87C12970E799009977D4 /* HitRateDataModelTests.swift */,
 				D4BA87C32970E7BC009977D4 /* XCTestCase+Extensions.swift */,
 				D4BA87C52970EE46009977D4 /* SettingsDataModelTests.swift */,
+				D4DD9DDC29E86A730068777A /* StatsContainerInfoTests.swift */,
 			);
 			path = HitRateCalcTests;
 			sourceTree = "<group>";
@@ -199,7 +210,7 @@
 			children = (
 				D451DEF32970A0D300486EEE /* Trait.swift */,
 				D4DD9DC629E853BA0068777A /* Vision.swift */,
-				D4DD9DCE29E85ED20068777A /* VisionDetailState.swift */,
+				D4DD9DD629E868960068777A /* VisionStat.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +232,15 @@
 				D4DD9DCC29E85E7F0068777A /* VisionDetailsDataModel.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		D4DD9DD529E868660068777A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D4DD9DCE29E85ED20068777A /* VisionDetailState.swift */,
+				D4DD9DD829E868FF0068777A /* StatsContainerInfo.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,7 +347,9 @@
 				D4DD9DCD29E85E7F0068777A /* VisionDetailsDataModel.swift in Sources */,
 				D451DEC829709FE500486EEE /* ContentView.swift in Sources */,
 				D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */,
+				D4DD9DD729E868960068777A /* VisionStat.swift in Sources */,
 				D451DEF42970A0D300486EEE /* Trait.swift in Sources */,
+				D4DD9DD329E8618B0068777A /* VisionStatsContainer.swift in Sources */,
 				D4BA87B12970E5C3009977D4 /* SettingsDataModel.swift in Sources */,
 				D409B7C02970C20E004CFA64 /* View+Extensions.swift in Sources */,
 				D4DD9DCF29E85ED20068777A /* VisionDetailState.swift in Sources */,
@@ -335,6 +357,7 @@
 				D4BA87A72970E021009977D4 /* EditableTraitList.swift in Sources */,
 				D4DD9DCB29E857770068777A /* ConditionalDisplayViewModifier.swift in Sources */,
 				D4BA87AF2970E332009977D4 /* SettingsView.swift in Sources */,
+				D4DD9DD929E868FF0068777A /* StatsContainerInfo.swift in Sources */,
 				D4DD9DD129E85EFC0068777A /* BindIntFocusStateViewModifier.swift in Sources */,
 				D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */,
 				D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */,
@@ -350,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4BA87C62970EE46009977D4 /* SettingsDataModelTests.swift in Sources */,
+				D4DD9DDD29E86A730068777A /* StatsContainerInfoTests.swift in Sources */,
 				D4BA87C22970E799009977D4 /* HitRateDataModelTests.swift in Sources */,
 				D4BA87C42970E7BC009977D4 /* XCTestCase+Extensions.swift in Sources */,
 			);
