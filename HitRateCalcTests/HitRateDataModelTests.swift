@@ -106,9 +106,9 @@ extension HitRateDataModelTests {
 
 // MARK: - SUT
 extension HitRateDataModelTests {
-    func makeSUT(checkingHitRate: Bool = false, evasionTraits: [Trait] = Trait.evasionTraits, accuracyTraits: [Trait] = Trait.accuracyTraits, file: StaticString = #filePath, line: UInt = #line) -> HitRateDataModel {
+    func makeSUT(checkingHitRate: Bool = false, evasionTraits: [Trait] = Trait.evasionTraits, accuracyTraits: [Trait] = Trait.accuracyTraits, file: StaticString = #filePath, line: UInt = #line) -> OldHitRateDataModel {
         
-        HitRateDataModel(checkingHitRate: checkingHitRate, evasionTraits: evasionTraits, accuracyTraits: accuracyTraits)
+        OldHitRateDataModel(checkingHitRate: checkingHitRate, evasionTraits: evasionTraits, accuracyTraits: accuracyTraits)
     }
     
     func makeEvasionTraits(agility: String = "", luck: String = "", bonus: String = "") -> [Trait] {

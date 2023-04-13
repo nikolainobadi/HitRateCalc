@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var showingSettings = false
-    @StateObject var dataModel = HitRateDataModel()
+    @StateObject var dataModel = OldHitRateDataModel()
     @State private var detailsToShow: TraitDetails?
     
     private var offset: CGFloat { getHeightPercent(20) }
@@ -48,7 +48,7 @@ struct ContentView: View {
                 }
                 
                 Spacer()
-                FinalResult(title: dataModel.finalRateTitle, resultRate: dataModel.finalRate)
+                FinalResultView(title: dataModel.finalRateTitle, resultRate: dataModel.finalRate)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .navigationTitle("Hit Rate Calc")
@@ -63,46 +63,6 @@ struct ContentView: View {
                         .foregroundColor(.primary)
                 }
             }
-        }
-    }
-}
-
-
-// MARK: - SwitchButton
-fileprivate struct SwitchButton: View {
-    let action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            Image(systemName: "arrow.up.arrow.down")
-                .font(.largeTitle)
-                .cornerRadius(1)
-        }
-        .tint(.black)
-        .buttonStyle(.borderedProminent)
-        .padding(.top, getHeightPercent(5))
-        .shadow(color: .primary, radius: 4)
-    }
-}
-
-
-// MARK: - FinalResult
-fileprivate struct FinalResult: View {
-    let title: String
-    let resultRate: String
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text(title)
-                .font(.title3)
-                .padding(.horizontal)
-            Text("\(resultRate)%")
-                .font(.largeTitle.weight(.semibold))
-                .minimumScaleFactor(0.5)
-                .frame(maxWidth: .infinity, maxHeight: getHeightPercent(8), alignment: .center)
-                .padding(.horizontal)
-                .withRoundedBorder()
-                
         }
     }
 }
