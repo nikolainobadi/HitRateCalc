@@ -14,7 +14,7 @@ struct VisionDetailsView: View {
         Form {
             Section {
                 TraitTextField("Name", text: $dataModel.name, keyboardType: .alphabet)
-            }
+            }.onlyShow(when: dataModel.showNameField)
             
             Section {
                 TraitTextField("Luck", text: $dataModel.luck)
@@ -23,12 +23,12 @@ struct VisionDetailsView: View {
             Section("Evasion") {
                 TraitTextField("Agility", text: $dataModel.agility)
                 TraitTextField("Evasion", text: $dataModel.evasion)
-            }
+            }.onlyShow(when: dataModel.showEvasion)
             
             Section("Accuracy") {
                 TraitTextField("Dexterity", text: $dataModel.dexterity)
                 TraitTextField("Accuracy", text: $dataModel.accuracy)
-            }
+            }.onlyShow(when: dataModel.showAccuracy)
         }
     }
 }
@@ -70,7 +70,7 @@ struct VisionDetailsView_Previews: PreviewProvider {
     }
     
     static var dataModel: VisionDetailsDataModel {
-        VisionDetailsDataModel(vision: Vision())
+        VisionDetailsDataModel(vision: Vision(), state: .allDetails)
     }
 }
 
@@ -83,8 +83,10 @@ final class VisionDetailsDataModel: ObservableObject {
     @Published var accuracy: String
     
     private let originalVision: Vision
+    private let state: VisionDetailState
     
-    init(vision: Vision) {
+    init(vision: Vision, state: VisionDetailState) {
+        self.state = state
         self.originalVision = vision
         self.name = originalVision.name
         self.luck = "\(originalVision.luck)"
@@ -93,4 +95,15 @@ final class VisionDetailsDataModel: ObservableObject {
         self.evasion = "\(originalVision.evasion)"
         self.accuracy = "\(originalVision.accuracy)"
     }
+}
+
+extension VisionDetailsDataModel {
+    var showNameField: Bool { state ==  .allDetails }
+    var showEvasion: Bool { state != .accuracy }
+    var showAccuracy: Bool { state != .evasion}
+}
+
+
+enum VisionDetailState {
+    case allDetails, evasion, accuracy
 }
