@@ -13,7 +13,21 @@ struct VisionDetailsView: View {
     var body: some View {
         Form {
             Section {
-                TraitTextField("Name", text: $dataModel.name)
+                TraitTextField("Name", text: $dataModel.name, keyboardType: .alphabet)
+            }
+            
+            Section {
+                TraitTextField("Luck", text: $dataModel.luck)
+            }
+            
+            Section("Evasion") {
+                TraitTextField("Agility", text: $dataModel.agility)
+                TraitTextField("Evasion", text: $dataModel.evasion)
+            }
+            
+            Section("Accuracy") {
+                TraitTextField("Dexterity", text: $dataModel.dexterity)
+                TraitTextField("Accuracy", text: $dataModel.accuracy)
             }
         }
     }
@@ -25,16 +39,23 @@ fileprivate struct TraitTextField: View {
     @Binding var text: String
     
     let title: String
+    let keyboardType: UIKeyboardType
     
-    init(_ title: String, text: Binding<String>) {
+    init(_ title: String, text: Binding<String>, keyboardType: UIKeyboardType = .numberPad) {
         self.title = title
         self._text = text
+        self.keyboardType = keyboardType
     }
     
     var body: some View {
         HStack {
-            Text(title)
+            Text("\(title):")
+                .lineLimit(1)
+                .font(.title3)
+                .minimumScaleFactor(0.5)
+                .frame(maxWidth: getWidthPercent(20), alignment: .leading)
             TextField("", text: $text)
+                .keyboardType(keyboardType)
                 .textFieldStyle(.roundedBorder)
                 .multilineTextAlignment(.center)
         }
