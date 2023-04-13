@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D409B7BD2970C144004CFA64 /* RoundedBorderViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D409B7BC2970C144004CFA64 /* RoundedBorderViewModifier.swift */; };
 		D409B7C02970C20E004CFA64 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D409B7BF2970C20E004CFA64 /* View+Extensions.swift */; };
+		D450524029E86E660024D519 /* HitRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D450523F29E86E660024D519 /* HitRateView.swift */; };
 		D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEC529709FE500486EEE /* HitRateCalcApp.swift */; };
 		D451DEC829709FE500486EEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEC729709FE500486EEE /* ContentView.swift */; };
 		D451DECA29709FE600486EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D451DEC929709FE600486EEE /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		D409B7BC2970C144004CFA64 /* RoundedBorderViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderViewModifier.swift; sourceTree = "<group>"; };
 		D409B7BF2970C20E004CFA64 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		D450523F29E86E660024D519 /* HitRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateView.swift; sourceTree = "<group>"; };
 		D451DEC229709FE500486EEE /* HitRateCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HitRateCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D451DEC529709FE500486EEE /* HitRateCalcApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalcApp.swift; sourceTree = "<group>"; };
 		D451DEC729709FE500486EEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				D4BA87AE2970E332009977D4 /* SettingsView.swift */,
 				D4DD9DC829E854080068777A /* VisionDetailsView.swift */,
 				D4DD9DD229E8618B0068777A /* VisionStatsContainer.swift */,
+				D450523F29E86E660024D519 /* HitRateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				D4DD9DD729E868960068777A /* VisionStat.swift in Sources */,
 				D451DEF42970A0D300486EEE /* Trait.swift in Sources */,
 				D4DD9DD329E8618B0068777A /* VisionStatsContainer.swift in Sources */,
+				D450524029E86E660024D519 /* HitRateView.swift in Sources */,
 				D4BA87B12970E5C3009977D4 /* SettingsDataModel.swift in Sources */,
 				D409B7C02970C20E004CFA64 /* View+Extensions.swift in Sources */,
 				D4DD9DCF29E85ED20068777A /* VisionDetailState.swift in Sources */,
