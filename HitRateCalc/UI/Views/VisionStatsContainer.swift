@@ -12,6 +12,8 @@ struct VisionStatsContainer: View {
     
     var body: some View {
         VStack(spacing: 0) {
+            // MARK: - TODO
+            // setUnit will lead to unitList
             StatHeader(title: viewModel.title, action: { })
             
             HStack {
@@ -38,10 +40,12 @@ fileprivate struct StatHeader: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal)
             
-            Button("Set Unit", action: action)
-                .buttonStyle(.bordered)
-                .padding(.horizontal)
-                .padding(.vertical, 8)
+            // MARK: - TODO
+            // uncomment once UnitList is enabled
+//            Button("Set Unit", action: action)
+//                .buttonStyle(.bordered)
+//                .padding(.horizontal)
+//                .padding(.vertical, 8)
         }
     }
 }
