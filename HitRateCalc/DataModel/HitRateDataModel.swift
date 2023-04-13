@@ -18,6 +18,9 @@ final class HitRateDataModel: ObservableObject {
 extension HitRateDataModel {
     var finalRateTitle: String { "Chance to \(checkingHitRate ? "hit" : "evade") enemy unit" }
     var finalRate: String { String(checkingHitRate ? hitRate : (100 - hitRate)) }
+    
+    func resetAttacker() { attacker = Vision() }
+    func resetDefender() { defender = Vision() }
 }
 
 

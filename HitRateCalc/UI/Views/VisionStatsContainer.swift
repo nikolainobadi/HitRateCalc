@@ -9,47 +9,22 @@ import SwiftUI
 
 struct VisionStatsContainer: View {
     let viewModel: StatsContainerInfo
+    let resetValues: () -> Void
+    
+    private var canResetValues: Bool { viewModel.statList.map({ $0.amount }).reduce(0, +) != 0 }
     
     var body: some View {
         VStack(spacing: 0) {
-            Text(viewModel.title)
-                .font(.largeTitle.bold())
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal)
+            // MARK: - TODO
+            // setUnit will lead to unitList
+            StatHeader(title: viewModel.title, action: { })
             
             HStack {
-                VStack(spacing: 0) {
-                    ForEach(viewModel.statList) { stats in
-                        HStack {
-                            Text(stats.name)
-                                .lineLimit(1)
-                                .font(.title3.weight(.heavy))
-                                .minimumScaleFactor(0.5)
-                                .foregroundColor(Color(uiColor: .systemBackground))
-                                .padding(.horizontal, 5)
-                                .frame(maxWidth: getWidthPercent(25), maxHeight: .infinity, alignment: .center)
-                                .background(Color(uiColor: .label))
-                            
-                            TextField("0", text: .constant(stats.value))
-                                .font(.title)
-                                .keyboardType(.numberPad)
-                                .multilineTextAlignment(.center)
-                                .background(Color(uiColor: .secondarySystemBackground))
-                                .cornerRadius(10)
-                                .padding(10)
-                                .disabled(true)
-                        }.frame(maxHeight: getHeightPercent(7))
-                    }
-                }
-                Divider().frame(maxHeight: getHeightPercent(21)).background(.primary)
+                StatList(statList: viewModel.statList)
+                Divider()
+                    .background(.primary)
+                    .frame(maxHeight: getHeightPercent(21))
                 VStack {
-                    // MARK: - TODO
-                    // decide whether or not to include this button
-//                    Button(action: { }) {
-//                        Text("Clear values")
-//                            .underline()
-//                            .font(.caption)
-//                    }.padding(5)
                     Spacer()
                     Text("\(viewModel.statRate)%")
                         .lineLimit(1)
@@ -57,8 +32,67 @@ struct VisionStatsContainer: View {
                         .minimumScaleFactor(0.5)
                         .frame(maxWidth: getWidthPercent(25))
                     Spacer()
+                    Button("Reset Values", action: resetValues)
+                        .underline()
+                        .padding()
+                        .onlyShow(when: canResetValues)
                 }.frame(maxHeight: getHeightPercent(21))
             }.withRoundedBorder()
+        }
+    }
+}
+
+
+// MARK: - Header
+fileprivate struct StatHeader: View {
+    let title: String
+    let action: () -> Void
+    
+    var body: some View {
+        HStack {
+            Text(title)
+                .font(.largeTitle.bold())
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal)
+            
+            // MARK: - TODO
+            // uncomment once UnitList is enabled
+//            Button("Set Unit", action: action)
+//                .buttonStyle(.bordered)
+//                .padding(.horizontal)
+//                .padding(.vertical, 8)
+        }
+    }
+}
+
+
+// MARK: - StatList
+fileprivate struct StatList: View {
+    let statList: [VisionStat]
+     
+    var body: some View {
+        VStack(spacing: 0) {
+            ForEach(statList) { stats in
+                HStack {
+                    Text(stats.name)
+                        .lineLimit(1)
+                        .font(.title3.weight(.heavy))
+                        .minimumScaleFactor(0.5)
+                        .foregroundColor(Color(uiColor: .systemBackground))
+                        .padding(.horizontal, 5)
+                        .frame(maxWidth: getWidthPercent(25), maxHeight: .infinity, alignment: .center)
+                        .background(Color(uiColor: .label))
+                    
+                    TextField("0", text: .constant(stats.value))
+                        .font(.title)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.center)
+                        .background(Color(uiColor: .secondarySystemBackground))
+                        .cornerRadius(10)
+                        .padding(10)
+                        .disabled(true)
+                }.frame(maxHeight: getHeightPercent(7))
+            }
         }
     }
 }
@@ -67,6 +101,6 @@ struct VisionStatsContainer: View {
 // MARK: - Preview
 struct VisionStatsContainer_Previews: PreviewProvider {
     static var previews: some View {
-        VisionStatsContainer(viewModel: .accuracy(Vision()))
+        VisionStatsContainer(viewModel: .accuracy(Vision()), resetValues: { })
     }
 }
