@@ -8,39 +8,31 @@
 import SwiftUI
 
 struct HitRateView: View {
-    @State private var firstVision = Vision()
-    @State private var secondVision = Vision()
-    @State private var checkingHitRate = true
+    @State private var dataModel = HitRateDataModel()
     
     private var offset: CGFloat { getHeightPercent(20) }
-    private var accuracyOffset: CGFloat { checkingHitRate ? -offset : offset }
-    private var evasionOffset: CGFloat { checkingHitRate ? offset : -offset }
-    private var finalRateTitle: String { "Chance to \(checkingHitRate ? "hit" : "evade") enemy unit" }
-    private var finalRate: String {
-        let hitRate = HitRateCalculator.getHitRate(attacker: firstVision, defender: secondVision)
-        
-        return String(checkingHitRate ? hitRate : (100 - hitRate))
-    }
+    private var accuracyOffset: CGFloat { dataModel.checkingHitRate ? -offset : offset }
+    private var evasionOffset: CGFloat { dataModel.checkingHitRate ? offset : -offset }
     
     var body: some View {
         NavigationStack {
             VStack {
                 VStack {
                     ZStack {
-                        VisionStatsContainer(viewModel: .accuracy(firstVision))
+                        VisionStatsContainer(viewModel: .accuracy(dataModel.attacker))
                             .offset(y: accuracyOffset)
                         
-                        SwitchButton(action: { checkingHitRate.toggle() })
+                        SwitchButton(action: { dataModel.checkingHitRate.toggle() })
                         
-                        VisionStatsContainer(viewModel: .evasion(secondVision))
+                        VisionStatsContainer(viewModel: .evasion(dataModel.defender))
                             .offset(y: evasionOffset)
                     }
-                    .animation(.default, value: checkingHitRate)
+                    .animation(.default, value: dataModel.checkingHitRate)
                     .frame(maxWidth: .infinity, maxHeight: .infinity) // prevents view from moving off-screen
                 }
                 
                 Spacer()
-                FinalResultView(title: finalRateTitle, resultRate: finalRate)
+                FinalResultView(title: dataModel.finalRateTitle, resultRate: dataModel.finalRate)
             }
             .navigationTitle("Hit-Rate Calc")
             .navigationBarTitleDisplayMode(.inline)

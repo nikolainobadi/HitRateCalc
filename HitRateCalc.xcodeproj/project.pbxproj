@@ -12,6 +12,7 @@
 		D450524029E86E660024D519 /* HitRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D450523F29E86E660024D519 /* HitRateView.swift */; };
 		D450524229E870680024D519 /* SwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D450524129E870680024D519 /* SwitchButton.swift */; };
 		D450524429E8712C0024D519 /* FinalResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D450524329E8712C0024D519 /* FinalResultView.swift */; };
+		D450524629E874CB0024D519 /* HitRateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D450524529E874CB0024D519 /* HitRateDataModel.swift */; };
 		D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEC529709FE500486EEE /* HitRateCalcApp.swift */; };
 		D451DEC829709FE500486EEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEC729709FE500486EEE /* ContentView.swift */; };
 		D451DECA29709FE600486EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D451DEC929709FE600486EEE /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		D450523F29E86E660024D519 /* HitRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateView.swift; sourceTree = "<group>"; };
 		D450524129E870680024D519 /* SwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchButton.swift; sourceTree = "<group>"; };
 		D450524329E8712C0024D519 /* FinalResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalResultView.swift; sourceTree = "<group>"; };
+		D450524529E874CB0024D519 /* HitRateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateDataModel.swift; sourceTree = "<group>"; };
 		D451DEC229709FE500486EEE /* HitRateCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HitRateCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D451DEC529709FE500486EEE /* HitRateCalcApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalcApp.swift; sourceTree = "<group>"; };
 		D451DEC729709FE500486EEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				D4BA87A92970E083009977D4 /* OldHitRateDataModel.swift */,
 				D4BA87B02970E5C3009977D4 /* SettingsDataModel.swift */,
 				D4DD9DCC29E85E7F0068777A /* VisionDetailsDataModel.swift */,
+				D450524529E874CB0024D519 /* HitRateDataModel.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				D4DD9DD929E868FF0068777A /* StatsContainerInfo.swift in Sources */,
 				D4DD9DD129E85EFC0068777A /* BindIntFocusStateViewModifier.swift in Sources */,
 				D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */,
+				D450524629E874CB0024D519 /* HitRateDataModel.swift in Sources */,
 				D450524229E870680024D519 /* SwitchButton.swift in Sources */,
 				D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */,
 				D409B7BD2970C144004CFA64 /* RoundedBorderViewModifier.swift in Sources */,
