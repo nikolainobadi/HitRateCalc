@@ -103,6 +103,11 @@ fileprivate struct StatTextField: View {
                 .keyboardType(keyboardType)
                 .textFieldStyle(.roundedBorder)
                 .multilineTextAlignment(.center)
+                .onTapGesture {
+                    if text == "0" {
+                        text = ""
+                    }
+                }
         }
     }
 }
