@@ -59,7 +59,7 @@ fileprivate struct StatsForm: View {
             Section {
                 StatTextField("Luck", text: $dataModel.luck)
                     .focused($focusedIndex, equals: 1)
-            }.onlyShow(when: focusedIndex == nil || focusedIndex == 1)
+            }
             
             Section("Evasion") {
                 StatTextField("Agility", text: $dataModel.agility)
