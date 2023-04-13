@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct VisionStatsContainer: View {
-    let viewModel: StatsType
+    let viewModel: StatsContainerInfo
     
     var body: some View {
         VStack(spacing: 0) {
@@ -73,12 +73,12 @@ struct VisionStatsContainer_Previews: PreviewProvider {
 
 
 // MARK: - Dependencies
-enum StatsType {
+enum StatsContainerInfo {
     case evasion(Vision)
     case accuracy(Vision)
 }
 
-extension StatsType {
+extension StatsContainerInfo {
     var title: String {
         switch self {
         case .evasion: return "Evasion"
