@@ -20,7 +20,7 @@ struct HitRateView: View {
             VStack {
                 VStack {
                     ZStack {
-                        VisionStatsContainer(viewModel: .accuracy(dataModel.attacker))
+                        VisionStatsContainer(viewModel: .accuracy(dataModel.attacker), resetValues: dataModel.resetAttacker)
                             .offset(y: accuracyOffset)
                             .onTapGesture {
                                 selectedInfo = .accuracy(dataModel.attacker)
@@ -28,7 +28,7 @@ struct HitRateView: View {
                         
                         SwitchButton(action: { dataModel.checkingHitRate.toggle() })
                         
-                        VisionStatsContainer(viewModel: .evasion(dataModel.defender))
+                        VisionStatsContainer(viewModel: .evasion(dataModel.defender), resetValues: dataModel.resetDefender)
                             .offset(y: evasionOffset)
                             .onTapGesture {
                                 selectedInfo = .evasion(dataModel.defender)

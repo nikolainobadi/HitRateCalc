@@ -9,6 +9,9 @@ import SwiftUI
 
 struct VisionStatsContainer: View {
     let viewModel: StatsContainerInfo
+    let resetValues: () -> Void
+    
+    private var canResetValues: Bool { viewModel.statList.map({ $0.amount }).reduce(0, +) != 0 }
     
     var body: some View {
         VStack(spacing: 0) {
@@ -21,7 +24,19 @@ struct VisionStatsContainer: View {
                 Divider()
                     .background(.primary)
                     .frame(maxHeight: getHeightPercent(21))
-                StatRate(statRate: viewModel.statRate)
+                VStack {
+                    Spacer()
+                    Text("\(viewModel.statRate)%")
+                        .lineLimit(1)
+                        .font(.largeTitle)
+                        .minimumScaleFactor(0.5)
+                        .frame(maxWidth: getWidthPercent(25))
+                    Spacer()
+                    Button("Reset Values", action: resetValues)
+                        .underline()
+                        .padding()
+                        .onlyShow(when: canResetValues)
+                }.frame(maxHeight: getHeightPercent(21))
             }.withRoundedBorder()
         }
     }
@@ -83,27 +98,9 @@ fileprivate struct StatList: View {
 }
 
 
-// MARK: - StatRate
-fileprivate struct StatRate: View {
-    let statRate: Int
-    
-    var body: some View {
-        VStack {
-            Spacer()
-            Text("\(statRate)%")
-                .lineLimit(1)
-                .font(.largeTitle)
-                .minimumScaleFactor(0.5)
-                .frame(maxWidth: getWidthPercent(25))
-            Spacer()
-        }.frame(maxHeight: getHeightPercent(21))
-    }
-}
-
-
 // MARK: - Preview
 struct VisionStatsContainer_Previews: PreviewProvider {
     static var previews: some View {
-        VisionStatsContainer(viewModel: .accuracy(Vision()))
+        VisionStatsContainer(viewModel: .accuracy(Vision()), resetValues: { })
     }
 }
