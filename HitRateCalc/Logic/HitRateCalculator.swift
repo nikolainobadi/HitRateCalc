@@ -38,6 +38,10 @@ enum HitRateCalculator {
 
 // MARK: - Vision Rates
 extension HitRateCalculator {
+    static func getHitRate(attacker: Vision, defender: Vision) -> Int {
+        return makeRoundedInt(getAccuracyRate(for: attacker) - getEvasionRate(for: defender))
+    }
+    
     static func getEvasionRate(for vision: Vision) -> Int {
         let luckValue = getLuckValue("\(vision.luck)")
         print("luck:", luckValue)
@@ -67,6 +71,7 @@ extension HitRateCalculator {
 // MARK: - Private
 private extension HitRateCalculator {
     static func makeRoundedInt(_ num: Double) -> Int { Int(round(num)) }
+    static func makeRoundedInt(_ num: Int) -> Int { Int(round(Double(num))) }
     static func getBonusValue(_ other: String) -> Double { Double(other) ?? 0 }
     static func getBaseRate(luck: Double, otherTrait: Double) -> Double { (luck + otherTrait) * 100 }
     

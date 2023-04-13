@@ -16,6 +16,11 @@ struct HitRateView: View {
     private var accuracyOffset: CGFloat { checkingHitRate ? -offset : offset }
     private var evasionOffset: CGFloat { checkingHitRate ? offset : -offset }
     private var finalRateTitle: String { "Chance to \(checkingHitRate ? "hit" : "evade") enemy unit" }
+    private var finalRate: String {
+        let hitRate = HitRateCalculator.getHitRate(attacker: firstVision, defender: secondVision)
+        
+        return String(checkingHitRate ? hitRate : (100 - hitRate))
+    }
     
     var body: some View {
         NavigationStack {
@@ -35,7 +40,7 @@ struct HitRateView: View {
                 }
                 
                 Spacer()
-                FinalResultView(title: finalRateTitle, resultRate: "")
+                FinalResultView(title: finalRateTitle, resultRate: finalRate)
             }
             .navigationTitle("Hit-Rate Calc")
             .navigationBarTitleDisplayMode(.inline)
