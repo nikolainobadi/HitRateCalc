@@ -15,6 +15,7 @@ struct HitRateView: View {
     private var offset: CGFloat { getHeightPercent(20) }
     private var accuracyOffset: CGFloat { checkingHitRate ? -offset : offset }
     private var evasionOffset: CGFloat { checkingHitRate ? offset : -offset }
+    private var finalRateTitle: String { "Chance to \(checkingHitRate ? "hit" : "evade") enemy unit" }
     
     var body: some View {
         NavigationStack {
@@ -28,8 +29,13 @@ struct HitRateView: View {
                         
                         VisionStatsContainer(viewModel: .evasion(secondVision))
                             .offset(y: evasionOffset)
-                    }.animation(.default, value: checkingHitRate)
+                    }
+                    .animation(.default, value: checkingHitRate)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity) // prevents view from moving off-screen
                 }
+                
+                Spacer()
+                FinalResultView(title: finalRateTitle, resultRate: "")
             }
             .navigationTitle("Hit-Rate Calc")
             .navigationBarTitleDisplayMode(.inline)
