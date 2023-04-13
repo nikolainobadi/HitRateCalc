@@ -11,8 +11,8 @@ struct HitRateView: View {
     @StateObject private var dataModel = HitRateDataModel()
     
     private var offset: CGFloat { getHeightPercent(20) }
-    private var accuracyOffset: CGFloat { dataModel.checkingHitRate ? -offset : offset }
     private var evasionOffset: CGFloat { dataModel.checkingHitRate ? offset : -offset }
+    private var accuracyOffset: CGFloat { dataModel.checkingHitRate ? -offset : offset }
     
     var body: some View {
         NavigationStack {
