@@ -32,6 +32,7 @@
 		D4DD9DD129E85EFC0068777A /* BindIntFocusStateViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DD029E85EFC0068777A /* BindIntFocusStateViewModifier.swift */; };
 		D4DD9DD329E8618B0068777A /* VisionStatsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DD229E8618B0068777A /* VisionStatsContainer.swift */; };
 		D4DD9DD729E868960068777A /* VisionStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DD629E868960068777A /* VisionStat.swift */; };
+		D4DD9DD929E868FF0068777A /* StatsContainerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DD829E868FF0068777A /* StatsContainerInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		D4DD9DD029E85EFC0068777A /* BindIntFocusStateViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindIntFocusStateViewModifier.swift; sourceTree = "<group>"; };
 		D4DD9DD229E8618B0068777A /* VisionStatsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionStatsContainer.swift; sourceTree = "<group>"; };
 		D4DD9DD629E868960068777A /* VisionStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionStat.swift; sourceTree = "<group>"; };
+		D4DD9DD829E868FF0068777A /* StatsContainerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContainerInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				D4DD9DCE29E85ED20068777A /* VisionDetailState.swift */,
+				D4DD9DD829E868FF0068777A /* StatsContainerInfo.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				D4BA87A72970E021009977D4 /* EditableTraitList.swift in Sources */,
 				D4DD9DCB29E857770068777A /* ConditionalDisplayViewModifier.swift in Sources */,
 				D4BA87AF2970E332009977D4 /* SettingsView.swift in Sources */,
+				D4DD9DD929E868FF0068777A /* StatsContainerInfo.swift in Sources */,
 				D4DD9DD129E85EFC0068777A /* BindIntFocusStateViewModifier.swift in Sources */,
 				D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */,
 				D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */,
