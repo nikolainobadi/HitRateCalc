@@ -22,11 +22,17 @@ struct HitRateView: View {
                     ZStack {
                         VisionStatsContainer(viewModel: .accuracy(dataModel.attacker))
                             .offset(y: accuracyOffset)
+                            .onTapGesture {
+                                selectedInfo = .accuracy(dataModel.attacker)
+                            }
                         
                         SwitchButton(action: { dataModel.checkingHitRate.toggle() })
                         
                         VisionStatsContainer(viewModel: .evasion(dataModel.defender))
                             .offset(y: evasionOffset)
+                            .onTapGesture {
+                                selectedInfo = .evasion(dataModel.defender)
+                            }
                     }
                     .animation(.default, value: dataModel.checkingHitRate)
                     .frame(maxWidth: .infinity, maxHeight: .infinity) // prevents view from moving off-screen
@@ -38,14 +44,19 @@ struct HitRateView: View {
             .navigationTitle("Hit-Rate Calc")
             .navigationBarTitleDisplayMode(.inline)
             .sheet(item: $selectedInfo) { info in
-                showDetails(info) { updatedVision in
-                    switch info {
-                    case .evasion:
-                        dataModel.defender = updatedVision
-                    case .accuracy:
-                        dataModel.attacker = updatedVision
-                    }
+                NavigationStack {
+                    showDetails(info) { updatedVision in
+                        switch info {
+                        case .evasion:
+                            dataModel.defender = updatedVision
+                        case .accuracy:
+                            dataModel.attacker = updatedVision
+                        }
+                        
+                        self.selectedInfo = nil
+                    }.navigationTitle(info.title)
                 }
+                
             }
         }
     }

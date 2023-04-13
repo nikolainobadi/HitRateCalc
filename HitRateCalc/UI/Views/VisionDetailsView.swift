@@ -13,58 +13,67 @@ struct VisionDetailsView: View {
     @StateObject var dataModel: VisionDetailsDataModel
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                Form {
-                    Section {
-                        TraitTextField("Name", text: $dataModel.name, keyboardType: .alphabet)
-                            .focused($focusedIndex, equals: 0)
-                    }.onlyShow(when: dataModel.showNameField)
-                    
-                    Section {
-                        TraitTextField("Luck", text: $dataModel.luck)
-                            .focused($focusedIndex, equals: 1)
-                    }.onlyShow(when: focusedIndex == nil || focusedIndex == 1)
-                    
-                    Section("Evasion") {
-                        TraitTextField("Agility", text: $dataModel.agility)
-                            .focused($focusedIndex, equals: 2)
-                        TraitTextField("Evasion", text: $dataModel.evasion)
-                            .focused($focusedIndex, equals: 3)
-                    }.onlyShow(when: dataModel.showEvasion)
-                    
-                    Section("Accuracy") {
-                        TraitTextField("Dexterity", text: $dataModel.dexterity)
-                            .focused($focusedIndex, equals: 4)
-                        TraitTextField("Accuracy", text: $dataModel.accuracy)
-                            .focused($focusedIndex, equals: 5)
-                    }.onlyShow(when: dataModel.showAccuracy)
-                }
-                
-                Button(action: { }) {
-                    Text("Save")
-                        .font(.title)
-                        .padding(.horizontal)
-                }
-                .padding()
-                .disabled(!dataModel.canSave)
-                .buttonStyle(.borderedProminent)
+        VStack {
+            StatsForm(focusedIndex: _focusedIndex, dataModel: dataModel)
+            
+            Button(action: dataModel.save) {
+                Text("Save")
+                    .font(.title)
+                    .padding(.horizontal)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-            .background(Color(uiColor: .secondarySystemBackground))
-            .bindFocus(focusState: _focusedIndex, publishedFocusState: $dataModel.focusedIndex)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: { dismiss() }) {
-                        Image(systemName: "xmark")
-                    }
-                }
-                ToolbarItemGroup(placement: .keyboard) {
-                    Button(action: { focusedIndex = nil }, label: { Text("Cancel") }).tint(.primary)
-                    Spacer()
-                    Button(dataModel.nextButtonText, action: dataModel.nextButtonAction)
+            .padding()
+            .disabled(!dataModel.canSave)
+            .buttonStyle(.borderedProminent)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(Color(uiColor: .secondarySystemBackground))
+        .bindFocus(focusState: _focusedIndex, publishedFocusState: $dataModel.focusedIndex)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: { dismiss() }) {
+                    Image(systemName: "xmark")
                 }
             }
+            ToolbarItemGroup(placement: .keyboard) {
+                Button(action: { focusedIndex = nil }, label: { Text("Cancel") }).tint(.primary)
+                Spacer()
+                Button(dataModel.nextButtonText, action: dataModel.nextButtonAction)
+            }
+        }
+    }
+}
+
+
+// MARK: - StatsForm
+fileprivate struct StatsForm: View {
+    @FocusState var focusedIndex: Int?
+    @ObservedObject var dataModel: VisionDetailsDataModel
+    
+    var body: some View {
+        Form {
+            Section {
+                TraitTextField("Name", text: $dataModel.name, keyboardType: .alphabet)
+                    .focused($focusedIndex, equals: 0)
+            }.onlyShow(when: dataModel.showNameField)
+            
+            Section {
+                TraitTextField("Luck", text: $dataModel.luck)
+                    .focused($focusedIndex, equals: 1)
+            }.onlyShow(when: focusedIndex == nil || focusedIndex == 1)
+            
+            Section("Evasion") {
+                TraitTextField("Agility", text: $dataModel.agility)
+                    .focused($focusedIndex, equals: 2)
+                TraitTextField("Evasion", text: $dataModel.evasion)
+                    .focused($focusedIndex, equals: 3)
+            }.onlyShow(when: dataModel.showEvasion)
+            
+            Section("Accuracy") {
+                TraitTextField("Dexterity", text: $dataModel.dexterity)
+                    .focused($focusedIndex, equals: 4)
+                TraitTextField("Accuracy", text: $dataModel.accuracy)
+                    .focused($focusedIndex, equals: 5)
+            }.onlyShow(when: dataModel.showAccuracy)
         }
     }
 }

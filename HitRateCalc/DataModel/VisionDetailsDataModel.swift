@@ -94,6 +94,6 @@ private extension VisionDetailsDataModel {
         updated.accuracy = Int(accuracy) ?? 0
         updated.evasion = Int(evasion) ?? 0
         
-        return originalVision
+        return updated
     }
 }

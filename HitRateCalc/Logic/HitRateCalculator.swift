@@ -44,11 +44,8 @@ extension HitRateCalculator {
     
     static func getEvasionRate(for vision: Vision) -> Int {
         let luckValue = getLuckValue("\(vision.luck)")
-        print("luck:", luckValue)
         let agilityValue = getAgilityValue("\(vision.agility)")
-        print("agility:", agilityValue)
         let bonusValue = getBonusValue("\(vision.evasion)")
-        print("bonus:", bonusValue)
         let baseRate = getBaseRate(luck: luckValue, otherTrait: agilityValue)
         
         return makeRoundedInt(baseRate + bonusValue)
@@ -56,11 +53,8 @@ extension HitRateCalculator {
     
     static func getAccuracyRate(for vision: Vision) -> Int {
         let luckValue = getLuckValue("\(vision.luck)")
-        print("luck:", luckValue)
         let dexValue = getDexterityValue("\(vision.dexterity)")
-        print("dex:", dexValue)
         let bonusValue = getBonusValue("\(vision.accuracy)")
-        print("bonus:", bonusValue)
         let baseRate = getBaseRate(luck: luckValue, otherTrait: dexValue)
         
         return makeRoundedInt(baseRate + bonusValue)
