@@ -48,7 +48,7 @@ struct ContentView: View {
                 }
                 
                 Spacer()
-                FinalResult(title: dataModel.finalRateTitle, resultRate: dataModel.finalRate)
+                FinalResultView(title: dataModel.finalRateTitle, resultRate: dataModel.finalRate)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .navigationTitle("Hit Rate Calc")
@@ -63,28 +63,6 @@ struct ContentView: View {
                         .foregroundColor(.primary)
                 }
             }
-        }
-    }
-}
-
-
-// MARK: - FinalResult
-fileprivate struct FinalResult: View {
-    let title: String
-    let resultRate: String
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text(title)
-                .font(.title3)
-                .padding(.horizontal)
-            Text("\(resultRate)%")
-                .font(.largeTitle.weight(.semibold))
-                .minimumScaleFactor(0.5)
-                .frame(maxWidth: .infinity, maxHeight: getHeightPercent(8), alignment: .center)
-                .padding(.horizontal)
-                .withRoundedBorder()
-                
         }
     }
 }
