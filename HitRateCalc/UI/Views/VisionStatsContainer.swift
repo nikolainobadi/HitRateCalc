@@ -38,7 +38,7 @@ struct VisionStatsContainer: View {
                                 .cornerRadius(10)
                                 .padding(10)
                                 .disabled(true)
-                        }
+                        }.frame(maxHeight: getHeightPercent(7))
                     }
                 }
                 Divider().frame(maxHeight: getHeightPercent(21)).background(.primary)
