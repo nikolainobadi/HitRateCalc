@@ -99,21 +99,15 @@ fileprivate struct StatTextField: View {
                 .font(.title3)
                 .minimumScaleFactor(0.5)
                 .frame(maxWidth: getWidthPercent(20), alignment: .leading)
-            TextField("", text: $text)
+            TextField("100", text: $text)
                 .keyboardType(keyboardType)
                 .textFieldStyle(.roundedBorder)
                 .multilineTextAlignment(.center)
-                .onTapGesture {
-                    if text == "0" {
-                        text = ""
-                    }
-                }
         }.onChange(of: text) { newValue in
             if newValue.count > 3 {
                 text = String(newValue.prefix(3))
             }
         }
-
     }
 }
 

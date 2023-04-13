@@ -30,6 +30,7 @@ final class VisionDetailsDataModel: ObservableObject {
         self.dexterity = "\(originalVision.dexterity)"
         self.evasion = "\(originalVision.evasion)"
         self.accuracy = "\(originalVision.accuracy)"
+        self.adjustValues()
     }
 }
 
@@ -95,5 +96,13 @@ private extension VisionDetailsDataModel {
         updated.evasion = Int(evasion) ?? 0
         
         return updated
+    }
+    
+    func adjustValues() {
+        if luck == "0" { luck = "" }
+        if agility == "0" { agility = "" }
+        if evasion == "0" { evasion = "" }
+        if dexterity == "0" { dexterity = "" }
+        if accuracy == "0" { accuracy = "" }
     }
 }
