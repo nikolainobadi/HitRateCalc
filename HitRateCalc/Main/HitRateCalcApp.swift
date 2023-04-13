@@ -21,7 +21,7 @@ struct AppLauncher {
 struct HitRateCalcApp: App {
     var body: some Scene {
         WindowGroup {
-            HitRateView()
+            HitRateCoordinatorView()
         }
     }
 }
