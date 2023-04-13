@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HitRateView: View {
-    @State private var dataModel = HitRateDataModel()
+    @StateObject private var dataModel = HitRateDataModel()
     
     private var offset: CGFloat { getHeightPercent(20) }
     private var accuracyOffset: CGFloat { dataModel.checkingHitRate ? -offset : offset }
