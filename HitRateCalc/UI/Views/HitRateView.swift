@@ -55,17 +55,17 @@ struct HitRateView: View {
 // MARK: - Subviews
 private extension HitRateView {
     func showDetails(_ info: StatsContainerInfo, completion: ((Vision) -> Void)? = nil) -> some View {
-        let dataModel = makeDataModel(info)
+        let dataModel = makeDataModel(info, completion: completion)
         
         return VisionDetailsView(dataModel: dataModel)
     }
     
-    func makeDataModel(_ info: StatsContainerInfo) -> VisionDetailsDataModel {
+    func makeDataModel(_ info: StatsContainerInfo, completion: ((Vision) -> Void)?) -> VisionDetailsDataModel {
         switch info {
         case .evasion(let vision):
-            return VisionDetailsDataModel(vision: vision, state: .evasion)
+            return VisionDetailsDataModel(vision: vision, state: .evasion, completion: completion ?? { _ in })
         case .accuracy(let vision):
-            return VisionDetailsDataModel(vision: vision, state: .accuracy)
+            return VisionDetailsDataModel(vision: vision, state: .accuracy, completion: completion ?? { _ in })
         }
     }
 }

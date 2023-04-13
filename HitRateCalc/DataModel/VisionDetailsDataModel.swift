@@ -18,10 +18,12 @@ final class VisionDetailsDataModel: ObservableObject {
     
     private let originalVision: Vision
     private let state: VisionDetailState
+    private let completion: (Vision) -> Void
     
-    init(vision: Vision, state: VisionDetailState) {
+    init(vision: Vision, state: VisionDetailState, completion: @escaping (Vision) -> Void) {
         self.state = state
         self.originalVision = vision
+        self.completion = completion
         self.name = originalVision.name
         self.luck = "\(originalVision.luck)"
         self.agility = "\(originalVision.agility)"
@@ -34,13 +36,24 @@ final class VisionDetailsDataModel: ObservableObject {
 
 // MARK: - ViewModel
 extension VisionDetailsDataModel {
-    var showNameField: Bool { state ==  .allDetails }
-    var showEvasion: Bool { state != .accuracy }
-    var showAccuracy: Bool { state != .evasion }
+    var showNameField: Bool { state == .allDetails && (focusedIndex == nil || focusedIndex == 0) }
+    var showEvasion: Bool { state != .accuracy && (focusedIndex == nil || focusedIndex == 2 || focusedIndex == 3) }
+    var showAccuracy: Bool { state != .evasion && (focusedIndex == nil ||  focusedIndex == 4 || focusedIndex == 5)}
     var nextButtonText: String {
         guard let focusedIndex = focusedIndex else { return "" }
         
         return focusedIndex < finalFieldIndex ? "Next" : "Done"
+    }
+    
+    var canSave: Bool {
+        switch state {
+        case .allDetails:
+            return !name.isEmpty
+        case .accuracy:
+            return true
+        case .evasion:
+            return true
+        }
     }
     
     func nextButtonAction() {
@@ -52,6 +65,10 @@ extension VisionDetailsDataModel {
         } else {
             self.focusedIndex = nil
         }
+    }
+    
+    func save() {
+        completion(updatedVision)
     }
 }
 
@@ -65,5 +82,18 @@ private extension VisionDetailsDataModel {
         case .evasion: return [1, 2, 3]
         case .accuracy: return [1, 4, 5]
         }
+    }
+    
+    var updatedVision: Vision {
+        var updated = originalVision
+        
+        updated.name = name
+        updated.luck = Int(luck) ?? 0
+        updated.agility = Int(agility) ?? 0
+        updated.dexterity = Int(dexterity) ?? 0
+        updated.accuracy = Int(accuracy) ?? 0
+        updated.evasion = Int(evasion) ?? 0
+        
+        return originalVision
     }
 }

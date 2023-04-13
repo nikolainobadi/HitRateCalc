@@ -9,40 +9,61 @@ import SwiftUI
 
 struct VisionDetailsView: View {
     @FocusState private var focusedIndex: Int?
+    @Environment(\.dismiss) private var dismiss
     @StateObject var dataModel: VisionDetailsDataModel
     
     var body: some View {
-        Form {
-            Section {
-                TraitTextField("Name", text: $dataModel.name, keyboardType: .alphabet)
-                    .focused($focusedIndex, equals: 0)
-            }.onlyShow(when: dataModel.showNameField)
-            
-            Section {
-                TraitTextField("Luck", text: $dataModel.luck)
-                    .focused($focusedIndex, equals: 1)
+        NavigationStack {
+            VStack {
+                Form {
+                    Section {
+                        TraitTextField("Name", text: $dataModel.name, keyboardType: .alphabet)
+                            .focused($focusedIndex, equals: 0)
+                    }.onlyShow(when: dataModel.showNameField)
+                    
+                    Section {
+                        TraitTextField("Luck", text: $dataModel.luck)
+                            .focused($focusedIndex, equals: 1)
+                    }.onlyShow(when: focusedIndex == nil || focusedIndex == 1)
+                    
+                    Section("Evasion") {
+                        TraitTextField("Agility", text: $dataModel.agility)
+                            .focused($focusedIndex, equals: 2)
+                        TraitTextField("Evasion", text: $dataModel.evasion)
+                            .focused($focusedIndex, equals: 3)
+                    }.onlyShow(when: dataModel.showEvasion)
+                    
+                    Section("Accuracy") {
+                        TraitTextField("Dexterity", text: $dataModel.dexterity)
+                            .focused($focusedIndex, equals: 4)
+                        TraitTextField("Accuracy", text: $dataModel.accuracy)
+                            .focused($focusedIndex, equals: 5)
+                    }.onlyShow(when: dataModel.showAccuracy)
+                }
+                
+                Button(action: { }) {
+                    Text("Save")
+                        .font(.title)
+                        .padding(.horizontal)
+                }
+                .padding()
+                .disabled(!dataModel.canSave)
+                .buttonStyle(.borderedProminent)
             }
-            
-            Section("Evasion") {
-                TraitTextField("Agility", text: $dataModel.agility)
-                    .focused($focusedIndex, equals: 2)
-                TraitTextField("Evasion", text: $dataModel.evasion)
-                    .focused($focusedIndex, equals: 3)
-            }.onlyShow(when: dataModel.showEvasion)
-            
-            Section("Accuracy") {
-                TraitTextField("Dexterity", text: $dataModel.dexterity)
-                    .focused($focusedIndex, equals: 4)
-                TraitTextField("Accuracy", text: $dataModel.accuracy)
-                    .focused($focusedIndex, equals: 5)
-            }.onlyShow(when: dataModel.showAccuracy)
-        }
-        .bindFocus(focusState: _focusedIndex, publishedFocusState: $dataModel.focusedIndex)
-        .toolbar {
-            ToolbarItemGroup(placement: .keyboard) {
-                Button(action: { focusedIndex = nil }, label: { Text("Cancel") }).tint(.primary)
-                Spacer()
-                Button(dataModel.nextButtonText, action: dataModel.nextButtonAction)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .background(Color(uiColor: .secondarySystemBackground))
+            .bindFocus(focusState: _focusedIndex, publishedFocusState: $dataModel.focusedIndex)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: { dismiss() }) {
+                        Image(systemName: "xmark")
+                    }
+                }
+                ToolbarItemGroup(placement: .keyboard) {
+                    Button(action: { focusedIndex = nil }, label: { Text("Cancel") }).tint(.primary)
+                    Spacer()
+                    Button(dataModel.nextButtonText, action: dataModel.nextButtonAction)
+                }
             }
         }
     }
@@ -81,10 +102,12 @@ fileprivate struct TraitTextField: View {
 // MARK: - Preview
 struct VisionDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        VisionDetailsView(dataModel: dataModel)
+        NavigationStack {
+            VisionDetailsView(dataModel: dataModel)
+        }
     }
     
     static var dataModel: VisionDetailsDataModel {
-        VisionDetailsDataModel(vision: Vision(), state: .allDetails)
+        VisionDetailsDataModel(vision: Vision(), state: .allDetails, completion: { _ in })
     }
 }
