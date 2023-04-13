@@ -147,6 +147,7 @@
 				D4BA87A82970E074009977D4 /* DataModel */,
 				D451DEF52970A18700486EEE /* Logic */,
 				D451DEF22970A0C200486EEE /* Model */,
+				D4DD9DD529E868660068777A /* Shared */,
 				D451DEF12970A00E00486EEE /* Resources */,
 				D451DECB29709FE600486EEE /* Preview Content */,
 			);
@@ -202,7 +203,6 @@
 			children = (
 				D451DEF32970A0D300486EEE /* Trait.swift */,
 				D4DD9DC629E853BA0068777A /* Vision.swift */,
-				D4DD9DCE29E85ED20068777A /* VisionDetailState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,6 +224,14 @@
 				D4DD9DCC29E85E7F0068777A /* VisionDetailsDataModel.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		D4DD9DD529E868660068777A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D4DD9DCE29E85ED20068777A /* VisionDetailState.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
