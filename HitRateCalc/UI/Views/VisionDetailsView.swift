@@ -52,26 +52,26 @@ fileprivate struct StatsForm: View {
     var body: some View {
         Form {
             Section {
-                TraitTextField("Name", text: $dataModel.name, keyboardType: .alphabet)
+                StatTextField("Name", text: $dataModel.name, keyboardType: .alphabet)
                     .focused($focusedIndex, equals: 0)
             }.onlyShow(when: dataModel.showNameField)
             
             Section {
-                TraitTextField("Luck", text: $dataModel.luck)
+                StatTextField("Luck", text: $dataModel.luck)
                     .focused($focusedIndex, equals: 1)
             }.onlyShow(when: focusedIndex == nil || focusedIndex == 1)
             
             Section("Evasion") {
-                TraitTextField("Agility", text: $dataModel.agility)
+                StatTextField("Agility", text: $dataModel.agility)
                     .focused($focusedIndex, equals: 2)
-                TraitTextField("Evasion", text: $dataModel.evasion)
+                StatTextField("Evasion", text: $dataModel.evasion)
                     .focused($focusedIndex, equals: 3)
             }.onlyShow(when: dataModel.showEvasion)
             
             Section("Accuracy") {
-                TraitTextField("Dexterity", text: $dataModel.dexterity)
+                StatTextField("Dexterity", text: $dataModel.dexterity)
                     .focused($focusedIndex, equals: 4)
-                TraitTextField("Accuracy", text: $dataModel.accuracy)
+                StatTextField("Accuracy", text: $dataModel.accuracy)
                     .focused($focusedIndex, equals: 5)
             }.onlyShow(when: dataModel.showAccuracy)
         }
@@ -80,7 +80,7 @@ fileprivate struct StatsForm: View {
 
 
 // MARK: - TraitTextField
-fileprivate struct TraitTextField: View {
+fileprivate struct StatTextField: View {
     @Binding var text: String
     
     let title: String
