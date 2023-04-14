@@ -118,16 +118,14 @@
 		D409B7BA2970C12B004CFA64 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D451DEC729709FE500486EEE /* ContentView.swift */,
-				D451DEFA2970A53C00486EEE /* TraitList.swift */,
-				D4BA87A62970E021009977D4 /* EditableTraitList.swift */,
-				D4BA87AE2970E332009977D4 /* SettingsView.swift */,
-				D4DD9DC829E854080068777A /* VisionDetailsView.swift */,
-				D4DD9DD229E8618B0068777A /* VisionStatsContainer.swift */,
+				D4E4ABA529EA1B5900EDAFA9 /* Old */,
 				D450523F29E86E660024D519 /* HitRateView.swift */,
+				D4DD9DD229E8618B0068777A /* VisionStatsContainer.swift */,
 				D450524129E870680024D519 /* SwitchButton.swift */,
 				D450524329E8712C0024D519 /* FinalResultView.swift */,
 				D45540E629E8DA5B00440D66 /* UnitListView.swift */,
+				D4DD9DC829E854080068777A /* VisionDetailsView.swift */,
+				D4BA87AE2970E332009977D4 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -278,6 +276,16 @@
 				D4DD9DD829E868FF0068777A /* StatsContainerInfo.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		D4E4ABA529EA1B5900EDAFA9 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				D451DEFA2970A53C00486EEE /* TraitList.swift */,
+				D4BA87A62970E021009977D4 /* EditableTraitList.swift */,
+				D451DEC729709FE500486EEE /* ContentView.swift */,
+			);
+			path = Old;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
