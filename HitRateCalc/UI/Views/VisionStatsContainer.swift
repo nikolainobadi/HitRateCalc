@@ -10,41 +10,45 @@ import SwiftUI
 struct VisionStatsContainer: View {
     let viewModel: StatsContainerInfo
     let resetValues: () -> Void
-    let showUnitList: (Vision) -> Void
+    let showUnitList: (StatsContainerInfo) -> Void
     
+    private var visionName: String { viewModel.vision.name }
     private var canResetValues: Bool { viewModel.statList.map({ $0.amount }).reduce(0, +) != 0 }
-    
-    private func selectNewUnit() {
-        switch viewModel {
-        case .evasion(let vision): showUnitList(vision)
-        case .accuracy(let vision): showUnitList(vision)
-        }
-    }
     
     var body: some View {
         VStack(spacing: 0) {
             // MARK: - TODO
             // setUnit will lead to unitList
-            StatHeader(title: viewModel.title, action: selectNewUnit)
+            StatHeader(title: viewModel.title, action: { showUnitList(viewModel) })
             
-            HStack {
-                StatList(statList: viewModel.statList)
+            
+            VStack(spacing: 0) {
+                Text(visionName)
+                    .font(.title.bold())
+                    .frame(maxWidth: .infinity)
+                    .background(Color(uiColor: .secondarySystemBackground))
+                    .onlyShow(when: !visionName.isEmpty)
+                    
                 Divider()
-                    .background(.primary)
-                    .frame(maxHeight: getHeightPercent(21))
-                VStack {
-                    Spacer()
-                    Text("\(viewModel.statRate)%")
-                        .lineLimit(1)
-                        .font(.largeTitle)
-                        .minimumScaleFactor(0.5)
-                        .frame(maxWidth: getWidthPercent(25))
-                    Spacer()
-                    Button("Reset Values", action: resetValues)
-                        .underline()
-                        .padding()
-                        .onlyShow(when: canResetValues)
-                }.frame(maxHeight: getHeightPercent(21))
+                HStack {
+                    StatList(statList: viewModel.statList)
+                    Divider()
+                        .background(.primary)
+                        .frame(maxHeight: getHeightPercent(21))
+                    VStack {
+                        Spacer()
+                        Text("\(viewModel.statRate)%")
+                            .lineLimit(1)
+                            .font(.largeTitle)
+                            .minimumScaleFactor(0.5)
+                            .frame(maxWidth: getWidthPercent(25))
+                        Spacer()
+                        Button("Reset Values", action: resetValues)
+                            .underline()
+                            .padding()
+                            .onlyShow(when: canResetValues)
+                    }.frame(maxHeight: getHeightPercent(21))
+                }
             }.withRoundedBorder()
         }
     }
@@ -107,6 +111,6 @@ fileprivate struct StatList: View {
 // MARK: - Preview
 struct VisionStatsContainer_Previews: PreviewProvider {
     static var previews: some View {
-        VisionStatsContainer(viewModel: .accuracy(Vision()), resetValues: { }, showUnitList: { _ in })
+        VisionStatsContainer(viewModel: .accuracy(Vision(name: "Eliza")), resetValues: { }, showUnitList: { _ in })
     }
 }

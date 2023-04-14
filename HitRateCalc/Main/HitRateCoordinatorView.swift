@@ -16,15 +16,16 @@ struct HitRateCoordinatorView: View {
             HitRateView(path: $path, dataModel: dataModel)
                 .navigationTitle("Hit-Rate Calc")
                 .navigationBarTitleDisplayMode(.inline)
-                .navigationDestination(for: Vision.self, destination: { vision in
-                    UnitListView(currentVision: vision)
+                .navigationDestination(for: StatsContainerInfo.self, destination: { info in
+                    UnitListView(currentVision: dataModel.getVisionToReplace(info: info))
+                        .navigationTitle("Unit List")
                 })
                 .sheet(item: $dataModel.selectedInfo) { info in
                     NavigationStack {
-                        VisionDetailsView(dataModel: makeDataModel(info, completion: { updatedVision in
-                            updateVision(vision: updatedVision, info: info)
+                        showDetails(info) { updatedVision in
+                            updateVision(updatedVision: updatedVision, info: info)
                             dataModel.selectedInfo = nil
-                        })).navigationTitle(info.title)
+                        }.navigationTitle(info.title)
                     }
                 }
         }
@@ -34,31 +35,32 @@ struct HitRateCoordinatorView: View {
 
 // MARK: - Private Methods
 private extension HitRateCoordinatorView {
-    func updateVision(vision: Vision, info: StatsContainerInfo) {
+    func updateVision(updatedVision: Vision, info: StatsContainerInfo) {
         switch info {
-        case .evasion:
-            dataModel.defender = vision
-        case .accuracy:
-            dataModel.attacker = vision
+        case .evasion: dataModel.defender = updatedVision
+        case .accuracy: dataModel.attacker = updatedVision
         } 
     }
     
-    func showDetails(_ info: StatsContainerInfo, completion: ((Vision) -> Void)? = nil) -> some View {
-        let dataModel = makeDataModel(info, completion: completion)
+    func showDetails(_ info: StatsContainerInfo, completion: @escaping (Vision) -> Void) -> some View {
+        let store = VisionStoreAdapter(store: SharedCoreDataManager.shared, completion: completion)
+        let dataModel = makeDataModel(info, store: store)
         
         return VisionDetailsView(dataModel: dataModel)
     }
     
-    func makeDataModel(_ info: StatsContainerInfo, completion: ((Vision) -> Void)?) -> VisionDetailsDataModel {
+    func makeDataModel(_ info: StatsContainerInfo, store: VisionStore) -> VisionDetailsDataModel {
         switch info {
         case .evasion(let vision):
-            return VisionDetailsDataModel(vision: vision, state: .evasion, completion: completion ?? { _ in })
+            return VisionDetailsDataModel(vision: vision, state: .evasion, store: store)
         case .accuracy(let vision):
-            return VisionDetailsDataModel(vision: vision, state: .accuracy, completion: completion ?? { _ in })
+            return VisionDetailsDataModel(vision: vision, state: .accuracy, store: store)
         }
     }
 }
 
+
+// MARK: - Preview
 struct HitRateCoordinatorView_Previews: PreviewProvider {
     static var previews: some View {
         HitRateCoordinatorView()

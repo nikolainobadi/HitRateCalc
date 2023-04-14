@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct UnitListView: View {
+    @Binding var currentVision: Vision
+    @State private var selectedVision: Vision?
+    @Environment(\.dismiss) private var dismiss
     @FetchRequest(fetchRequest: VisionEntity.all()) private var entities: FetchedResults<VisionEntity>
-    
-    let currentVision: Vision
     
     private var visions: [Vision] { entities.map({ Vision(entity: $0) }) }
     
@@ -19,7 +20,7 @@ struct UnitListView: View {
             Section {
                 HStack {
                     Spacer()
-                    Button("Add New Unit", action: { })
+                    Button("Add New Unit", action: { selectedVision = Vision() })
                         .font(.title3)
                         .buttonStyle(.borderedProminent)
                     Spacer()
@@ -29,20 +30,42 @@ struct UnitListView: View {
             Section("Available Units") {
                 ForEach(visions) { vision in
                     HStack {
-                        Image(systemName: "checkmark")
-                            .onlyShow(when: vision.id == currentVision.id)
-                        Text(vision.name)
-                            .padding()
-                            .font(vision.id == currentVision.id ? .title : .title3)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.5)
-                        Spacer()
-                        Button(action: { }) {
+                        HStack {
+                            Image(systemName: "checkmark")
+                                .onlyShow(when: vision.id == currentVision.id)
+                            Text(vision.name)
+                                .padding()
+                                .font(vision.id == currentVision.id ? .title : .title3)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.5)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            currentVision = vision
+                            dismiss()
+                        }
+                            
+                        Button(action: { selectedVision = vision }) {
                             Image(systemName: "info.circle")
                                 .font(.title3)
                         }.padding()
                     }
                 }
+            }
+        }.sheet(item: $selectedVision) { vision in
+            NavigationStack {
+                // MARK: - TODO
+                // enapsulate better
+                let store = VisionStoreAdapter(store: SharedCoreDataManager.shared) { updatedVision in
+                    /// should be stored in attacker/defender in HitRateDataModel
+                    currentVision = updatedVision
+                    selectedVision = nil
+                }
+                let dataModel = VisionDetailsDataModel(vision: vision, state: .allDetails, store: store)
+                
+                VisionDetailsView(dataModel: dataModel)
+                    .navigationTitle(vision.name.isEmpty ? "Add New Vision" : vision.name)
             }
         }
     }
@@ -52,13 +75,15 @@ struct UnitListView: View {
 // MARK: - Preview
 struct UnitListView_Previews: PreviewProvider {
     static var previews: some View {
-        UnitListView(currentVision: Vision(id: Vision.alayaId))
+        UnitListView(currentVision: .constant(Vision(id: Vision.alayaId)))
             .environment(\.managedObjectContext, SharedCoreDataManager.shared.viewContext)
             .previewDisplayName("UnitList with Data")
             .onAppear { VisionEntity.makePreview(visionList: Vision.defaultList) }
     }
 }
 
+
+// MARK: - Helpers
 extension Vision {
     init(entity: VisionEntity) {
         self.init(id: entity.id ?? UUID(), name: entity.name, luck: entity.luck.toInt, agility: entity.agility.toInt, dexterity: entity.dexterity.toInt, evasion: entity.evasion.toInt, accuracy: entity.accuracy.toInt)

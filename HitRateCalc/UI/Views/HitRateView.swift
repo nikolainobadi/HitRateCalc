@@ -15,9 +15,7 @@ struct HitRateView: View {
     private var evasionOffset: CGFloat { dataModel.checkingHitRate ? offset : -offset }
     private var accuracyOffset: CGFloat { dataModel.checkingHitRate ? -offset : offset }
     
-    private func showUnitList(with vision: Vision) {
-        path.append(vision)
-    }
+    private func showUnitList(with info: StatsContainerInfo) { path.append(info) }
     
     var body: some View {
         VStack {

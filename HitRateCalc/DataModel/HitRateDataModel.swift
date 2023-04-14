@@ -5,6 +5,7 @@
 //  Created by Nikolai Nobadi on 4/13/23.
 //
 
+import SwiftUI
 import Foundation
 
 final class HitRateDataModel: ObservableObject {
@@ -24,6 +25,19 @@ extension HitRateDataModel {
     func resetDefender() { defender = Vision() }
     func editAttacker() { selectedInfo = .accuracy(attacker) }
     func editDefender() { selectedInfo = .evasion(defender) }
+    func getVisionToReplace(info: StatsContainerInfo) -> Binding<Vision> {
+        Binding<Vision> {
+            switch info {
+            case .evasion: return self.defender
+            case .accuracy: return self.attacker
+            }
+        } set: { newValue in
+            switch info {
+            case .evasion: self.defender = newValue
+            case .accuracy: self.attacker = newValue
+            }
+        }
+    }
 }
 
 
