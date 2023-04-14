@@ -135,6 +135,10 @@ final class VisionStoreAdapter {
 extension VisionStoreAdapter: VisionStore {
     func saveVision(_ vision: Vision) async throws {
         try await store.saveVision(vision)
-        completion(vision)
+        await finished(vision)
     }
+}
+
+private extension VisionStoreAdapter {
+    @MainActor func finished(_ vision: Vision) { completion(vision) }
 }

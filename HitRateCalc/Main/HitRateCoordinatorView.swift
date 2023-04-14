@@ -18,6 +18,7 @@ struct HitRateCoordinatorView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationDestination(for: StatsContainerInfo.self, destination: { info in
                     UnitListView(currentVision: dataModel.getVisionToReplace(info: info))
+                        .navigationTitle("Unit List")
                 })
                 .sheet(item: $dataModel.selectedInfo) { info in
                     NavigationStack {
