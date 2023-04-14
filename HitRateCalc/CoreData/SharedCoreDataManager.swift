@@ -91,3 +91,7 @@ extension EnvironmentValues {
 extension Int {
     var toInt16: Int16 { Int16(self) }
 }
+
+extension Int16 {
+    var toInt: Int { Int(self) }
+}
