@@ -22,3 +22,9 @@ final class SharedCoreDataManager {
         }
     }
 }
+
+
+// MARK: - ViewContext
+extension SharedCoreDataManager {
+    var viewContext: NSManagedObjectContext { container.viewContext }
+}
