@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct UnitListView: View {
-    let visions: [Vision]
+    @FetchRequest(fetchRequest: VisionEntity.all()) private var entities: FetchedResults<VisionEntity>
+    
+    private var visions: [Vision] { entities.map({ Vision(entity: $0) }) }
     
     var body: some View {
         List {
@@ -46,11 +48,18 @@ struct UnitListView: View {
 // MARK: - Preview
 struct UnitListView_Previews: PreviewProvider {
     static var previews: some View {
-        UnitListView(visions: Vision.defaultList)
+        UnitListView()
+            .environment(\.managedObjectContext, SharedCoreDataManager.shared.viewContext)
+            .previewDisplayName("UnitList with Data")
+            .onAppear { VisionEntity.makePreview(visionList: Vision.defaultList) }
     }
 }
 
 extension Vision {
+    init(entity: VisionEntity) {
+        self.init(id: entity.id ?? UUID(), name: entity.name, luck: entity.luck.toInt, agility: entity.agility.toInt, dexterity: entity.dexterity.toInt, evasion: entity.evasion.toInt, accuracy: entity.accuracy.toInt)
+    }
+    
     static let defaultList: [Vision] = [
         Vision(name: "Eliza", luck: 344, agility: 103, dexterity: 630, evasion: 16, accuracy: 128),
         Vision(name: "Alaya", luck: 333, agility: 104, dexterity: 504, evasion: 28, accuracy: 59),

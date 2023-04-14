@@ -22,6 +22,7 @@ struct HitRateCalcApp: App {
     var body: some Scene {
         WindowGroup {
             HitRateCoordinatorView()
+                .environment(\.managedObjectContext, SharedCoreDataManager.shared.viewContext)
         }
     }
 }

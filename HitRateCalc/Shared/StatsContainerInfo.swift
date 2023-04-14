@@ -15,8 +15,8 @@ enum StatsContainerInfo {
 extension StatsContainerInfo: Identifiable {
     var id: String {
         switch self {
-        case .evasion(let vision): return vision.id
-        case .accuracy(let vision): return vision.id
+        case .evasion(let vision): return vision.id.uuidString
+        case .accuracy(let vision): return vision.id.uuidString
             
         }
     }
