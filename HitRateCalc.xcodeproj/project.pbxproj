@@ -22,6 +22,7 @@
 		D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */; };
 		D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEFA2970A53C00486EEE /* TraitList.swift */; };
 		D45540E729E8DA5B00440D66 /* UnitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45540E629E8DA5B00440D66 /* UnitListView.swift */; };
+		D45540EB29E8DD9E00440D66 /* HitRateCalcCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D45540E929E8DD9E00440D66 /* HitRateCalcCoreDataModel.xcdatamodeld */; };
 		D4BA87A72970E021009977D4 /* EditableTraitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87A62970E021009977D4 /* EditableTraitList.swift */; };
 		D4BA87AA2970E083009977D4 /* OldHitRateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87A92970E083009977D4 /* OldHitRateDataModel.swift */; };
 		D4BA87AF2970E332009977D4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87AE2970E332009977D4 /* SettingsView.swift */; };
@@ -70,6 +71,7 @@
 		D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalculator.swift; sourceTree = "<group>"; };
 		D451DEFA2970A53C00486EEE /* TraitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitList.swift; sourceTree = "<group>"; };
 		D45540E629E8DA5B00440D66 /* UnitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitListView.swift; sourceTree = "<group>"; };
+		D45540EA29E8DD9E00440D66 /* HitRateCalcCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HitRateCalcCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		D4BA87A62970E021009977D4 /* EditableTraitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableTraitList.swift; sourceTree = "<group>"; };
 		D4BA87A92970E083009977D4 /* OldHitRateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldHitRateDataModel.swift; sourceTree = "<group>"; };
 		D4BA87AE2970E332009977D4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				D4BA87A82970E074009977D4 /* DataModel */,
 				D451DEF52970A18700486EEE /* Logic */,
 				D451DEF22970A0C200486EEE /* Model */,
+				D45540E829E8DD7500440D66 /* CoreData */,
 				D4DD9DD529E868660068777A /* Shared */,
 				D451DEF12970A00E00486EEE /* Resources */,
 				D451DECB29709FE600486EEE /* Preview Content */,
@@ -239,6 +242,14 @@
 				D4BA87B22970E5E6009977D4 /* AppRateManager.swift */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		D45540E829E8DD7500440D66 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D45540E929E8DD9E00440D66 /* HitRateCalcCoreDataModel.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		D4BA87A82970E074009977D4 /* DataModel */ = {
@@ -367,6 +378,7 @@
 				D451DEC829709FE500486EEE /* ContentView.swift in Sources */,
 				D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */,
 				D4DD9DD729E868960068777A /* VisionStat.swift in Sources */,
+				D45540EB29E8DD9E00440D66 /* HitRateCalcCoreDataModel.xcdatamodeld in Sources */,
 				D450524429E8712C0024D519 /* FinalResultView.swift in Sources */,
 				D451DEF42970A0D300486EEE /* Trait.swift in Sources */,
 				D4DD9DD329E8618B0068777A /* VisionStatsContainer.swift in Sources */,
@@ -684,6 +696,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D45540E929E8DD9E00440D66 /* HitRateCalcCoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D45540EA29E8DD9E00440D66 /* HitRateCalcCoreDataModel.xcdatamodel */,
+			);
+			currentVersion = D45540EA29E8DD9E00440D66 /* HitRateCalcCoreDataModel.xcdatamodel */;
+			path = HitRateCalcCoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D451DEBA29709FE500486EEE /* Project object */;
 }
