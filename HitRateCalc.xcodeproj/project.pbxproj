@@ -94,6 +94,7 @@
 		D4DD9DD629E868960068777A /* VisionStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionStat.swift; sourceTree = "<group>"; };
 		D4DD9DD829E868FF0068777A /* StatsContainerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContainerInfo.swift; sourceTree = "<group>"; };
 		D4DD9DDC29E86A730068777A /* StatsContainerInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContainerInfoTests.swift; sourceTree = "<group>"; };
+		D4E4ABA429EA1A1000EDAFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +225,7 @@
 		D451DEF12970A00E00486EEE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D4E4ABA429EA1A1000EDAFA9 /* Info.plist */,
 				D451DEC929709FE600486EEE /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -559,9 +561,9 @@
 				DEVELOPMENT_TEAM = R8SJ24LQF3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HitRateCalc/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HitRateCalc;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -595,9 +597,9 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R8SJ24LQF3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HitRateCalc/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HitRateCalc;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
