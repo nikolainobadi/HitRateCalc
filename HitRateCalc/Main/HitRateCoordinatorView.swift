@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct HitRateCoordinatorView: View {
+    @State private var path = NavigationPath()
     @StateObject private var dataModel = HitRateDataModel()
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             HitRateView(dataModel: dataModel)
                 .navigationTitle("Hit-Rate Calc")
                 .navigationBarTitleDisplayMode(.inline)
