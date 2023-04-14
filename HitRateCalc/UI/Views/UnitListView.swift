@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct UnitListView: View {
+    @Binding var currentVision: Vision
+    @State private var selectedVision: Vision?
     @FetchRequest(fetchRequest: VisionEntity.all()) private var entities: FetchedResults<VisionEntity>
-    
-    let currentVision: Vision
     
     private var visions: [Vision] { entities.map({ Vision(entity: $0) }) }
     
@@ -19,7 +19,7 @@ struct UnitListView: View {
             Section {
                 HStack {
                     Spacer()
-                    Button("Add New Unit", action: { })
+                    Button("Add New Unit", action: { selectedVision = Vision() })
                         .font(.title3)
                         .buttonStyle(.borderedProminent)
                     Spacer()
@@ -44,6 +44,12 @@ struct UnitListView: View {
                     }
                 }
             }
+        }.sheet(item: $selectedVision) { vision in
+            let dataModel = VisionDetailsDataModel(vision: vision, state: .allDetails) { updatedVision in
+                currentVision = updatedVision
+            }
+            
+            VisionDetailsView(dataModel: dataModel)
         }
     }
 }
@@ -52,7 +58,7 @@ struct UnitListView: View {
 // MARK: - Preview
 struct UnitListView_Previews: PreviewProvider {
     static var previews: some View {
-        UnitListView(currentVision: Vision(id: Vision.alayaId))
+        UnitListView(currentVision: .constant(Vision(id: Vision.alayaId)))
             .environment(\.managedObjectContext, SharedCoreDataManager.shared.viewContext)
             .previewDisplayName("UnitList with Data")
             .onAppear { VisionEntity.makePreview(visionList: Vision.defaultList) }

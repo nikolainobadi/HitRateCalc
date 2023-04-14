@@ -16,9 +16,11 @@ struct HitRateCoordinatorView: View {
             HitRateView(path: $path, dataModel: dataModel)
                 .navigationTitle("Hit-Rate Calc")
                 .navigationBarTitleDisplayMode(.inline)
-                .navigationDestination(for: Vision.self, destination: { vision in
-                    UnitListView(currentVision: vision)
-                })
+            // MARK: - TODO
+            // need a way to distinguish between attacker and defender
+//                .navigationDestination(for: Vision.self, destination: { vision in
+//                    UnitListView(currentVision: dataModel.getVisionToReplace(id: vision.id))
+//                })
                 .sheet(item: $dataModel.selectedInfo) { info in
                     NavigationStack {
                         VisionDetailsView(dataModel: makeDataModel(info, completion: { updatedVision in
