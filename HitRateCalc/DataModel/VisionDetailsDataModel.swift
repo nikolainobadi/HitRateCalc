@@ -37,7 +37,6 @@ final class VisionDetailsDataModel: ObservableObject {
 
 // MARK: - ViewModel
 extension VisionDetailsDataModel {
-    var showNameField: Bool { state == .allDetails && (focusedIndex == nil || focusedIndex == 0) }
     var showEvasion: Bool { state != .accuracy }
     var showAccuracy: Bool { state != .evasion }
     var nextButtonText: String {

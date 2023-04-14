@@ -81,6 +81,7 @@ struct UnitListView: View {
                 
                 VisionDetailsView(dataModel: dataModel)
                     .navigationTitle(vision.name.isEmpty ? "Add New Vision" : vision.name)
+                    .navigationBarTitleDisplayMode(.large)
             }
         }
     }

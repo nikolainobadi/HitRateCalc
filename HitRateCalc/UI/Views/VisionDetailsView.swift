@@ -24,6 +24,7 @@ struct VisionDetailsView: View {
             .padding()
             .disabled(!dataModel.canSave)
             .buttonStyle(.borderedProminent)
+            .onlyShow(when: focusedIndex == nil)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(Color(uiColor: .secondarySystemBackground))
@@ -35,7 +36,7 @@ struct VisionDetailsView: View {
                 }
             }
             ToolbarItemGroup(placement: .keyboard) {
-                Button(action: { focusedIndex = nil }, label: { Text("Cancel") }).tint(.primary)
+                Button("Cancel", action: { focusedIndex = nil })
                 Spacer()
                 Button(dataModel.nextButtonText, action: dataModel.nextButtonAction)
             }
@@ -54,7 +55,7 @@ fileprivate struct StatsForm: View {
             Section {
                 StatTextField("Name", text: $dataModel.name, keyboardType: .alphabet)
                     .focused($focusedIndex, equals: 0)
-            }.onlyShow(when: dataModel.showNameField)
+            }
             
             Section {
                 StatTextField("Luck", text: $dataModel.luck)
