@@ -10,14 +10,22 @@ import SwiftUI
 struct VisionStatsContainer: View {
     let viewModel: StatsContainerInfo
     let resetValues: () -> Void
+    let showUnitList: (Vision) -> Void
     
     private var canResetValues: Bool { viewModel.statList.map({ $0.amount }).reduce(0, +) != 0 }
+    
+    private func selectNewUnit() {
+        switch viewModel {
+        case .evasion(let vision): showUnitList(vision)
+        case .accuracy(let vision): showUnitList(vision)
+        }
+    }
     
     var body: some View {
         VStack(spacing: 0) {
             // MARK: - TODO
             // setUnit will lead to unitList
-            StatHeader(title: viewModel.title, action: { })
+            StatHeader(title: viewModel.title, action: selectNewUnit)
             
             HStack {
                 StatList(statList: viewModel.statList)
@@ -54,13 +62,11 @@ fileprivate struct StatHeader: View {
                 .font(.largeTitle.bold())
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal)
-            
-            // MARK: - TODO
-            // uncomment once UnitList is enabled
-//            Button("Set Unit", action: action)
-//                .buttonStyle(.bordered)
-//                .padding(.horizontal)
-//                .padding(.vertical, 8)
+        
+            Button("Set Unit", action: action)
+                .buttonStyle(.bordered)
+                .padding(.horizontal)
+                .padding(.vertical, 8)
         }
     }
 }
@@ -101,6 +107,6 @@ fileprivate struct StatList: View {
 // MARK: - Preview
 struct VisionStatsContainer_Previews: PreviewProvider {
     static var previews: some View {
-        VisionStatsContainer(viewModel: .accuracy(Vision()), resetValues: { })
+        VisionStatsContainer(viewModel: .accuracy(Vision()), resetValues: { }, showUnitList: { _ in })
     }
 }
