@@ -54,7 +54,7 @@ extension SharedCoreDataManager: VisionStore {
 private extension SharedCoreDataManager {
     func getVisionEntity(_ vision: Vision) -> VisionEntity? {
         let request: NSFetchRequest<VisionEntity>
-        request = VisionEntity.fetchRequest()
+        request = VisionEntity.all()
         request.fetchLimit = 1
         request.predicate = NSPredicate(format: "id == %@", vision.id as CVarArg)
         

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UnitListView: View {
-    @FetchRequest(sortDescriptors: []) private var entities: FetchedResults<VisionEntity>
+    @FetchRequest(fetchRequest: VisionEntity.all()) private var entities: FetchedResults<VisionEntity>
     
     private var visions: [Vision] { entities.map({ Vision(entity: $0) }) }
     
@@ -49,27 +49,15 @@ struct UnitListView: View {
 struct UnitListView_Previews: PreviewProvider {
     static var previews: some View {
         UnitListView()
-    }
-    
-    static var defaultEntities: [VisionEntity] {
-        Vision.defaultList.map { vision in
-            let entity = VisionEntity(context: SharedCoreDataManager.shared.viewContext)
-            entity.id = vision.id
-            entity.name = vision.name
-            entity.luck = vision.luck.toInt16
-            entity.agility = vision.agility.toInt16
-            entity.dexterity = vision.dexterity.toInt16
-            entity.evasion = vision.evasion.toInt16
-            entity.accuracy = vision.accuracy.toInt16
-            
-            return entity
-        }
+            .environment(\.managedObjectContext, SharedCoreDataManager.shared.viewContext)
+            .previewDisplayName("UnitList with Data")
+            .onAppear { VisionEntity.makePreview(visionList: Vision.defaultList) }
     }
 }
 
 extension Vision {
     init(entity: VisionEntity) {
-        self.init(id: entity.id ?? UUID(), name: entity.name ?? "", luck: entity.luck.toInt, agility: entity.agility.toInt, dexterity: entity.dexterity.toInt, evasion: entity.evasion.toInt, accuracy: entity.accuracy.toInt)
+        self.init(id: entity.id ?? UUID(), name: entity.name, luck: entity.luck.toInt, agility: entity.agility.toInt, dexterity: entity.dexterity.toInt, evasion: entity.evasion.toInt, accuracy: entity.accuracy.toInt)
     }
     
     static let defaultList: [Vision] = [
