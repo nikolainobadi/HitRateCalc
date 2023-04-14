@@ -20,7 +20,9 @@ extension StatsContainerInfo: Identifiable {
             
         }
     }
+}
 
+extension StatsContainerInfo {
     var title: String {
         switch self {
         case .evasion: return "Evasion"
@@ -41,6 +43,13 @@ extension StatsContainerInfo: Identifiable {
             return HitRateCalculator.getEvasionRate(for: vision)
         case .accuracy(let vision):
             return HitRateCalculator.getAccuracyRate(for: vision)
+        }
+    }
+    
+    var vision: Vision {
+        switch self {
+        case .evasion(let vision): return vision
+        case .accuracy(let vision): return vision
         }
     }
 }
