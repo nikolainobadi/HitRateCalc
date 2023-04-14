@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct HitRateView: View {
+    @Binding var path: NavigationPath
     @ObservedObject var dataModel: HitRateDataModel
     
     private var offset: CGFloat { getHeightPercent(20) }
     private var evasionOffset: CGFloat { dataModel.checkingHitRate ? offset : -offset }
     private var accuracyOffset: CGFloat { dataModel.checkingHitRate ? -offset : offset }
+    
+    private func showUnitList(with vision: Vision) {
+        path.append(vision)
+    }
     
     var body: some View {
         VStack {
@@ -47,6 +52,6 @@ struct HitRateView: View {
 // MARK: - Preview
 struct HitRateView_Previews: PreviewProvider {
     static var previews: some View {
-        HitRateView(dataModel: HitRateDataModel())
+        HitRateView(path: .constant(NavigationPath()), dataModel: HitRateDataModel())
     }
 }

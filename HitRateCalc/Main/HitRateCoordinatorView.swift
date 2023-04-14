@@ -13,7 +13,7 @@ struct HitRateCoordinatorView: View {
     
     var body: some View {
         NavigationStack(path: $path) {
-            HitRateView(dataModel: dataModel)
+            HitRateView(path: $path, dataModel: dataModel)
                 .navigationTitle("Hit-Rate Calc")
                 .navigationBarTitleDisplayMode(.inline)
                 .sheet(item: $dataModel.selectedInfo) { info in
