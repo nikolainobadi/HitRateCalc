@@ -29,14 +29,21 @@ struct UnitListView: View {
             Section("Available Units") {
                 ForEach(visions) { vision in
                     HStack {
-                        Image(systemName: "checkmark")
-                            .onlyShow(when: vision.id == currentVision.id)
-                        Text(vision.name)
-                            .padding()
-                            .font(vision.id == currentVision.id ? .title : .title3)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.5)
-                        Spacer()
+                        HStack {
+                            Image(systemName: "checkmark")
+                                .onlyShow(when: vision.id == currentVision.id)
+                            Text(vision.name)
+                                .padding()
+                                .font(vision.id == currentVision.id ? .title : .title3)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.5)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            currentVision = vision
+                        }
+                            
                         Button(action: { selectedVision = vision }) {
                             Image(systemName: "info.circle")
                                 .font(.title3)
@@ -46,10 +53,17 @@ struct UnitListView: View {
             }
         }.sheet(item: $selectedVision) { vision in
             NavigationStack {
-                VisionDetailsView(dataModel: VisionDetailsDataModel(vision: vision, state: .allDetails) { updatedVision in
+                // MARK: - TODO
+                // enapsulate better
+                let store = VisionStoreAdapter(store: SharedCoreDataManager.shared) { updatedVision in
                     /// should be stored in attacker/defender in HitRateDataModel
                     currentVision = updatedVision
-                }).navigationTitle(vision.name.isEmpty ? "Add New Vision" : vision.name)
+                    selectedVision = nil
+                }
+                let dataModel = VisionDetailsDataModel(vision: vision, state: .allDetails, store: store)
+                
+                VisionDetailsView(dataModel: dataModel)
+                    .navigationTitle(vision.name.isEmpty ? "Add New Vision" : vision.name)
             }
         }
     }

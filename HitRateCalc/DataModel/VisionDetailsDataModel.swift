@@ -18,12 +18,12 @@ final class VisionDetailsDataModel: ObservableObject {
     
     private let originalVision: Vision
     private let state: VisionDetailState
-    private let completion: (Vision) -> Void
+    private let store: VisionStore
     
-    init(vision: Vision, state: VisionDetailState, completion: @escaping (Vision) -> Void) {
+    init(vision: Vision, state: VisionDetailState, store: VisionStore) {
         self.state = state
         self.originalVision = vision
-        self.completion = completion
+        self.store = store
         self.name = originalVision.name
         self.luck = "\(originalVision.luck)"
         self.agility = "\(originalVision.agility)"
@@ -70,7 +70,15 @@ extension VisionDetailsDataModel {
     }
     
     func save() {
-        completion(updatedVision)
+        // MARK: - TODO
+        // add proper error handling
+        Task {
+            do {
+                try await store.saveVision(updatedVision)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 

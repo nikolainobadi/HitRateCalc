@@ -21,10 +21,10 @@ struct HitRateCoordinatorView: View {
                 })
                 .sheet(item: $dataModel.selectedInfo) { info in
                     NavigationStack {
-                        VisionDetailsView(dataModel: makeDataModel(info, completion: { updatedVision in
+                        showDetails(info) { updatedVision in
                             updateVision(updatedVision: updatedVision, info: info)
                             dataModel.selectedInfo = nil
-                        })).navigationTitle(info.title)
+                        }.navigationTitle(info.title)
                     }
                 }
         }
@@ -42,17 +42,18 @@ private extension HitRateCoordinatorView {
     }
     
     func showDetails(_ info: StatsContainerInfo, completion: @escaping (Vision) -> Void) -> some View {
-        let dataModel = makeDataModel(info, completion: completion)
+        let store = VisionStoreAdapter(store: SharedCoreDataManager.shared, completion: completion)
+        let dataModel = makeDataModel(info, store: store)
         
         return VisionDetailsView(dataModel: dataModel)
     }
     
-    func makeDataModel(_ info: StatsContainerInfo, completion: @escaping (Vision) -> Void) -> VisionDetailsDataModel {
+    func makeDataModel(_ info: StatsContainerInfo, store: VisionStore) -> VisionDetailsDataModel {
         switch info {
         case .evasion(let vision):
-            return VisionDetailsDataModel(vision: vision, state: .evasion, completion: completion)
+            return VisionDetailsDataModel(vision: vision, state: .evasion, store: store)
         case .accuracy(let vision):
-            return VisionDetailsDataModel(vision: vision, state: .accuracy, completion: completion)
+            return VisionDetailsDataModel(vision: vision, state: .accuracy, store: store)
         }
     }
 }

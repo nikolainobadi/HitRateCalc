@@ -124,6 +124,10 @@ struct VisionDetailsView_Previews: PreviewProvider {
     }
     
     static var dataModel: VisionDetailsDataModel {
-        VisionDetailsDataModel(vision: Vision(), state: .allDetails, completion: { _ in })
+        VisionDetailsDataModel(vision: Vision(), state: .allDetails, store: MockStore())
+    }
+    
+    class MockStore: VisionStore {
+        func saveVision(_ vision: Vision) async throws { }
     }
 }
