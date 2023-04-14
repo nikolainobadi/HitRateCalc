@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HitRateCoordinatorView: View {
     @State private var path = NavigationPath()
+    @State private var showingSettings = false
     @StateObject private var dataModel = HitRateDataModel()
     
     var body: some View {
@@ -16,6 +17,12 @@ struct HitRateCoordinatorView: View {
             HitRateView(path: $path, dataModel: dataModel)
                 .navigationTitle("Hit-Rate Calc")
                 .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    Button(action: { showingSettings = true }) {
+                        Image(systemName: "gearshape")
+                            .foregroundColor(.primary)
+                    }
+                }
                 .navigationDestination(for: StatsContainerInfo.self, destination: { info in
                     UnitListView(currentVision: dataModel.getVisionToReplace(info: info))
                         .navigationTitle("Unit List")
@@ -27,6 +34,9 @@ struct HitRateCoordinatorView: View {
                             dataModel.selectedInfo = nil
                         }.navigationTitle(info.title)
                     }
+                }
+                .sheet(isPresented: $showingSettings) {
+                    SettingsView()
                 }
         }
     }
