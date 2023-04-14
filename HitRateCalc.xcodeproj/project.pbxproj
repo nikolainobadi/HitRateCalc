@@ -21,6 +21,7 @@
 		D451DEF42970A0D300486EEE /* Trait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEF32970A0D300486EEE /* Trait.swift */; };
 		D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */; };
 		D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEFA2970A53C00486EEE /* TraitList.swift */; };
+		D45540E729E8DA5B00440D66 /* UnitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45540E629E8DA5B00440D66 /* UnitListView.swift */; };
 		D4BA87A72970E021009977D4 /* EditableTraitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87A62970E021009977D4 /* EditableTraitList.swift */; };
 		D4BA87AA2970E083009977D4 /* OldHitRateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87A92970E083009977D4 /* OldHitRateDataModel.swift */; };
 		D4BA87AF2970E332009977D4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87AE2970E332009977D4 /* SettingsView.swift */; };
@@ -68,6 +69,7 @@
 		D451DEF32970A0D300486EEE /* Trait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trait.swift; sourceTree = "<group>"; };
 		D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalculator.swift; sourceTree = "<group>"; };
 		D451DEFA2970A53C00486EEE /* TraitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitList.swift; sourceTree = "<group>"; };
+		D45540E629E8DA5B00440D66 /* UnitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitListView.swift; sourceTree = "<group>"; };
 		D4BA87A62970E021009977D4 /* EditableTraitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableTraitList.swift; sourceTree = "<group>"; };
 		D4BA87A92970E083009977D4 /* OldHitRateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldHitRateDataModel.swift; sourceTree = "<group>"; };
 		D4BA87AE2970E332009977D4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				D450523F29E86E660024D519 /* HitRateView.swift */,
 				D450524129E870680024D519 /* SwitchButton.swift */,
 				D450524329E8712C0024D519 /* FinalResultView.swift */,
+				D45540E629E8DA5B00440D66 /* UnitListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				D4DD9DD129E85EFC0068777A /* BindIntFocusStateViewModifier.swift in Sources */,
 				D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */,
 				D450524629E874CB0024D519 /* HitRateDataModel.swift in Sources */,
+				D45540E729E8DA5B00440D66 /* UnitListView.swift in Sources */,
 				D450524229E870680024D519 /* SwitchButton.swift in Sources */,
 				D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */,
 				D409B7BD2970C144004CFA64 /* RoundedBorderViewModifier.swift in Sources */,

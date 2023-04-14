@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Vision {
+struct Vision: Identifiable {
     var id: String = UUID().uuidString
     var name: String = ""
     var luck: Int = 0
