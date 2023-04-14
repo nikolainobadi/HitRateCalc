@@ -10,22 +10,15 @@ import SwiftUI
 struct VisionStatsContainer: View {
     let viewModel: StatsContainerInfo
     let resetValues: () -> Void
-    let showUnitList: (Vision) -> Void
+    let showUnitList: (StatsContainerInfo) -> Void
     
     private var canResetValues: Bool { viewModel.statList.map({ $0.amount }).reduce(0, +) != 0 }
-    
-    private func selectNewUnit() {
-        switch viewModel {
-        case .evasion(let vision): showUnitList(vision)
-        case .accuracy(let vision): showUnitList(vision)
-        }
-    }
     
     var body: some View {
         VStack(spacing: 0) {
             // MARK: - TODO
             // setUnit will lead to unitList
-            StatHeader(title: viewModel.title, action: selectNewUnit)
+            StatHeader(title: viewModel.title, action: { showUnitList(viewModel) })
             
             HStack {
                 StatList(statList: viewModel.statList)

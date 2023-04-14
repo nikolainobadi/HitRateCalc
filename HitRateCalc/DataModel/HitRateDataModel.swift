@@ -25,17 +25,17 @@ extension HitRateDataModel {
     func resetDefender() { defender = Vision() }
     func editAttacker() { selectedInfo = .accuracy(attacker) }
     func editDefender() { selectedInfo = .evasion(defender) }
-    func getVisionToReplace(id: UUID) -> Binding<Vision> {
+    func getVisionToReplace(info: StatsContainerInfo) -> Binding<Vision> {
         Binding<Vision> {
-            if self.attacker.id == id { return self.attacker }
-            if self.defender.id == id { return self.defender }
-            
-            fatalError("should not occur")
+            switch info {
+            case .evasion: return self.defender
+            case .accuracy: return self.attacker
+            }
         } set: { newValue in
-            if self.attacker.id == id { self.attacker = newValue }
-            if self.defender.id == id { self.defender = newValue }
-            
-            fatalError("should not occur")
+            switch info {
+            case .evasion: self.defender = newValue
+            case .accuracy: self.attacker = newValue
+            }
         }
     }
 }
