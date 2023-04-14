@@ -106,3 +106,26 @@ private extension VisionDetailsDataModel {
         if accuracy == "0" { accuracy = "" }
     }
 }
+
+
+// MARK: - Dependencies
+protocol VisionStore {
+    func saveVision(_ vision: Vision) throws
+}
+
+final class VisionStoreAdapter {
+    private let store: VisionStore
+    private let completion: (Vision) -> Void
+    
+    init(store: VisionStore, completion: @escaping (Vision) -> Void) {
+        self.store = store
+        self.completion = completion
+    }
+}
+
+extension VisionStoreAdapter: VisionStore {
+    func saveVision(_ vision: Vision) throws {
+        try store.saveVision(vision)
+        completion(vision)
+    }
+}
