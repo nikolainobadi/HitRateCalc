@@ -12,6 +12,7 @@ struct VisionStatsContainer: View {
     let resetValues: () -> Void
     let showUnitList: (StatsContainerInfo) -> Void
     
+    private var visionName: String { viewModel.vision.name }
     private var canResetValues: Bool { viewModel.statList.map({ $0.amount }).reduce(0, +) != 0 }
     
     var body: some View {
@@ -20,24 +21,34 @@ struct VisionStatsContainer: View {
             // setUnit will lead to unitList
             StatHeader(title: viewModel.title, action: { showUnitList(viewModel) })
             
-            HStack {
-                StatList(statList: viewModel.statList)
+            
+            VStack(spacing: 0) {
+                Text(visionName)
+                    .font(.title.bold())
+                    .frame(maxWidth: .infinity)
+                    .background(Color(uiColor: .secondarySystemBackground))
+                    .onlyShow(when: !visionName.isEmpty)
+                    
                 Divider()
-                    .background(.primary)
-                    .frame(maxHeight: getHeightPercent(21))
-                VStack {
-                    Spacer()
-                    Text("\(viewModel.statRate)%")
-                        .lineLimit(1)
-                        .font(.largeTitle)
-                        .minimumScaleFactor(0.5)
-                        .frame(maxWidth: getWidthPercent(25))
-                    Spacer()
-                    Button("Reset Values", action: resetValues)
-                        .underline()
-                        .padding()
-                        .onlyShow(when: canResetValues)
-                }.frame(maxHeight: getHeightPercent(21))
+                HStack {
+                    StatList(statList: viewModel.statList)
+                    Divider()
+                        .background(.primary)
+                        .frame(maxHeight: getHeightPercent(21))
+                    VStack {
+                        Spacer()
+                        Text("\(viewModel.statRate)%")
+                            .lineLimit(1)
+                            .font(.largeTitle)
+                            .minimumScaleFactor(0.5)
+                            .frame(maxWidth: getWidthPercent(25))
+                        Spacer()
+                        Button("Reset Values", action: resetValues)
+                            .underline()
+                            .padding()
+                            .onlyShow(when: canResetValues)
+                    }.frame(maxHeight: getHeightPercent(21))
+                }
             }.withRoundedBorder()
         }
     }
@@ -100,6 +111,6 @@ fileprivate struct StatList: View {
 // MARK: - Preview
 struct VisionStatsContainer_Previews: PreviewProvider {
     static var previews: some View {
-        VisionStatsContainer(viewModel: .accuracy(Vision()), resetValues: { }, showUnitList: { _ in })
+        VisionStatsContainer(viewModel: .accuracy(Vision(name: "Eliza")), resetValues: { }, showUnitList: { _ in })
     }
 }

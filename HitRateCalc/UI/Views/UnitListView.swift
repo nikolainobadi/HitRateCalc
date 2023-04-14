@@ -10,6 +10,7 @@ import SwiftUI
 struct UnitListView: View {
     @Binding var currentVision: Vision
     @State private var selectedVision: Vision?
+    @Environment(\.dismiss) private var dismiss
     @FetchRequest(fetchRequest: VisionEntity.all()) private var entities: FetchedResults<VisionEntity>
     
     private var visions: [Vision] { entities.map({ Vision(entity: $0) }) }
@@ -42,6 +43,7 @@ struct UnitListView: View {
                         .contentShape(Rectangle())
                         .onTapGesture {
                             currentVision = vision
+                            dismiss()
                         }
                             
                         Button(action: { selectedVision = vision }) {
