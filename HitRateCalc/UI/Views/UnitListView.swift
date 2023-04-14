@@ -28,8 +28,13 @@ struct UnitListView: View {
                         Text(vision.name)
                             .padding()
                             .font(.title)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
                         Spacer()
-                        Image(systemName: "info.circle")
+                        Button(action: { }) {
+                            Image(systemName: "info.circle")
+                                .font(.title3)
+                        }.padding()
                     }
                 }
             }
@@ -49,7 +54,7 @@ extension Vision {
     static let defaultList: [Vision] = [
         Vision(name: "Eliza", luck: 344, agility: 103, dexterity: 630, evasion: 16, accuracy: 128),
         Vision(name: "Alaya", luck: 333, agility: 104, dexterity: 504, evasion: 28, accuracy: 59),
-        Vision(name: "Bold Leela", luck: 554, agility: 101, dexterity: 500, evasion: 94, accuracy: 75),
+        Vision(name: "Leela the Bold", luck: 554, agility: 101, dexterity: 500, evasion: 94, accuracy: 75),
         Vision(name: "Joker", luck: 502, agility: 104, dexterity: 447, evasion: 97, accuracy: 59)
     ]
 }
