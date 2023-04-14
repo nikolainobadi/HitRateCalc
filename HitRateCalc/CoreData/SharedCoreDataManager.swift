@@ -36,10 +36,49 @@ extension SharedCoreDataManager {
 
 // MARK: - Store
 extension SharedCoreDataManager: VisionStore {
-    func saveVision(_ vision: Vision) throws {
-        guard viewContext.hasChanges else { return }
+    func saveVision(_ vision: Vision) async throws {
+        if let existingEntity = getVisionEntity(vision) {
+            updateExistingEntity(entity: existingEntity, newData: vision)
+        } else {
+            addNewVision(vision)
+        }
         
-//        try viewContext.save()
+        try await viewContext.perform { [unowned self] in
+            try viewContext.save()
+        }
+    }
+}
+
+
+// MARK: - Private Methods
+private extension SharedCoreDataManager {
+    func getVisionEntity(_ vision: Vision) -> VisionEntity? {
+        let request: NSFetchRequest<VisionEntity>
+        request = VisionEntity.fetchRequest()
+        request.fetchLimit = 1
+        request.predicate = NSPredicate(format: "id == %@", vision.id as CVarArg)
+        
+        guard let result = try? container.viewContext.fetch(request).first else {
+            return nil
+        }
+        
+        return result
+    }
+    
+    func updateExistingEntity(entity: VisionEntity, newData: Vision) {
+        entity.name = newData.name
+        entity.luck = newData.luck.toInt16
+        entity.agility = newData.agility.toInt16
+        entity.dexterity = newData.dexterity.toInt16
+        entity.evasion = newData.evasion.toInt16
+        entity.accuracy = newData.accuracy.toInt16
+    }
+    
+    func addNewVision(_ vision: Vision) {
+        let newEntity = VisionEntity(context: viewContext)
+        newEntity.id = vision.id
+        
+        updateExistingEntity(entity: newEntity, newData: vision)
     }
 }
 
@@ -47,4 +86,8 @@ extension SharedCoreDataManager: VisionStore {
 // MARK: - Dependencies
 extension EnvironmentValues {
     static var isPreview: Bool { ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" }
+}
+
+extension Int {
+    var toInt16: Int16 { Int16(self) }
 }

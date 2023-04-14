@@ -110,7 +110,7 @@ private extension VisionDetailsDataModel {
 
 // MARK: - Dependencies
 protocol VisionStore {
-    func saveVision(_ vision: Vision) throws
+    func saveVision(_ vision: Vision) async throws
 }
 
 final class VisionStoreAdapter {
@@ -124,8 +124,8 @@ final class VisionStoreAdapter {
 }
 
 extension VisionStoreAdapter: VisionStore {
-    func saveVision(_ vision: Vision) throws {
-        try store.saveVision(vision)
+    func saveVision(_ vision: Vision) async throws {
+        try await store.saveVision(vision)
         completion(vision)
     }
 }
