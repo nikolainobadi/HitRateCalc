@@ -37,7 +37,7 @@ struct UnitListView: View {
                             .lineLimit(1)
                             .minimumScaleFactor(0.5)
                         Spacer()
-                        Button(action: { }) {
+                        Button(action: { selectedVision = vision }) {
                             Image(systemName: "info.circle")
                                 .font(.title3)
                         }.padding()
@@ -45,11 +45,12 @@ struct UnitListView: View {
                 }
             }
         }.sheet(item: $selectedVision) { vision in
-            let dataModel = VisionDetailsDataModel(vision: vision, state: .allDetails) { updatedVision in
-                currentVision = updatedVision
+            NavigationStack {
+                VisionDetailsView(dataModel: VisionDetailsDataModel(vision: vision, state: .allDetails) { updatedVision in
+                    /// should be stored in attacker/defender in HitRateDataModel
+                    currentVision = updatedVision
+                }).navigationTitle(vision.name.isEmpty ? "Add New Vision" : vision.name)
             }
-            
-            VisionDetailsView(dataModel: dataModel)
         }
     }
 }
@@ -65,6 +66,8 @@ struct UnitListView_Previews: PreviewProvider {
     }
 }
 
+
+// MARK: - Helpers
 extension Vision {
     init(entity: VisionEntity) {
         self.init(id: entity.id ?? UUID(), name: entity.name, luck: entity.luck.toInt, agility: entity.agility.toInt, dexterity: entity.dexterity.toInt, evasion: entity.evasion.toInt, accuracy: entity.accuracy.toInt)

@@ -57,6 +57,7 @@ extension VisionDetailsDataModel {
         }
     }
     
+    func focusFirstField() { focusedIndex = availableFieldIndices.first }
     func nextButtonAction() {
         guard let focusedIndex = focusedIndex else { return }
         guard let currentIndex = availableFieldIndices.firstIndex(where: { $0 == focusedIndex }) else { return }

@@ -74,7 +74,7 @@ fileprivate struct StatsForm: View {
                 StatTextField("Accuracy", text: $dataModel.accuracy)
                     .focused($focusedIndex, equals: 5)
             }.onlyShow(when: dataModel.showAccuracy)
-        }
+        }.onAppear { dataModel.focusFirstField() }
     }
 }
 
@@ -85,6 +85,9 @@ fileprivate struct StatTextField: View {
     
     let title: String
     let keyboardType: UIKeyboardType
+    
+    private var textLimit: Int { keyboardType == .numberPad ? 3 : 30 }
+    private var prompt: String { keyboardType == .numberPad ? "100" : "Unit Name..." }
     
     init(_ title: String, text: Binding<String>, keyboardType: UIKeyboardType = .numberPad) {
         self.title = title
@@ -99,12 +102,12 @@ fileprivate struct StatTextField: View {
                 .font(.title3)
                 .minimumScaleFactor(0.5)
                 .frame(maxWidth: getWidthPercent(20), alignment: .leading)
-            TextField("100", text: $text)
+            TextField(prompt, text: $text)
                 .keyboardType(keyboardType)
                 .textFieldStyle(.roundedBorder)
                 .multilineTextAlignment(.center)
         }.onChange(of: text) { newValue in
-            if newValue.count > 3 {
+            if newValue.count > textLimit {
                 text = String(newValue.prefix(3))
             }
         }
