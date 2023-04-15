@@ -16,21 +16,15 @@
 		D450524429E8712C0024D519 /* FinalResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D450524329E8712C0024D519 /* FinalResultView.swift */; };
 		D450524629E874CB0024D519 /* HitRateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D450524529E874CB0024D519 /* HitRateDataModel.swift */; };
 		D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEC529709FE500486EEE /* HitRateCalcApp.swift */; };
-		D451DEC829709FE500486EEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEC729709FE500486EEE /* ContentView.swift */; };
 		D451DECA29709FE600486EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D451DEC929709FE600486EEE /* Assets.xcassets */; };
 		D451DECD29709FE600486EEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D451DECC29709FE600486EEE /* Preview Assets.xcassets */; };
-		D451DEF42970A0D300486EEE /* Trait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEF32970A0D300486EEE /* Trait.swift */; };
 		D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */; };
-		D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D451DEFA2970A53C00486EEE /* TraitList.swift */; };
 		D45540E729E8DA5B00440D66 /* UnitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45540E629E8DA5B00440D66 /* UnitListView.swift */; };
 		D45540EB29E8DD9E00440D66 /* HitRateCalcCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D45540E929E8DD9E00440D66 /* HitRateCalcCoreDataModel.xcdatamodeld */; };
 		D45540F229E8DF8D00440D66 /* SharedCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45540F129E8DF8D00440D66 /* SharedCoreDataManager.swift */; };
-		D4BA87A72970E021009977D4 /* EditableTraitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87A62970E021009977D4 /* EditableTraitList.swift */; };
-		D4BA87AA2970E083009977D4 /* OldHitRateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87A92970E083009977D4 /* OldHitRateDataModel.swift */; };
 		D4BA87AF2970E332009977D4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87AE2970E332009977D4 /* SettingsView.swift */; };
 		D4BA87B12970E5C3009977D4 /* SettingsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87B02970E5C3009977D4 /* SettingsDataModel.swift */; };
 		D4BA87B32970E5E6009977D4 /* AppRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87B22970E5E6009977D4 /* AppRateManager.swift */; };
-		D4BA87C22970E799009977D4 /* HitRateDataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87C12970E799009977D4 /* HitRateDataModelTests.swift */; };
 		D4BA87C42970E7BC009977D4 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87C32970E7BC009977D4 /* XCTestCase+Extensions.swift */; };
 		D4BA87C62970EE46009977D4 /* SettingsDataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA87C52970EE46009977D4 /* SettingsDataModelTests.swift */; };
 		D4DD9DC729E853BA0068777A /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DC629E853BA0068777A /* Vision.swift */; };
@@ -73,22 +67,16 @@
 		D450524529E874CB0024D519 /* HitRateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateDataModel.swift; sourceTree = "<group>"; };
 		D451DEC229709FE500486EEE /* HitRateCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HitRateCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D451DEC529709FE500486EEE /* HitRateCalcApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalcApp.swift; sourceTree = "<group>"; };
-		D451DEC729709FE500486EEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D451DEC929709FE600486EEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D451DECC29709FE600486EEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D451DED229709FE600486EEE /* HitRateCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HitRateCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D451DEF32970A0D300486EEE /* Trait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trait.swift; sourceTree = "<group>"; };
 		D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateCalculator.swift; sourceTree = "<group>"; };
-		D451DEFA2970A53C00486EEE /* TraitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitList.swift; sourceTree = "<group>"; };
 		D45540E629E8DA5B00440D66 /* UnitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitListView.swift; sourceTree = "<group>"; };
 		D45540EA29E8DD9E00440D66 /* HitRateCalcCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HitRateCalcCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		D45540F129E8DF8D00440D66 /* SharedCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCoreDataManager.swift; sourceTree = "<group>"; };
-		D4BA87A62970E021009977D4 /* EditableTraitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableTraitList.swift; sourceTree = "<group>"; };
-		D4BA87A92970E083009977D4 /* OldHitRateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldHitRateDataModel.swift; sourceTree = "<group>"; };
 		D4BA87AE2970E332009977D4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D4BA87B02970E5C3009977D4 /* SettingsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDataModel.swift; sourceTree = "<group>"; };
 		D4BA87B22970E5E6009977D4 /* AppRateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRateManager.swift; sourceTree = "<group>"; };
-		D4BA87C12970E799009977D4 /* HitRateDataModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitRateDataModelTests.swift; sourceTree = "<group>"; };
 		D4BA87C32970E7BC009977D4 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		D4BA87C52970EE46009977D4 /* SettingsDataModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDataModelTests.swift; sourceTree = "<group>"; };
 		D4DD9DC629E853BA0068777A /* Vision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
@@ -132,7 +120,6 @@
 		D409B7BA2970C12B004CFA64 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D4E4ABA529EA1B5900EDAFA9 /* Old */,
 				D450523F29E86E660024D519 /* HitRateView.swift */,
 				D4DD9DD229E8618B0068777A /* VisionStatsContainer.swift */,
 				D450524129E870680024D519 /* SwitchButton.swift */,
@@ -209,7 +196,6 @@
 		D451DED529709FE600486EEE /* HitRateCalcTests */ = {
 			isa = PBXGroup;
 			children = (
-				D4BA87C12970E799009977D4 /* HitRateDataModelTests.swift */,
 				D4BA87C32970E7BC009977D4 /* XCTestCase+Extensions.swift */,
 				D4BA87C52970EE46009977D4 /* SettingsDataModelTests.swift */,
 				D4DD9DDC29E86A730068777A /* StatsContainerInfoTests.swift */,
@@ -249,7 +235,6 @@
 		D451DEF22970A0C200486EEE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D451DEF32970A0D300486EEE /* Trait.swift */,
 				D4DD9DC629E853BA0068777A /* Vision.swift */,
 				D4DD9DD629E868960068777A /* VisionStat.swift */,
 			);
@@ -279,7 +264,6 @@
 		D4BA87A82970E074009977D4 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				D4BA87A92970E083009977D4 /* OldHitRateDataModel.swift */,
 				D4BA87B02970E5C3009977D4 /* SettingsDataModel.swift */,
 				D4DD9DCC29E85E7F0068777A /* VisionDetailsDataModel.swift */,
 				D450524529E874CB0024D519 /* HitRateDataModel.swift */,
@@ -294,16 +278,6 @@
 				D4DD9DD829E868FF0068777A /* StatsContainerInfo.swift */,
 			);
 			path = Shared;
-			sourceTree = "<group>";
-		};
-		D4E4ABA529EA1B5900EDAFA9 /* Old */ = {
-			isa = PBXGroup;
-			children = (
-				D451DEFA2970A53C00486EEE /* TraitList.swift */,
-				D4BA87A62970E021009977D4 /* EditableTraitList.swift */,
-				D451DEC729709FE500486EEE /* ContentView.swift */,
-			);
-			path = Old;
 			sourceTree = "<group>";
 		};
 		D4E4ABAC29EA29E800EDAFA9 /* AdMob */ = {
@@ -425,14 +399,12 @@
 			files = (
 				D4DD9DCD29E85E7F0068777A /* VisionDetailsDataModel.swift in Sources */,
 				D405854A29E8849500DE83D8 /* HitRateCoordinatorView.swift in Sources */,
-				D451DEC829709FE500486EEE /* ContentView.swift in Sources */,
 				D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */,
 				D4E4ABB529EA2AAE00EDAFA9 /* AppOpenManager.swift in Sources */,
 				D4DD9DD729E868960068777A /* VisionStat.swift in Sources */,
 				D45540EB29E8DD9E00440D66 /* HitRateCalcCoreDataModel.xcdatamodeld in Sources */,
 				D4389E2829E9E098009AD708 /* VisionEntity.swift in Sources */,
 				D450524429E8712C0024D519 /* FinalResultView.swift in Sources */,
-				D451DEF42970A0D300486EEE /* Trait.swift in Sources */,
 				D4DD9DD329E8618B0068777A /* VisionStatsContainer.swift in Sources */,
 				D450524029E86E660024D519 /* HitRateView.swift in Sources */,
 				D4E4ABA929EA277B00EDAFA9 /* IntTextField.swift in Sources */,
@@ -441,12 +413,10 @@
 				D4E4ABAE29EA29F300EDAFA9 /* AdMobId.swift in Sources */,
 				D4DD9DCF29E85ED20068777A /* VisionDetailState.swift in Sources */,
 				D4DD9DC929E854080068777A /* VisionDetailsView.swift in Sources */,
-				D4BA87A72970E021009977D4 /* EditableTraitList.swift in Sources */,
 				D4DD9DCB29E857770068777A /* ConditionalDisplayViewModifier.swift in Sources */,
 				D4BA87AF2970E332009977D4 /* SettingsView.swift in Sources */,
 				D4DD9DD929E868FF0068777A /* StatsContainerInfo.swift in Sources */,
 				D4DD9DD129E85EFC0068777A /* BindIntFocusStateViewModifier.swift in Sources */,
-				D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */,
 				D4E4ABB729EA2C0300EDAFA9 /* LaunchCoordinatorView.swift in Sources */,
 				D450524629E874CB0024D519 /* HitRateDataModel.swift in Sources */,
 				D45540E729E8DA5B00440D66 /* UnitListView.swift in Sources */,
@@ -454,7 +424,6 @@
 				D4E4ABAB29EA28DD00EDAFA9 /* VisionStoreAdapter.swift in Sources */,
 				D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */,
 				D409B7BD2970C144004CFA64 /* RoundedBorderViewModifier.swift in Sources */,
-				D4BA87AA2970E083009977D4 /* OldHitRateDataModel.swift in Sources */,
 				D4DD9DC729E853BA0068777A /* Vision.swift in Sources */,
 				D4BA87B32970E5E6009977D4 /* AppRateManager.swift in Sources */,
 				D45540F229E8DF8D00440D66 /* SharedCoreDataManager.swift in Sources */,
@@ -468,7 +437,6 @@
 			files = (
 				D4BA87C62970EE46009977D4 /* SettingsDataModelTests.swift in Sources */,
 				D4DD9DDD29E86A730068777A /* StatsContainerInfoTests.swift in Sources */,
-				D4BA87C22970E799009977D4 /* HitRateDataModelTests.swift in Sources */,
 				D4BA87C42970E7BC009977D4 /* XCTestCase+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
