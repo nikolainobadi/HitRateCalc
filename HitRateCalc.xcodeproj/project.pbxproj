@@ -46,6 +46,7 @@
 		D4E4ABA929EA277B00EDAFA9 /* IntTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABA829EA277B00EDAFA9 /* IntTextField.swift */; };
 		D4E4ABAB29EA28DD00EDAFA9 /* VisionStoreAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABAA29EA28DD00EDAFA9 /* VisionStoreAdapter.swift */; };
 		D4E4ABAE29EA29F300EDAFA9 /* AdMobId.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABAD29EA29F300EDAFA9 /* AdMobId.swift */; };
+		D4E4ABB129EA2A3C00EDAFA9 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = D4E4ABB029EA2A3C00EDAFA9 /* GoogleMobileAds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4E4ABB129EA2A3C00EDAFA9 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +323,9 @@
 			dependencies = (
 			);
 			name = HitRateCalc;
+			packageProductDependencies = (
+				D4E4ABB029EA2A3C00EDAFA9 /* GoogleMobileAds */,
+			);
 			productName = HitRateCalc;
 			productReference = D451DEC229709FE500486EEE /* HitRateCalc.app */;
 			productType = "com.apple.product-type.application";
@@ -372,6 +377,9 @@
 				Base,
 			);
 			mainGroup = D451DEB929709FE500486EEE;
+			packageReferences = (
+				D4E4ABAF29EA2A3C00EDAFA9 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = D451DEC329709FE500486EEE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -734,6 +742,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D4E4ABAF29EA2A3C00EDAFA9 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D4E4ABB029EA2A3C00EDAFA9 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4E4ABAF29EA2A3C00EDAFA9 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D45540E929E8DD9E00440D66 /* HitRateCalcCoreDataModel.xcdatamodeld */ = {
