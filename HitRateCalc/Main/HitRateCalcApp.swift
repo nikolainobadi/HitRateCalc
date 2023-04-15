@@ -19,10 +19,19 @@ struct AppLauncher {
 }
 
 struct HitRateCalcApp: App {
+    @Environment(\.scenePhase) private var scenePhase
+    @AppStorage(AppStorageKey.initialLaunch) var isInitialLaunch = true
+    
     var body: some Scene {
         WindowGroup {
-            HitRateCoordinatorView()
+            LaunchCoordinatorView(isInitialLaunch: $isInitialLaunch)
                 .environment(\.managedObjectContext, SharedCoreDataManager.shared.viewContext)
+        }.onChange(of: scenePhase) { phase in
+            if phase == .active {
+                if !isInitialLaunch {
+                    AppOpenAdManager.shared.showAdIfAvailable()
+                }
+            }
         }
     }
 }
@@ -38,3 +47,6 @@ struct TestApp: App {
     }
 }
 
+enum AppStorageKey {
+    static let initialLaunch = "INITIAL_LAUNCH"
+}

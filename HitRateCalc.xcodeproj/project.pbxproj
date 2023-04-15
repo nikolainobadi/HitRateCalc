@@ -45,6 +45,11 @@
 		D4DD9DDD29E86A730068777A /* StatsContainerInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DDC29E86A730068777A /* StatsContainerInfoTests.swift */; };
 		D4E4ABA929EA277B00EDAFA9 /* IntTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABA829EA277B00EDAFA9 /* IntTextField.swift */; };
 		D4E4ABAB29EA28DD00EDAFA9 /* VisionStoreAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABAA29EA28DD00EDAFA9 /* VisionStoreAdapter.swift */; };
+		D4E4ABAE29EA29F300EDAFA9 /* AdMobId.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABAD29EA29F300EDAFA9 /* AdMobId.swift */; };
+		D4E4ABB129EA2A3C00EDAFA9 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = D4E4ABB029EA2A3C00EDAFA9 /* GoogleMobileAds */; };
+		D4E4ABB329EA2A7200EDAFA9 /* ATTAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABB229EA2A7200EDAFA9 /* ATTAdapter.swift */; };
+		D4E4ABB529EA2AAE00EDAFA9 /* AppOpenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABB429EA2AAE00EDAFA9 /* AppOpenManager.swift */; };
+		D4E4ABB729EA2C0300EDAFA9 /* LaunchCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABB629EA2C0300EDAFA9 /* LaunchCoordinatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +104,10 @@
 		D4E4ABA429EA1A1000EDAFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4E4ABA829EA277B00EDAFA9 /* IntTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextField.swift; sourceTree = "<group>"; };
 		D4E4ABAA29EA28DD00EDAFA9 /* VisionStoreAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionStoreAdapter.swift; sourceTree = "<group>"; };
+		D4E4ABAD29EA29F300EDAFA9 /* AdMobId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobId.swift; sourceTree = "<group>"; };
+		D4E4ABB229EA2A7200EDAFA9 /* ATTAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATTAdapter.swift; sourceTree = "<group>"; };
+		D4E4ABB429EA2AAE00EDAFA9 /* AppOpenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenManager.swift; sourceTree = "<group>"; };
+		D4E4ABB629EA2C0300EDAFA9 /* LaunchCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCoordinatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4E4ABB129EA2A3C00EDAFA9 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +190,7 @@
 				D451DEF52970A18700486EEE /* Logic */,
 				D451DEF22970A0C200486EEE /* Model */,
 				D45540E829E8DD7500440D66 /* CoreData */,
+				D4E4ABAC29EA29E800EDAFA9 /* AdMob */,
 				D4DD9DD529E868660068777A /* Shared */,
 				D451DEF12970A00E00486EEE /* Resources */,
 				D451DECB29709FE600486EEE /* Preview Content */,
@@ -211,6 +222,7 @@
 			children = (
 				D451DEC529709FE500486EEE /* HitRateCalcApp.swift */,
 				D405854929E8849500DE83D8 /* HitRateCoordinatorView.swift */,
+				D4E4ABB629EA2C0300EDAFA9 /* LaunchCoordinatorView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -294,6 +306,16 @@
 			path = Old;
 			sourceTree = "<group>";
 		};
+		D4E4ABAC29EA29E800EDAFA9 /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				D4E4ABAD29EA29F300EDAFA9 /* AdMobId.swift */,
+				D4E4ABB229EA2A7200EDAFA9 /* ATTAdapter.swift */,
+				D4E4ABB429EA2AAE00EDAFA9 /* AppOpenManager.swift */,
+			);
+			path = AdMob;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -310,6 +332,9 @@
 			dependencies = (
 			);
 			name = HitRateCalc;
+			packageProductDependencies = (
+				D4E4ABB029EA2A3C00EDAFA9 /* GoogleMobileAds */,
+			);
 			productName = HitRateCalc;
 			productReference = D451DEC229709FE500486EEE /* HitRateCalc.app */;
 			productType = "com.apple.product-type.application";
@@ -361,6 +386,9 @@
 				Base,
 			);
 			mainGroup = D451DEB929709FE500486EEE;
+			packageReferences = (
+				D4E4ABAF29EA2A3C00EDAFA9 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = D451DEC329709FE500486EEE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -399,6 +427,7 @@
 				D405854A29E8849500DE83D8 /* HitRateCoordinatorView.swift in Sources */,
 				D451DEC829709FE500486EEE /* ContentView.swift in Sources */,
 				D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */,
+				D4E4ABB529EA2AAE00EDAFA9 /* AppOpenManager.swift in Sources */,
 				D4DD9DD729E868960068777A /* VisionStat.swift in Sources */,
 				D45540EB29E8DD9E00440D66 /* HitRateCalcCoreDataModel.xcdatamodeld in Sources */,
 				D4389E2829E9E098009AD708 /* VisionEntity.swift in Sources */,
@@ -409,6 +438,7 @@
 				D4E4ABA929EA277B00EDAFA9 /* IntTextField.swift in Sources */,
 				D4BA87B12970E5C3009977D4 /* SettingsDataModel.swift in Sources */,
 				D409B7C02970C20E004CFA64 /* View+Extensions.swift in Sources */,
+				D4E4ABAE29EA29F300EDAFA9 /* AdMobId.swift in Sources */,
 				D4DD9DCF29E85ED20068777A /* VisionDetailState.swift in Sources */,
 				D4DD9DC929E854080068777A /* VisionDetailsView.swift in Sources */,
 				D4BA87A72970E021009977D4 /* EditableTraitList.swift in Sources */,
@@ -417,6 +447,7 @@
 				D4DD9DD929E868FF0068777A /* StatsContainerInfo.swift in Sources */,
 				D4DD9DD129E85EFC0068777A /* BindIntFocusStateViewModifier.swift in Sources */,
 				D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */,
+				D4E4ABB729EA2C0300EDAFA9 /* LaunchCoordinatorView.swift in Sources */,
 				D450524629E874CB0024D519 /* HitRateDataModel.swift in Sources */,
 				D45540E729E8DA5B00440D66 /* UnitListView.swift in Sources */,
 				D450524229E870680024D519 /* SwitchButton.swift in Sources */,
@@ -427,6 +458,7 @@
 				D4DD9DC729E853BA0068777A /* Vision.swift in Sources */,
 				D4BA87B32970E5E6009977D4 /* AppRateManager.swift in Sources */,
 				D45540F229E8DF8D00440D66 /* SharedCoreDataManager.swift in Sources */,
+				D4E4ABB329EA2A7200EDAFA9 /* ATTAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,6 +754,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D4E4ABAF29EA2A3C00EDAFA9 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D4E4ABB029EA2A3C00EDAFA9 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4E4ABAF29EA2A3C00EDAFA9 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D45540E929E8DD9E00440D66 /* HitRateCalcCoreDataModel.xcdatamodeld */ = {
