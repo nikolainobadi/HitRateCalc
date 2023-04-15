@@ -15,6 +15,21 @@ struct UnitListView: View {
     
     private var visions: [Vision] { entities.map({ Vision(entity: $0) }) }
     
+    private func deleteVision(_ vision: Vision) {
+        // MARK: - TODO -> encapsulate
+        if vision.id == currentVision.id {
+            currentVision = Vision()
+        }
+        
+        Task {
+            do {
+                try await SharedCoreDataManager.shared.deleteVision(vision)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     var body: some View {
         List {
             Section {
@@ -28,28 +43,37 @@ struct UnitListView: View {
             }
             
             Section("Available Units") {
-                ForEach(visions) { vision in
-                    HStack {
+                if visions.isEmpty {
+                    EmptyListView()
+                } else {
+                    ForEach(visions) { vision in
                         HStack {
-                            Image(systemName: "checkmark")
-                                .onlyShow(when: vision.id == currentVision.id)
-                            Text(vision.name)
-                                .padding()
-                                .font(vision.id == currentVision.id ? .title : .title3)
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.5)
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                            HStack {
+                                Image(systemName: "checkmark")
+                                    .onlyShow(when: vision.id == currentVision.id)
+                                Text(vision.name)
+                                    .padding()
+                                    .font(vision.id == currentVision.id ? .title : .title3)
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.5)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                currentVision = vision
+                                dismiss()
+                            }
+                                
+                            Button(action: { selectedVision = vision }) {
+                                Image(systemName: "info.circle")
+                                    .font(.title3)
+                            }.padding()
                         }
-                        .contentShape(Rectangle())
-                        .onTapGesture {
-                            currentVision = vision
-                            dismiss()
+                        .swipeActions {
+                            Button(action: { deleteVision(vision) }) {
+                                Image(systemName: "trash")
+                            }.tint(.red)
                         }
-                            
-                        Button(action: { selectedVision = vision }) {
-                            Image(systemName: "info.circle")
-                                .font(.title3)
-                        }.padding()
                     }
                 }
             }
@@ -66,8 +90,27 @@ struct UnitListView: View {
                 
                 VisionDetailsView(dataModel: dataModel)
                     .navigationTitle(vision.name.isEmpty ? "Add New Vision" : vision.name)
+                    .navigationBarTitleDisplayMode(.large)
             }
         }
+    }
+}
+
+
+// MARK: - EmptyListView
+fileprivate struct EmptyListView: View {
+    var body: some View {
+        VStack(spacing: 15) {
+            Spacer()
+            Image(systemName: "tray")
+                .font(.largeTitle)
+            Text("No results found")
+                .font(.largeTitle)
+            Text("You haven't saved any units. Tap the button above to add your first unit!")
+                .multilineTextAlignment(.center)
+            
+            Spacer()
+        }.frame(maxWidth: .infinity)
     }
 }
 

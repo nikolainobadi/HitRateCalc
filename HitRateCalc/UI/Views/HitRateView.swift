@@ -12,9 +12,6 @@ struct HitRateView: View {
     @ObservedObject var dataModel: HitRateDataModel
     
     private var offset: CGFloat { getHeightPercent(20) }
-    private var evasionOffset: CGFloat { dataModel.checkingHitRate ? offset : -offset }
-    private var accuracyOffset: CGFloat { dataModel.checkingHitRate ? -offset : offset }
-    
     private func showUnitList(with info: StatsContainerInfo) { path.append(info) }
     
     var body: some View {
@@ -22,7 +19,7 @@ struct HitRateView: View {
             VStack {
                 ZStack {
                     VisionStatsContainer(viewModel: .accuracy(dataModel.attacker), resetValues: dataModel.resetAttacker, showUnitList: showUnitList(with:))
-                        .offset(y: accuracyOffset)
+                        .offset(y: dataModel.checkingHitRate ? -offset : offset)
                         .onTapGesture {
                             dataModel.editAttacker()
                         }
@@ -30,7 +27,7 @@ struct HitRateView: View {
                     SwitchButton(action: { dataModel.checkingHitRate.toggle() })
                     
                     VisionStatsContainer(viewModel: .evasion(dataModel.defender), resetValues: dataModel.resetDefender, showUnitList: showUnitList(with:))
-                        .offset(y: evasionOffset)
+                        .offset(y: dataModel.checkingHitRate ? offset : -offset)
                         .onTapGesture {
                             dataModel.editDefender()
                         }

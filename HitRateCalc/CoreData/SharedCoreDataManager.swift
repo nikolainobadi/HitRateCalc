@@ -42,10 +42,18 @@ extension SharedCoreDataManager: VisionStore {
         } else {
             addNewVision(vision)
         }
+    }
+}
+
+
+// MARK: - Delete
+extension SharedCoreDataManager {
+    func deleteVision(_ vision: Vision) async throws {
+        guard let entity = getVisionEntity(vision) else { throw CoreDataError.dataNotFound }
         
-        try await viewContext.perform { [unowned self] in
-            try viewContext.save()
-        }
+        viewContext.delete(entity)
+        
+        try await saveContext()
     }
 }
 
@@ -80,6 +88,12 @@ private extension SharedCoreDataManager {
         
         updateExistingEntity(entity: newEntity, newData: vision)
     }
+    
+    func saveContext() async throws {
+        try await viewContext.perform { [unowned self] in
+            try viewContext.save()
+        }
+    }
 }
 
 
@@ -94,4 +108,8 @@ extension Int {
 
 extension Int16 {
     var toInt: Int { Int(self) }
+}
+
+enum CoreDataError: Error {
+    case dataNotFound
 }
