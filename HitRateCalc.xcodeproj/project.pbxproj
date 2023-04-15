@@ -44,6 +44,7 @@
 		D4E4ABB329EA2A7200EDAFA9 /* ATTAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABB229EA2A7200EDAFA9 /* ATTAdapter.swift */; };
 		D4E4ABB529EA2AAE00EDAFA9 /* AppOpenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABB429EA2AAE00EDAFA9 /* AppOpenManager.swift */; };
 		D4E4ABB729EA2C0300EDAFA9 /* LaunchCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABB629EA2C0300EDAFA9 /* LaunchCoordinatorView.swift */; };
+		D4FB6BC229EB269C0006D60D /* AppStorageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB6BC129EB269C0006D60D /* AppStorageKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		D4E4ABB229EA2A7200EDAFA9 /* ATTAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATTAdapter.swift; sourceTree = "<group>"; };
 		D4E4ABB429EA2AAE00EDAFA9 /* AppOpenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenManager.swift; sourceTree = "<group>"; };
 		D4E4ABB629EA2C0300EDAFA9 /* LaunchCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCoordinatorView.swift; sourceTree = "<group>"; };
+		D4FB6BC129EB269C0006D60D /* AppStorageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +278,7 @@
 			children = (
 				D4DD9DCE29E85ED20068777A /* VisionDetailState.swift */,
 				D4DD9DD829E868FF0068777A /* StatsContainerInfo.swift */,
+				D4FB6BC129EB269C0006D60D /* AppStorageKey.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				D4E4ABA929EA277B00EDAFA9 /* IntTextField.swift in Sources */,
 				D4BA87B12970E5C3009977D4 /* SettingsDataModel.swift in Sources */,
 				D409B7C02970C20E004CFA64 /* View+Extensions.swift in Sources */,
+				D4FB6BC229EB269C0006D60D /* AppStorageKey.swift in Sources */,
 				D4E4ABAE29EA29F300EDAFA9 /* AdMobId.swift in Sources */,
 				D4DD9DCF29E85ED20068777A /* VisionDetailState.swift in Sources */,
 				D4DD9DC929E854080068777A /* VisionDetailsView.swift in Sources */,
