@@ -48,6 +48,7 @@
 		D4E4ABAE29EA29F300EDAFA9 /* AdMobId.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABAD29EA29F300EDAFA9 /* AdMobId.swift */; };
 		D4E4ABB129EA2A3C00EDAFA9 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = D4E4ABB029EA2A3C00EDAFA9 /* GoogleMobileAds */; };
 		D4E4ABB329EA2A7200EDAFA9 /* ATTAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABB229EA2A7200EDAFA9 /* ATTAdapter.swift */; };
+		D4E4ABB529EA2AAE00EDAFA9 /* AppOpenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABB429EA2AAE00EDAFA9 /* AppOpenManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		D4E4ABAA29EA28DD00EDAFA9 /* VisionStoreAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionStoreAdapter.swift; sourceTree = "<group>"; };
 		D4E4ABAD29EA29F300EDAFA9 /* AdMobId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobId.swift; sourceTree = "<group>"; };
 		D4E4ABB229EA2A7200EDAFA9 /* ATTAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATTAdapter.swift; sourceTree = "<group>"; };
+		D4E4ABB429EA2AAE00EDAFA9 /* AppOpenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +308,7 @@
 			children = (
 				D4E4ABAD29EA29F300EDAFA9 /* AdMobId.swift */,
 				D4E4ABB229EA2A7200EDAFA9 /* ATTAdapter.swift */,
+				D4E4ABB429EA2AAE00EDAFA9 /* AppOpenManager.swift */,
 			);
 			path = AdMob;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				D405854A29E8849500DE83D8 /* HitRateCoordinatorView.swift in Sources */,
 				D451DEC829709FE500486EEE /* ContentView.swift in Sources */,
 				D451DEF72970A1AF00486EEE /* HitRateCalculator.swift in Sources */,
+				D4E4ABB529EA2AAE00EDAFA9 /* AppOpenManager.swift in Sources */,
 				D4DD9DD729E868960068777A /* VisionStat.swift in Sources */,
 				D45540EB29E8DD9E00440D66 /* HitRateCalcCoreDataModel.xcdatamodeld in Sources */,
 				D4389E2829E9E098009AD708 /* VisionEntity.swift in Sources */,
