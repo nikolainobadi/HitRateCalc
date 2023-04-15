@@ -47,6 +47,8 @@ struct TestApp: App {
     }
 }
 
+
+// MARK: - Dependencies
 enum AppStorageKey {
     static let initialLaunch = "INITIAL_LAUNCH"
 }
