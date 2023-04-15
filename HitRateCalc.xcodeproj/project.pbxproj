@@ -49,6 +49,7 @@
 		D4E4ABB129EA2A3C00EDAFA9 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = D4E4ABB029EA2A3C00EDAFA9 /* GoogleMobileAds */; };
 		D4E4ABB329EA2A7200EDAFA9 /* ATTAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABB229EA2A7200EDAFA9 /* ATTAdapter.swift */; };
 		D4E4ABB529EA2AAE00EDAFA9 /* AppOpenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABB429EA2AAE00EDAFA9 /* AppOpenManager.swift */; };
+		D4E4ABB729EA2C0300EDAFA9 /* LaunchCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABB629EA2C0300EDAFA9 /* LaunchCoordinatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		D4E4ABAD29EA29F300EDAFA9 /* AdMobId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobId.swift; sourceTree = "<group>"; };
 		D4E4ABB229EA2A7200EDAFA9 /* ATTAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATTAdapter.swift; sourceTree = "<group>"; };
 		D4E4ABB429EA2AAE00EDAFA9 /* AppOpenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenManager.swift; sourceTree = "<group>"; };
+		D4E4ABB629EA2C0300EDAFA9 /* LaunchCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCoordinatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 			children = (
 				D451DEC529709FE500486EEE /* HitRateCalcApp.swift */,
 				D405854929E8849500DE83D8 /* HitRateCoordinatorView.swift */,
+				D4E4ABB629EA2C0300EDAFA9 /* LaunchCoordinatorView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				D4DD9DD929E868FF0068777A /* StatsContainerInfo.swift in Sources */,
 				D4DD9DD129E85EFC0068777A /* BindIntFocusStateViewModifier.swift in Sources */,
 				D451DEFB2970A53C00486EEE /* TraitList.swift in Sources */,
+				D4E4ABB729EA2C0300EDAFA9 /* LaunchCoordinatorView.swift in Sources */,
 				D450524629E874CB0024D519 /* HitRateDataModel.swift in Sources */,
 				D45540E729E8DA5B00440D66 /* UnitListView.swift in Sources */,
 				D450524229E870680024D519 /* SwitchButton.swift in Sources */,

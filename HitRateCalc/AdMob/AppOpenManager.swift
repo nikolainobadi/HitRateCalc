@@ -12,8 +12,6 @@ import AppTrackingTransparency
 final class AppOpenAdManager: NSObject {
     static let shared = AppOpenAdManager()
     
-    private var completion: (() -> Void)?
-    
     var isLoadingAd = false
     var isShowingAd = false
     var appOpenAd: GADAppOpenAd?
@@ -21,7 +19,7 @@ final class AppOpenAdManager: NSObject {
 }
 
 extension AppOpenAdManager {
-    func showAdIfAvailable(completion: (() -> Void)? = nil ) {
+    func showAdIfAvailable() {
         let rootVC = UIApplication.shared.connectedScenes
             .filter({$0.activationState == .foregroundActive})
             .map {$0 as? UIWindowScene }
@@ -32,25 +30,20 @@ extension AppOpenAdManager {
 
         if isShowingAd {
             print("App open ad is already showing.")
-            completion?()
             return
         }
         
         if !isAdAvailable() {
             print("App open ad is not ready yet.")
-            completion?()
             loadAd()
             return
         }
         
         if let ad = appOpenAd, let rootVC = rootVC, wasLoadTimeLessThanNHoursAgo(thresholdN: 4) {
             isShowingAd = true
-            
-            self.completion = completion // acts as 'delegate', called when ad dismissed
             ad.present(fromRootViewController: rootVC)
         } else {
             loadAd()
-            completion?()
         }
     }
 }
@@ -73,14 +66,12 @@ extension AppOpenAdManager: GADFullScreenContentDelegate {
     func adWillDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         appOpenAd = nil
         isShowingAd = false
-        finished()
         loadAd()
     }
     
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         appOpenAd = nil
         isShowingAd = false
-        finished()
         loadAd()
     }
 }
@@ -122,11 +113,6 @@ private extension AppOpenAdManager {
         let intervalInHours = timeIntervalBetweenNowAndLoadTime / secondsPerHour
         
         return intervalInHours < Double(thresholdN)
-    }
-    
-    func finished() {
-        completion?()
-        completion = nil
     }
     
     func makeGADRequest() -> GADRequest {

@@ -9,6 +9,8 @@
 		<key>UISceneConfigurations</key>
 		<dict/>
 	</dict>
+    <key>NSUserTrackingUsageDescription</key>
+    <string>This will allow personalized ads to display in the app. If you would prefer non-personalized ads, choose 'Ask App Not to Track'.</string>
     <key>GADApplicationIdentifier</key>
     <string>ca-app-pub-6607027445077729~7924696598</string>
     <key>GADIsAdManagerApp</key>
