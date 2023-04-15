@@ -14,11 +14,13 @@ final class SharedCoreDataManager {
     private let dataModelName = "HitRateCalcCoreDataModel"
     
     private init() {
+        print("SharedCoreDataManager init")
         container = NSPersistentContainer(name: dataModelName)
         if EnvironmentValues.isPreview {
+            print("isPreview")
             container.persistentStoreDescriptions.first?.url = .init(URL(fileURLWithPath: "/dev/null"))
         }
-        container.viewContext.automaticallyMergesChangesFromParent = true
+        
         container.loadPersistentStores { (_, error) in
             if let error = error {
                 fatalError("no data means no app, error: \(error.localizedDescription)")
@@ -42,6 +44,8 @@ extension SharedCoreDataManager: VisionStore {
         } else {
             addNewVision(vision)
         }
+        
+        try await saveContext()
     }
 }
 
@@ -92,6 +96,7 @@ private extension SharedCoreDataManager {
     func saveContext() async throws {
         try await viewContext.perform { [unowned self] in
             try viewContext.save()
+        
         }
     }
 }
