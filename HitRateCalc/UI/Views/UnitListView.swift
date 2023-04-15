@@ -15,6 +15,21 @@ struct UnitListView: View {
     
     private var visions: [Vision] { entities.map({ Vision(entity: $0) }) }
     
+    private func deleteVision(_ vision: Vision) {
+        // MARK: - TODO -> encapsulate
+        if vision.id == currentVision.id {
+            currentVision = Vision()
+        }
+        
+        Task {
+            do {
+                try await SharedCoreDataManager.shared.deleteVision(vision)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     var body: some View {
         List {
             Section {
@@ -29,17 +44,7 @@ struct UnitListView: View {
             
             Section("Available Units") {
                 if visions.isEmpty {
-                    VStack(spacing: 15) {
-                        Spacer()
-                        Image(systemName: "tray")
-                            .font(.largeTitle)
-                        Text("No results found")
-                            .font(.largeTitle)
-                        Text("You haven't saved any units. Tap the button above to add your first unit!")
-                            .multilineTextAlignment(.center)
-                        
-                        Spacer()
-                    }.frame(maxWidth: .infinity)
+                    EmptyListView()
                 } else {
                     ForEach(visions) { vision in
                         HStack {
@@ -64,8 +69,12 @@ struct UnitListView: View {
                                     .font(.title3)
                             }.padding()
                         }
+                        .swipeActions {
+                            Button(action: { deleteVision(vision) }) {
+                                Image(systemName: "trash")
+                            }.tint(.red)
+                        }
                     }
-
                 }
             }
         }.sheet(item: $selectedVision) { vision in
@@ -84,6 +93,24 @@ struct UnitListView: View {
                     .navigationBarTitleDisplayMode(.large)
             }
         }
+    }
+}
+
+
+// MARK: - EmptyListView
+fileprivate struct EmptyListView: View {
+    var body: some View {
+        VStack(spacing: 15) {
+            Spacer()
+            Image(systemName: "tray")
+                .font(.largeTitle)
+            Text("No results found")
+                .font(.largeTitle)
+            Text("You haven't saved any units. Tap the button above to add your first unit!")
+                .multilineTextAlignment(.center)
+            
+            Spacer()
+        }.frame(maxWidth: .infinity)
     }
 }
 
