@@ -45,6 +45,7 @@
 		D4DD9DDD29E86A730068777A /* StatsContainerInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DDC29E86A730068777A /* StatsContainerInfoTests.swift */; };
 		D4E4ABA929EA277B00EDAFA9 /* IntTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABA829EA277B00EDAFA9 /* IntTextField.swift */; };
 		D4E4ABAB29EA28DD00EDAFA9 /* VisionStoreAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABAA29EA28DD00EDAFA9 /* VisionStoreAdapter.swift */; };
+		D4E4ABAE29EA29F300EDAFA9 /* AdMobId.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABAD29EA29F300EDAFA9 /* AdMobId.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		D4E4ABA429EA1A1000EDAFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4E4ABA829EA277B00EDAFA9 /* IntTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextField.swift; sourceTree = "<group>"; };
 		D4E4ABAA29EA28DD00EDAFA9 /* VisionStoreAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionStoreAdapter.swift; sourceTree = "<group>"; };
+		D4E4ABAD29EA29F300EDAFA9 /* AdMobId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobId.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				D451DEF52970A18700486EEE /* Logic */,
 				D451DEF22970A0C200486EEE /* Model */,
 				D45540E829E8DD7500440D66 /* CoreData */,
+				D4E4ABAC29EA29E800EDAFA9 /* AdMob */,
 				D4DD9DD529E868660068777A /* Shared */,
 				D451DEF12970A00E00486EEE /* Resources */,
 				D451DECB29709FE600486EEE /* Preview Content */,
@@ -292,6 +295,14 @@
 				D451DEC729709FE500486EEE /* ContentView.swift */,
 			);
 			path = Old;
+			sourceTree = "<group>";
+		};
+		D4E4ABAC29EA29E800EDAFA9 /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				D4E4ABAD29EA29F300EDAFA9 /* AdMobId.swift */,
+			);
+			path = AdMob;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,6 +420,7 @@
 				D4E4ABA929EA277B00EDAFA9 /* IntTextField.swift in Sources */,
 				D4BA87B12970E5C3009977D4 /* SettingsDataModel.swift in Sources */,
 				D409B7C02970C20E004CFA64 /* View+Extensions.swift in Sources */,
+				D4E4ABAE29EA29F300EDAFA9 /* AdMobId.swift in Sources */,
 				D4DD9DCF29E85ED20068777A /* VisionDetailState.swift in Sources */,
 				D4DD9DC929E854080068777A /* VisionDetailsView.swift in Sources */,
 				D4BA87A72970E021009977D4 /* EditableTraitList.swift in Sources */,
