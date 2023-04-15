@@ -44,6 +44,7 @@
 		D4DD9DD929E868FF0068777A /* StatsContainerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DD829E868FF0068777A /* StatsContainerInfo.swift */; };
 		D4DD9DDD29E86A730068777A /* StatsContainerInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DDC29E86A730068777A /* StatsContainerInfoTests.swift */; };
 		D4E4ABA929EA277B00EDAFA9 /* IntTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABA829EA277B00EDAFA9 /* IntTextField.swift */; };
+		D4E4ABAB29EA28DD00EDAFA9 /* VisionStoreAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABAA29EA28DD00EDAFA9 /* VisionStoreAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		D4DD9DDC29E86A730068777A /* StatsContainerInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContainerInfoTests.swift; sourceTree = "<group>"; };
 		D4E4ABA429EA1A1000EDAFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4E4ABA829EA277B00EDAFA9 /* IntTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextField.swift; sourceTree = "<group>"; };
+		D4E4ABAA29EA28DD00EDAFA9 /* VisionStoreAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionStoreAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 			children = (
 				D451DEF62970A1AF00486EEE /* HitRateCalculator.swift */,
 				D4BA87B22970E5E6009977D4 /* AppRateManager.swift */,
+				D4E4ABAA29EA28DD00EDAFA9 /* VisionStoreAdapter.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				D450524629E874CB0024D519 /* HitRateDataModel.swift in Sources */,
 				D45540E729E8DA5B00440D66 /* UnitListView.swift in Sources */,
 				D450524229E870680024D519 /* SwitchButton.swift in Sources */,
+				D4E4ABAB29EA28DD00EDAFA9 /* VisionStoreAdapter.swift in Sources */,
 				D451DEC629709FE500486EEE /* HitRateCalcApp.swift in Sources */,
 				D409B7BD2970C144004CFA64 /* RoundedBorderViewModifier.swift in Sources */,
 				D4BA87AA2970E083009977D4 /* OldHitRateDataModel.swift in Sources */,
