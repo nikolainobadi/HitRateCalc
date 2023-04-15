@@ -53,32 +53,68 @@ fileprivate struct StatsForm: View {
     var body: some View {
         Form {
             Section {
-                StatTextField("Name", text: $dataModel.name, keyboardType: .alphabet)
-                    .focused($focusedIndex, equals: 0)
-            }
+                StatRowTitle(title: "Name") {
+                    TextField("Unit Name...", text: $dataModel.name)
+                        .keyboardType(.alphabet)
+                        .textFieldStyle(.roundedBorder)
+                        .multilineTextAlignment(.center)
+                        .focused($focusedIndex, equals: 0)
+                }
+            }.onlyShow(when: dataModel.showNameField)
             
             Section {
-                StatTextField("Luck", text: $dataModel.luck)
+                StatNumberRow(title: "Luck", number: $dataModel.luck)
                     .focused($focusedIndex, equals: 1)
             }
             
             Section("Evasion") {
-                StatTextField("Agility", text: $dataModel.agility)
+                StatNumberRow(title: "Agility", number: $dataModel.agility)
                     .focused($focusedIndex, equals: 2)
-                StatTextField("Evasion", text: $dataModel.evasion)
+                StatNumberRow(title: "Evasion", number: $dataModel.evasion)
                     .focused($focusedIndex, equals: 3)
             }.onlyShow(when: dataModel.showEvasion)
             
             Section("Accuracy") {
-                StatTextField("Dexterity", text: $dataModel.dexterity)
+                StatNumberRow(title: "Dexterity", number: $dataModel.dexterity)
                     .focused($focusedIndex, equals: 4)
-                StatTextField("Accuracy", text: $dataModel.accuracy)
+                StatNumberRow(title: "Accuracy", number: $dataModel.accuracy)
                     .focused($focusedIndex, equals: 5)
             }.onlyShow(when: dataModel.showAccuracy)
         }.onAppear { dataModel.focusFirstField() }
     }
 }
 
+
+// MARK: - StatRow
+fileprivate struct StatRowTitle<Child: View>: View {
+    let title: String
+    @ViewBuilder let child: Child
+    
+    var body: some View {
+        HStack {
+            Text("\(title):")
+                .lineLimit(1)
+                .font(.title3)
+                .minimumScaleFactor(0.5)
+                .frame(maxWidth: getWidthPercent(20), alignment: .leading)
+            child
+        }
+    }
+}
+
+
+
+// MARK: - StatNumberRow
+fileprivate struct StatNumberRow: View {
+    let title: String
+    @Binding var number: Int
+    
+    var body: some View {
+        StatRowTitle(title: title) {
+            IntTextField(integerValue: $number)
+        }
+    }
+}
 
 // MARK: - TraitTextField
 fileprivate struct StatTextField: View {
@@ -107,10 +143,6 @@ fileprivate struct StatTextField: View {
                 .keyboardType(keyboardType)
                 .textFieldStyle(.roundedBorder)
                 .multilineTextAlignment(.center)
-        }.onChange(of: text) { newValue in
-            if newValue.count > textLimit {
-                text = String(newValue.prefix(3))
-            }
         }
     }
 }
