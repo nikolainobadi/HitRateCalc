@@ -9,11 +9,11 @@ import Foundation
 
 final class VisionDetailsDataModel: ObservableObject {
     @Published var name: String
-    @Published var luck: String
-    @Published var agility: String
-    @Published var dexterity: String
-    @Published var evasion: String
-    @Published var accuracy: String
+    @Published var luck: Int
+    @Published var agility: Int
+    @Published var dexterity: Int
+    @Published var evasion: Int
+    @Published var accuracy: Int
     @Published var focusedIndex: Int?
     
     private let originalVision: Vision
@@ -25,18 +25,18 @@ final class VisionDetailsDataModel: ObservableObject {
         self.originalVision = vision
         self.store = store
         self.name = originalVision.name
-        self.luck = "\(originalVision.luck)"
-        self.agility = "\(originalVision.agility)"
-        self.dexterity = "\(originalVision.dexterity)"
-        self.evasion = "\(originalVision.evasion)"
-        self.accuracy = "\(originalVision.accuracy)"
-        self.adjustValues()
+        self.luck = originalVision.luck
+        self.agility = originalVision.agility
+        self.dexterity = originalVision.dexterity
+        self.evasion = originalVision.evasion
+        self.accuracy = originalVision.accuracy
     }
 }
 
 
 // MARK: - ViewModel
 extension VisionDetailsDataModel {
+    var showNameField: Bool { state == .allDetails }
     var showEvasion: Bool { state != .accuracy }
     var showAccuracy: Bool { state != .evasion }
     var nextButtonText: String {
@@ -97,21 +97,13 @@ private extension VisionDetailsDataModel {
         var updated = originalVision
         
         updated.name = name
-        updated.luck = Int(luck) ?? 0
-        updated.agility = Int(agility) ?? 0
-        updated.dexterity = Int(dexterity) ?? 0
-        updated.accuracy = Int(accuracy) ?? 0
-        updated.evasion = Int(evasion) ?? 0
+        updated.luck = luck
+        updated.agility = agility
+        updated.dexterity = dexterity
+        updated.accuracy = accuracy
+        updated.evasion = evasion
         
         return updated
-    }
-    
-    func adjustValues() {
-        if luck == "0" { luck = "" }
-        if agility == "0" { agility = "" }
-        if evasion == "0" { evasion = "" }
-        if dexterity == "0" { dexterity = "" }
-        if accuracy == "0" { accuracy = "" }
     }
 }
 
@@ -132,8 +124,10 @@ final class VisionStoreAdapter {
 }
 
 extension VisionStoreAdapter: VisionStore {
-    func saveVision(_ vision: Vision) async throws {
-        try await store.saveVision(vision)
+    func saveVision(_ vision: Vision) async throws {        
+        if !vision.name.isEmpty {
+            try await store.saveVision(vision)
+        }
         await finished(vision)
     }
 }

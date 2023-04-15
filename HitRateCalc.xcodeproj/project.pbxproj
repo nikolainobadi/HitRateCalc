@@ -43,6 +43,7 @@
 		D4DD9DD729E868960068777A /* VisionStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DD629E868960068777A /* VisionStat.swift */; };
 		D4DD9DD929E868FF0068777A /* StatsContainerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DD829E868FF0068777A /* StatsContainerInfo.swift */; };
 		D4DD9DDD29E86A730068777A /* StatsContainerInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DD9DDC29E86A730068777A /* StatsContainerInfoTests.swift */; };
+		D4E4ABA929EA277B00EDAFA9 /* IntTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E4ABA829EA277B00EDAFA9 /* IntTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		D4DD9DD829E868FF0068777A /* StatsContainerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContainerInfo.swift; sourceTree = "<group>"; };
 		D4DD9DDC29E86A730068777A /* StatsContainerInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContainerInfoTests.swift; sourceTree = "<group>"; };
 		D4E4ABA429EA1A1000EDAFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4E4ABA829EA277B00EDAFA9 /* IntTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				D45540E629E8DA5B00440D66 /* UnitListView.swift */,
 				D4DD9DC829E854080068777A /* VisionDetailsView.swift */,
 				D4BA87AE2970E332009977D4 /* SettingsView.swift */,
+				D4E4ABA829EA277B00EDAFA9 /* IntTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				D451DEF42970A0D300486EEE /* Trait.swift in Sources */,
 				D4DD9DD329E8618B0068777A /* VisionStatsContainer.swift in Sources */,
 				D450524029E86E660024D519 /* HitRateView.swift in Sources */,
+				D4E4ABA929EA277B00EDAFA9 /* IntTextField.swift in Sources */,
 				D4BA87B12970E5C3009977D4 /* SettingsDataModel.swift in Sources */,
 				D409B7C02970C20E004CFA64 /* View+Extensions.swift in Sources */,
 				D4DD9DCF29E85ED20068777A /* VisionDetailState.swift in Sources */,
