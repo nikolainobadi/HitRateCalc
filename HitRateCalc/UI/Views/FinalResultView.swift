@@ -14,7 +14,6 @@ struct FinalResultView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(title)
-//                .font(.title3)
                 .padding(.horizontal)
                 .frame(maxWidth: .infinity, alignment: .center)
             Text("\(resultRate)%")
