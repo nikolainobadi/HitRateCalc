@@ -17,11 +17,8 @@ struct VisionStatsContainer: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            // MARK: - TODO
-            // setUnit will lead to unitList
             StatHeader(title: viewModel.title, action: { showUnitList(viewModel) })
-            
-            
+        
             VStack(spacing: 0) {
                 Text(visionName)
                     .font(.title.bold())
