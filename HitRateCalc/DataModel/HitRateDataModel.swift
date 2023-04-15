@@ -18,8 +18,14 @@ final class HitRateDataModel: ObservableObject {
 
 // MARK: - ViewModel
 extension HitRateDataModel {
-    var finalRateTitle: String { "Chance to \(checkingHitRate ? "hit" : "evade") enemy unit" }
     var finalRate: String { String(checkingHitRate ? hitRate : (100 - hitRate)) }
+    var finalRateTitle: String {
+        if checkingHitRate {
+            return "Chance for \(attackerName) to hit \(defenderName)"
+        } else {
+            return "Chance for \(defenderName) to evade \(attackerName)"
+        }
+    }
     
     func resetAttacker() { attacker = Vision() }
     func resetDefender() { defender = Vision() }
@@ -43,5 +49,7 @@ extension HitRateDataModel {
 
 // MARK: - Private
 private extension HitRateDataModel {
+    var attackerName: String { attacker.name.isEmpty ? "attacker" : "'\(attacker.name)'" }
+    var defenderName: String { defender.name.isEmpty ? "enemy unit" : "'\(defender.name)'" }
     var hitRate: Int { HitRateCalculator.getHitRate(attacker: attacker, defender: defender) }
 }
