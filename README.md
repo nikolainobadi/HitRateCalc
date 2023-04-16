@@ -45,8 +45,9 @@ Any contributions from the community is certainly welcome. If you have any featu
 
 ## Screenshots
 <div style="display: flex; justify-content: space-evenly;">
-   <img src="demo_images/evasionRate.png" height="400">
-   <img src="demo_images/accuracyRate.png" height="400">
+   <img src="demo_images/hitRate.png" height="400">
+   <img src="demo_images/details.png" height="400">
+   <img src="demo_images/unitList.png" height="400">
 </div>
 
 ## Download
