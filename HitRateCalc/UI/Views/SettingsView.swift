@@ -27,6 +27,13 @@ struct SettingsView: View {
                     .font(.caption)
                     .padding(.horizontal, 10)
                     .minimumScaleFactor(0.6)
+                Link(destination: URL(string: dataModel.privacyPolicyURL)!) {
+                    Text("Privacy Policy")
+                        .underline()
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.6)
+                        .foregroundColor(.primary)
+                }
             }
             .environmentObject(dataModel)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
